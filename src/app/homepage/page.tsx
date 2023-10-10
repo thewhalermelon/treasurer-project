@@ -9,10 +9,12 @@ import HandBagImg from 'public/images/hand-bag.png';
 import WineImg from 'public/images/wine.png';
 import LineImg from 'public/images/line.png';
 import DotImg from 'public/images/dot.png';
+import SmallIphoneImg from 'public/images/iphone-small.png';
 
 import Header from '@/app/components/Header/Header';
 import Footer from '@/app/components/Footer/Footer';
 import Divider from '@/app/components/Divider/Divider';
+import Slider from '@/app/components/Slider/Slider';
 
 interface HomePageProps {}
 
@@ -20,8 +22,9 @@ const HomePage: React.FC<HomePageProps> = () => {
   return (
     <>
       <Header />
+
       <section className={styles.section}>
-        <div>
+        <article>
           <h3>55,000+ TRUSTED BUSINESSES</h3>
           <h1>Separate ownership of valuable items</h1>
           <summary>
@@ -32,7 +35,7 @@ const HomePage: React.FC<HomePageProps> = () => {
             <input type='email' placeholder='Enter your email address' />
             <button>Get Started</button>
           </fieldset>
-        </div>
+        </article>
         <div className={styles.itemsGroup}>
           <Image src={DotImg} alt='Line' className={styles.dot} />
           <Image src={LineImg} alt='Line' className={styles.line} />
@@ -43,7 +46,42 @@ const HomePage: React.FC<HomePageProps> = () => {
           <Image src={WineImg} alt='Wine' className={styles.wine} />
         </div>
       </section>
-      <Divider color='var(--light-gray)' width='331px' />
+
+      <div style={{ padding: '0 1.25rem' }}>
+        <Divider color='var(--light-gray)' />
+      </div>
+
+      <section className={styles.section}>
+        <article>
+          <h2>500,000+ happy customers.</h2>
+          <summary>Using Sublime everyday and loving it!</summary>
+        </article>
+        <article>
+          <h2>42.1%</h2>
+          <summary>highest return</summary>
+        </article>
+        <article>
+          <h2>14.6%</h2>
+          <summary>average return</summary>
+        </article>
+        <article>
+          <h2>48%</h2>
+          <summary>Reinvestment rate</summary>
+        </article>
+      </section>
+
+      <div style={{ padding: '0 1.25rem' }}>
+        <Divider color='var(--light-gray)' />
+      </div>
+
+      <section className={styles.section}>
+        <h3>WHO WE ARE</h3>
+        <h2>Invest in your passions,</h2>
+        <h2>one share at a time</h2>
+        <summary>Treasureers provide easy and sensual collection investment opportunities for anyone.</summary>
+        <Slider />
+        <Image src={SmallIphoneImg} alt='small-iphone' className={styles.smallIphone} />
+      </section>
       <Footer />
     </>
   );
