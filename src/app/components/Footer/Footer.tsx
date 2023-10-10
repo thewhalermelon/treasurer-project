@@ -14,43 +14,51 @@ interface FooterProps {}
 const Footer: React.FC<FooterProps> = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.above}>
-        <Link scroll={false} href='/'>
+      <div className={`${styles.above} container`}>
+        <Link scroll={false} href='/' className={styles.brand}>
           <Image src={TreasureeBrandImg} alt='Treasurer' priority={true} />
         </Link>
-        <div className={styles.social}>
-          <Link scroll={false} href='https://www.facebook.com/'>
-            <Image src={FacebookImg} alt='Facebook' />
-          </Link>
-          <Link scroll={false} href='https://www.instagram.com/'>
-            <Image src={InstagramImg} alt='Instagram' />
-          </Link>
-        </div>
-        <ul className={styles.menu}>
-          <li>
-            <Link scroll={false} href='/'>
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link scroll={false} href='/collections'>
-              Collections
-            </Link>
-          </li>
-          <li>
-            <Link scroll={false} href='/blog'>
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link scroll={false} href='/contract'>
-              Contract
-            </Link>
-          </li>
-        </ul>
+        <nav className={styles.social}>
+          <ul>
+            <li>
+              <Link scroll={false} href='https://www.facebook.com/'>
+                <Image src={FacebookImg} alt='Facebook' />
+              </Link>
+            </li>
+            <li>
+              <Link scroll={false} href='https://www.instagram.com/'>
+                <Image src={InstagramImg} alt='Instagram' />
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <nav className={styles.menu}>
+          <ul>
+            <li>
+              <Link scroll={false} href='/'>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link scroll={false} href='/collections'>
+                Collections
+              </Link>
+            </li>
+            <li>
+              <Link scroll={false} href='/blog'>
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link scroll={false} href='/contract'>
+                Contract
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
       <Divider />
-      <div className={styles.below}>
+      <nav className={`${styles.below} container`}>
         <ul>
           <li>
             <Link scroll={false} href='/faq'>
@@ -69,7 +77,7 @@ const Footer: React.FC<FooterProps> = () => {
           </li>
         </ul>
         <small className={styles.copyrighted}>ⓒ2023 Treasurer. All rights reserved.</small>
-      </div>
+      </nav>
     </footer>
   );
 };

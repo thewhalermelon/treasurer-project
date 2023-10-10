@@ -5,11 +5,15 @@
   .above {
     display: flex;
     flex-direction: column;
+    margin: auto;
 
     .social {
-      display: flex;
-      gap: 2.5rem;
       padding-top: 2.5rem;
+
+      ul {
+        flex-direction: row;
+        gap: 2.5rem;
+      }
     }
 
     .menu {
@@ -21,11 +25,60 @@
     display: flex;
     flex-direction: column;
 
-    .copyrighted {
+    small {
       color: var(--grayish-blue);
       padding-top: 2.5rem;
       font-size: var(--font-12);
       font-weight: 400;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .footer {
+    padding: 1.875rem 1.25rem;
+
+    .above {
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .brand {
+        order: 1;
+      }
+
+      .social {
+        order: 3;
+        padding-top: 0;
+      }
+
+      .menu {
+        gap: 2.875rem;
+        order: 2;
+        padding-top: 0;
+
+        ul {
+          flex-direction: row;
+        }
+      }
+    }
+
+    .below {
+      flex-direction: row;
+      justify-content: space-between;
+      margin: auto;
+
+      small {
+        order: 1;
+        padding-top: 0;
+      }
+
+      ul {
+        align-items: center;
+        flex-direction: row;
+        gap: 2.5rem;
+        order: 2;
+      }
     }
   }
 }

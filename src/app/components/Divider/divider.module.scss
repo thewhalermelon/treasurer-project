@@ -2,6 +2,12 @@
   background-color: var(--pink);
   border-width: 0;
   height: 1px;
-  margin: 2.5rem 0;
+  margin: 2.5rem auto;
   width: 100%;
+}
+
+@media screen and (min-width: 769px) {
+  .divider {
+    margin: 4.5625rem auto 1.5rem;
+  }
 }
