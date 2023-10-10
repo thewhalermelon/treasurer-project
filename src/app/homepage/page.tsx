@@ -1,10 +1,15 @@
+import Header from '@/app/components/Header/Header';
+import Footer from '@/app/components/Footer/Footer';
+
 interface HomePageProps {}
 
 const HomePage: React.FC<HomePageProps> = () => {
   return (
-    <div>
+    <>
+      <Header />
       <p>This is homepage</p>
-    </div>
+      <Footer />
+    </>
   );
 };
 

@@ -1,0 +1,31 @@
+.footer {
+  background-color: var(--gray);
+  padding: 2.75rem 1.25rem 2.5rem;
+
+  .above {
+    display: flex;
+    flex-direction: column;
+
+    .social {
+      display: flex;
+      gap: 2.5rem;
+      padding-top: 2.5rem;
+    }
+
+    .menu {
+      padding-top: 4.125rem;
+    }
+  }
+
+  .below {
+    display: flex;
+    flex-direction: column;
+
+    .copyrighted {
+      color: var(--grayish-blue);
+      padding-top: 2.5rem;
+      font-size: var(--font-12);
+      font-weight: 400;
+    }
+  }
+}
