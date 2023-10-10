@@ -57,7 +57,7 @@ const Footer: React.FC<FooterProps> = () => {
           </ul>
         </nav>
       </div>
-      <Divider />
+      <Divider color='var(--pink)' />
       <nav className={`${styles.below} container`}>
         <ul>
           <li>

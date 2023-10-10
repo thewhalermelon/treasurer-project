@@ -1,0 +1,133 @@
+.section {
+  padding: 3.75rem 1.2rem;
+  background-color: var(--gray);
+  margin-bottom: 5rem;
+
+  h3 {
+    color: var(--secondary-color);
+    font-size: var(--font-14);
+    font-weight: 600;
+    letter-spacing: 0.7px;
+  }
+
+  h1 {
+    color: var(--primary-color);
+    font-size: var(--font-42);
+    font-weight: 700;
+    letter-spacing: -1.26px;
+    line-height: 51px;
+    padding-top: 1.25rem;
+    max-width: 611px;
+  }
+
+  summary {
+    color: var(--primary-color);
+    font-size: var(--font-16);
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0.16px;
+    padding-top: 1.5rem;
+    max-width: 481px;
+  }
+
+  fieldset {
+    border: none;
+    position: relative;
+    margin-top: 2.5rem;
+    max-width: 382px;
+    width: 100%;
+
+    input {
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-26);
+      height: 3.5rem;
+      width: 100%;
+
+      &::placeholder {
+        color: var(--placeholder);
+        font-size: var(--font-14);
+        padding-left: 1.125rem;
+      }
+    }
+
+    button {
+      border: none;
+      border-radius: var(--border-radius-25);
+      background-color: var(--orange);
+      color: var(--white);
+      font-family: 'SUIT';
+      font-size: var(--font-14);
+      height: 3rem;
+      padding: 0.9375rem 1rem;
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      width: 112px;
+    }
+  }
+
+  .itemsGroup {
+    padding-top: 3.9375rem;
+    position: relative;
+    max-width: 335px;
+    margin: auto;
+
+    .line,
+    .safe,
+    .wine,
+    .bag,
+    .watch {
+      position: absolute;
+    }
+
+    .dot {
+      position: absolute;
+      left: 333px;
+    }
+
+    .safe {
+      height: 201px;
+      width: 146px;
+      left: 175px;
+      top: 167px;
+    }
+
+    .wine {
+      height: 195px;
+      width: 68px;
+      left: 92px;
+      top: 169px;
+    }
+
+    .bag {
+      height: 88px;
+      width: 125px;
+      left: 13px;
+      top: 280px;
+      z-index: 1;
+    }
+
+    .watch {
+      height: 154px;
+      width: 89px;
+      top: 228px;
+      left: 125px;
+      z-index: 1;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .section {
+    h1 {
+      font-size: var(--font-60);
+      letter-spacing: unset;
+      line-height: 74px;
+      text-transform: capitalize;
+    }
+
+    summary {
+      font-size: var(--font-14);
+    }
+  }
+}

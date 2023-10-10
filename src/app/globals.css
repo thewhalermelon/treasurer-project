@@ -4,17 +4,26 @@
   --alt-primary-color: #18181a;
   --white: #fff;
   --black: #000;
+
+  --light-gray: #d9d9d9;
   --gray: #f5f5f5;
   --grayish-blue: #687083;
+
   --pink: #e1e1e1;
   --orange: #fd7103;
+
+  --placeholder: #a6a6af;
+  --border-color: #ececee;
+
   --font-12: 12px;
   --font-14: 14px;
   --font-16: 16px;
   --font-42: 42px;
+  --font-60: 60px;
 
   --border-radius-20: 20px;
   --border-radius-25: 25px;
+  --border-radius-26: 26.5px;
 
   --tablet-screen: 768px;
 }
@@ -39,7 +48,7 @@ ul {
 a {
   color: var(--primary-color);
   font-size: var(--font-14);
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -85,7 +94,7 @@ a {
 
 @font-face {
   font-family: 'SUIT';
-  src: url('../../public/fonts/SUIT-Medium.ttf') format('ttf');
+  src: url('../../public/fonts/SUIT-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -93,7 +102,15 @@ a {
 
 @font-face {
   font-family: 'SUIT';
-  src: url('../../public/fonts/SUIT-Bold.ttf') format('ttf');
+  src: url('../../public/fonts/SUIT-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SUIT';
+  src: url('../../public/fonts/SUIT-ExtraBold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
