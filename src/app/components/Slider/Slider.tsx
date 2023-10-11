@@ -18,34 +18,42 @@ const animation = { duration: 5000, easing: (t: number) => t };
 
 const SLIDER_ARRAY = [
   {
+    id: 0,
     src: SmallHandBagImg,
     alt: 'Hand Bag',
   },
   {
+    id: 1,
     src: SmallWineImg,
     alt: 'Wine',
   },
   {
+    id: 2,
     src: SneakerImg,
     alt: 'Sneaker',
   },
   {
+    id: 3,
     src: HandBag3Img,
     alt: 'Hand Bag 3',
   },
   {
+    id: 4,
     src: SmallRolexImg,
     alt: 'Watch',
   },
   {
+    id: 5,
     src: HandBag2Img,
     alt: 'Hand Bag 2',
   },
   {
+    id: 6,
     src: HandBag3Img,
     alt: 'Hand Bag 3',
   },
   {
+    id: 7,
     src: SmallRolexImg,
     alt: 'Watch',
   },
@@ -74,14 +82,14 @@ const Slider: React.FC<SliderProps> = () => {
   });
 
   return (
-    <div
-      ref={sliderRef}
-      className='keen-slider'
-      style={{ width: 'fit-content', paddingTop: '10rem', paddingBottom: '4.0625rem' }}
-    >
+    <div ref={sliderRef} className='keen-slider' style={{ paddingTop: '10rem', paddingBottom: '4.0625rem' }}>
       {SLIDER_ARRAY.map((item, index) => {
         return (
-          <div className={`keen-slider__slide number-slide${index} ${styles['keen-slider']}`}>
+          <div
+            className={`keen-slider__slide number-slide${index} ${styles['keen-slider']}`}
+            style={{ minWidth: 80 }}
+            key={item.id}
+          >
             <Image src={item.src} alt={item.alt} />
           </div>
         );
