@@ -111,8 +111,8 @@ const HomePage: React.FC<HomePageProps> = () => {
           <input type='email' placeholder='Enter your email address' />
           <button>Get Started</button>
         </fieldset>
-        {ORANGE_CHART.map((i) => {
-          return <Image src={i.src} alt={i.alt} className={styles[`${i.className}`]} />;
+        {ORANGE_CHART.map((i, index) => {
+          return <Image src={i.src} alt={i.alt} className={styles[`${i.className}`]} key={index} />;
         })}
       </section>
 
