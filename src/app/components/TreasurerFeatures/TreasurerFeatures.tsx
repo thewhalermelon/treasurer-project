@@ -3,7 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 
 import styles from '@/app/homepage/page.module.scss';
 
-import RightArrowImg from 'public/images/right-arrow.png';
+import RightArrowImg from 'public/images/right-arrow.svg';
 
 interface TreasurerFeaturesProps {
   icon: StaticImageData;

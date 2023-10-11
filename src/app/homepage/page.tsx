@@ -3,9 +3,9 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 
 import SmallIphoneImg from 'public/images/iphone-small.png';
-import RightArrowImg from 'public/images/right-arrow.png';
+import RightArrowImg from 'public/images/right-arrow.svg';
 
-import { FEATURES, FEEDBACK, ORANGE_CHART, PRODUCTS, STEPS } from '@/app/constants';
+import { FEATURES, ORANGE_CHART, PRODUCTS, STEPS } from '@/app/constants';
 import Header from '@/app/components/Header/Header';
 import Footer from '@/app/components/Footer/Footer';
 import Divider from '@/app/components/Divider/Divider';
