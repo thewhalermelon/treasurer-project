@@ -107,6 +107,7 @@ const FEEDBACK = [
 
 const FEATURES = [
   {
+    id: 0,
     icon: MagnifyingGlassImg,
     title: 'Convenient & Smart',
     summary:
@@ -140,6 +141,7 @@ const FEATURES = [
     ],
   },
   {
+    id: 1,
     icon: ProtectShieldImg,
     title: 'Thorough security & compensation system',
     summary:
@@ -173,6 +175,7 @@ const FEATURES = [
     ],
   },
   {
+    id: 2,
     icon: DataBaseImg,
     title: 'Blue chip product sourcing by thorough analysis',
     summary:
@@ -258,7 +261,7 @@ const HomePage: React.FC<HomePageProps> = () => {
       <section className={styles.section}>
         {FEATURES.map((f) => {
           return (
-            <TreasurerFeatures icon={f.icon} title={f.title} summary={f.summary}>
+            <TreasurerFeatures icon={f.icon} title={f.title} summary={f.summary} key={f.id}>
               {f.images.map((img) => {
                 return <Image src={img.src} alt={img.alt} className={styles[`${img.className}`]} />;
               })}
