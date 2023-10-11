@@ -14,7 +14,7 @@ interface TreasurerFeaturesProps {
 
 const TreasurerFeatures: React.FC<TreasurerFeaturesProps> = ({ icon, title, summary, children }) => {
   return (
-    <div>
+    <main>
       <div>
         <Image src={icon} alt='Grey Glass' className={styles.glass} />
         <h2>{title}</h2>
@@ -25,7 +25,7 @@ const TreasurerFeatures: React.FC<TreasurerFeaturesProps> = ({ icon, title, summ
         </a>
       </div>
       <div className={styles.imagesGroup}>{children}</div>
-    </div>
+    </main>
   );
 };
 

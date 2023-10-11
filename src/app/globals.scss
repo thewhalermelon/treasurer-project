@@ -5,12 +5,17 @@
   --white: #fff;
   --black: #000;
 
+  --lighter-gray: #f8f8f8;
   --light-gray: #d9d9d9;
+  --medium-gray: #a6a6a6;
   --gray: #f5f5f5;
   --grayish-blue: #687083;
+  --dark-charcoal-green: #21211e;
   --charcoal-gray: #4d4d55;
 
   --pink: #e1e1e1;
+
+  --vivid-coral: #e24932;
   --orange: #fd7103;
 
   --placeholder: #a6a6af;
@@ -21,6 +26,7 @@
   --font-14: 14px;
   --font-16: 16px;
   --font-20: 20px;
+  --font-24: 24px;
   --font-32: 32px;
   --font-34: 34px;
   --font-40: 40px;
@@ -64,8 +70,27 @@ a {
   max-width: 1200px;
 }
 
+// BUTTON
 .outlined-button {
   font-weight: 500;
+}
+
+.borderred-oulined-rounded-button {
+  background-color: var(--white);
+  border: 1px solid var(--dark-charcoal-green);
+  border-radius: 18.5px;
+  font-size: var(--font-13);
+  height: 2.375rem;
+  padding: 0.5rem 1rem;
+  min-width: 4.875rem;
+  text-transform: uppercase;
+  width: fit-content;
+  white-space: nowrap;
+
+  &.selected {
+    background-color: var(--black);
+    color: var(--white);
+  }
 }
 
 .rounded-button {
@@ -79,6 +104,7 @@ a {
 .rounded-arrow-button {
   align-items: center;
   background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   border-radius: var(--border-radius-20);
   color: var(--white);
   display: flex;
@@ -89,6 +115,21 @@ a {
 }
 
 // TITLE
+.title-14-medium-grey {
+  color: var(--medium-gray);
+  font-size: var(--font-14);
+  font-weight: 500;
+}
+
+.title-34-white-center {
+  color: var(--white);
+  font-size: var(--font-34);
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  line-height: 44px;
+  text-align: center;
+}
+
 .title-34-black-center {
   color: var(--black);
   font-size: var(--font-34);
@@ -198,6 +239,14 @@ a {
   font-family: 'SUIT';
   src: url('../../public/fonts/SUIT-ExtraBold.otf') format('opentype');
   font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Spoqa Han Sans Neo';
+  src: url('../../public/fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

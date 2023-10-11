@@ -2,222 +2,21 @@ import Image from 'next/image';
 
 import styles from './page.module.scss';
 
-import LineGraphImg from 'public/images/line-graph.svg';
-import RolexImg from 'public/images/rolex.png';
-import SafeImg from 'public/images/safe.png';
-import HandBagImg from 'public/images/hand-bag.png';
-import WineImg from 'public/images/wine.png';
-import LineImg from 'public/images/line.png';
-import DotImg from 'public/images/dot.png';
 import SmallIphoneImg from 'public/images/iphone-small.png';
-import MagnifyingGlassImg from 'public/images/magnifying-glass.png';
-import GreyRectangleImg from 'public/images/grey-rectangle.png';
-import GreyMagnifyingGlassImg from 'public/images/grey-magnifying-glass.png';
-import BlackMagnifyingGlassImg from 'public/images/black-magnifying-glass.png';
-import ReceiptImg from 'public/images/receipt.png';
-import ProtectShieldImg from 'public/images/protect-shield.png';
-import ProtectSafeShieldImg from 'public/images/protect-safe-shield.png';
-import VerticalOrangeLineImg from 'public/images/vertical-orange-line.png';
-import CircleShieldImg from 'public/images/circle-shield.png';
-import DataBaseImg from 'public/images/database.png';
-import RolexPricesImg from 'public/images/rolex-prices.png';
-import BagPricesImg from 'public/images/bag-prices.png';
-import AnalyticChartImg from 'public/images/analytic-chart.png';
-import BagPurchaseProcessImg from 'public/images/bag-purchase-process.png';
-import RepaymentImg from 'public/images/repayment.png';
+import RightArrowImg from 'public/images/right-arrow.png';
 
+import { BANNER_IMAGES, FEATURES, FEEDBACK, ORANGE_CHART, PRODUCTS, STEPS } from '@/app/constants';
 import Header from '@/app/components/Header/Header';
 import Footer from '@/app/components/Footer/Footer';
 import Divider from '@/app/components/Divider/Divider';
 import Slider from '@/app/components/Slider/Slider';
 import TreasurerFeatures from '@/app/components/TreasurerFeatures/TreasurerFeatures';
 import Steps from '@/app/components/Steps/Steps';
+import Categories from '@/app/components/Categories/Categories';
+import ProductCard from '@/app/components/ProductCard/ProductCard';
+import BrandsSlider from '@/app/components/BrandsSlider/BrandsSlider';
 
 interface HomePageProps {}
-
-const BANNER_IMAGES = [
-  {
-    id: 0,
-    src: DotImg,
-    alt: 'Line',
-    className: 'dot',
-  },
-  {
-    id: 1,
-    src: LineImg,
-    alt: 'Line',
-    className: 'line',
-  },
-  {
-    id: 2,
-    src: LineGraphImg,
-    alt: 'Line Chart',
-    className: 'graph',
-  },
-  {
-    id: 3,
-    src: RolexImg,
-    alt: 'Rolex Watch',
-    className: 'watch',
-  },
-  {
-    id: 4,
-    src: SafeImg,
-    alt: 'Safe',
-    className: 'safe',
-  },
-  {
-    id: 5,
-    src: HandBagImg,
-    alt: 'Hand Bag',
-    className: 'bag',
-  },
-  {
-    id: 6,
-    src: WineImg,
-    alt: 'Wine',
-    className: 'wine',
-  },
-];
-
-const FEEDBACK = [
-  {
-    id: 0,
-    title: '500,000+ happy customers.',
-    summary: 'Using Sublime everyday and loving it!',
-  },
-  {
-    id: 1,
-    title: '42.1%',
-    summary: 'highest return',
-  },
-
-  {
-    id: 2,
-    title: '14.6%',
-    summary: 'average return',
-  },
-
-  {
-    id: 3,
-    title: '48%',
-    summary: 'Reinvestment rate',
-  },
-];
-
-const FEATURES = [
-  {
-    id: 0,
-    icon: MagnifyingGlassImg,
-    title: 'Convenient & Smart',
-    summary:
-      'When recruiting pieces for each product, we receive consulting from experts to understand scarcity value, marketability, and transaction volume, and do our best to sell only collectible products.',
-    images: [
-      {
-        id: 0,
-        src: GreyMagnifyingGlassImg,
-        alt: 'Grey Glass',
-        className: 'glass',
-      },
-      {
-        id: 1,
-        src: GreyRectangleImg,
-        alt: 'Rectangle',
-        className: 'rectangle',
-      },
-      {
-        id: 2,
-        src: RolexImg,
-        alt: 'Watch',
-        className: 'watch',
-      },
-      {
-        id: 3,
-        src: HandBagImg,
-        alt: 'Bag',
-        className: 'bag',
-      },
-      {
-        id: 4,
-        src: ReceiptImg,
-        alt: 'Receipt',
-        className: 'receipt',
-      },
-    ],
-  },
-  {
-    id: 1,
-    icon: ProtectShieldImg,
-    title: 'Thorough security & compensation system',
-    summary:
-      'In the event of theft, damage, etc. during consign- ment storage of goods at Treasurer, the insured insurance will cover and the estimated return will cover the owners of the pieces as much as much as each piece owner.',
-    images: [
-      {
-        id: 5,
-        src: ProtectSafeShieldImg,
-        alt: 'Protect Safe Shield',
-        className: 'safeShield',
-      },
-      {
-        id: 6,
-        src: VerticalOrangeLineImg,
-        alt: 'Vertical Orange Line 1',
-        className: 'firstLine',
-      },
-      {
-        id: 7,
-        src: VerticalOrangeLineImg,
-        alt: 'Vertical Orange Line 2',
-        className: 'secondLine',
-      },
-      {
-        id: 8,
-        src: CircleShieldImg,
-        alt: 'Circle Shield 1',
-        className: 'firstCircleShield',
-      },
-      {
-        id: 9,
-        src: CircleShieldImg,
-        alt: 'Circle Shield 2',
-        className: 'secondCircleShield',
-      },
-    ],
-  },
-  {
-    id: 2,
-    icon: DataBaseImg,
-    title: 'Blue chip product sourcing by thorough analysis',
-    summary:
-      "Treasurer's AI crawls transaction data of more than 1 million Second Hands items a day from major auctions, direct transaction sites, and communities not only at home but also abroad.",
-    images: [
-      {
-        id: 10,
-        src: RolexPricesImg,
-        alt: 'Rolex Prices',
-        className: 'rolexPrices',
-      },
-      {
-        id: 11,
-        src: BagPricesImg,
-        alt: 'Bag Prices',
-        className: 'bagPrices',
-      },
-      {
-        id: 12,
-        src: AnalyticChartImg,
-        alt: 'Analytic Chart',
-        className: 'analyticChart',
-      },
-      {
-        id: 13,
-        src: AnalyticChartImg,
-        alt: 'Analytic Chart',
-        className: 'analyticChart1',
-      },
-    ],
-  },
-];
 
 const HomePage: React.FC<HomePageProps> = () => {
   return (
@@ -288,35 +87,15 @@ const HomePage: React.FC<HomePageProps> = () => {
         <h2 className='title-34-black-center'>3 Step</h2>
         <h2 className='title-34-black-center'>Investment Process</h2>
 
-        <Steps
-          step='STEP 01'
-          title='Purchase of spot assets'
-          summary='We compare and select products with high collection value among products purchased by individuals or
-            difficult to manage'
-        >
-          <Image src={BlackMagnifyingGlassImg} alt='Black Glass' className={styles.glass} />
-          <Image src={GreyRectangleImg} alt='Rectangle' className={styles.rectangle} />
-          <Image src={RolexImg} alt='Watch' className={styles.watch} />
-          <Image src={HandBagImg} alt='Bag' className={styles.bag} />
-          <Image src={ReceiptImg} alt='Receipt' className={styles.receipt} />
-        </Steps>
-
-        <Steps
-          step='STEP 02'
-          title='Ownership of piece open'
-          summary='Divide ownership of high-priced in-kind assets into $1 units to proceed with joint purchase'
-        >
-          <Image src={BagPurchaseProcessImg} alt='Bag Purchase Process' className={styles.purchaseProcess} />
-        </Steps>
-
-        <Steps
-          step='STEP 03'
-          title='Repayment of profits after the sale'
-          summary='Products that have been recruited for sculptures will be sold in the future, which will be judged to have
-            risen in value, and the profits generated will be repaid.'
-        >
-          <Image src={RepaymentImg} alt='Repayment' className={styles.purchaseProcess} />
-        </Steps>
+        {STEPS.map((s) => {
+          return (
+            <Steps step={s.step} title={s.title} summary={s.summary} key={s.id}>
+              {s.images.map((i) => {
+                return <Image src={i.src} alt={i.alt} className={styles[`${i.className}`]} key={i.id} />;
+              })}
+            </Steps>
+          );
+        })}
       </section>
 
       <section className={styles.section}>
@@ -325,8 +104,44 @@ const HomePage: React.FC<HomePageProps> = () => {
             <h2 className='title-34-black-center'>Investment</h2>
             <h2 className='title-34-black-center'>Products</h2>
           </div>
+          <Categories />
         </div>
+        <main aria-label='Product List'>
+          {PRODUCTS.map((p) => {
+            return (
+              <ProductCard
+                key={p.id}
+                src={p.imageSrc}
+                alt={p.imageAtl}
+                name={p.name}
+                desc={p.desc}
+                marketPrice={p.marketPrice}
+                piecePrice={p.piecePrice}
+                save={p.save}
+              />
+            );
+          })}
+          <a className='rounded-arrow-button'>
+            ALL Products
+            <Image src={RightArrowImg} alt='Arrow' className={styles['right-arrow']} />
+          </a>
+        </main>
       </section>
+
+      <section className={styles.section}>
+        <h2 className='title-34-white-center'>Own a piece</h2>
+        <h2 className='title-34-white-center'>of rare collectibles</h2>
+        <h2 className='title-34-white-center'>without breaking the bank.</h2>
+        <fieldset>
+          <input type='email' placeholder='Enter your email address' />
+          <button>Get Started</button>
+        </fieldset>
+        {ORANGE_CHART.map((i) => {
+          return <Image src={i.src} alt={i.alt} className={styles[`${i.className}`]} />;
+        })}
+      </section>
+
+      <BrandsSlider />
       <Footer />
     </>
   );

@@ -27,8 +27,9 @@
 
       &::placeholder {
         color: var(--placeholder);
+        font-family: 'SUIT', sans-serif;
         font-size: var(--font-14);
-        padding-left: 1.125rem;
+        padding-left: 1rem;
       }
     }
 
@@ -37,7 +38,7 @@
       border-radius: var(--border-radius-25);
       background-color: var(--orange);
       color: var(--white);
-      font-family: 'SUIT';
+      font-family: 'SUIT', sans-serif;
       font-size: var(--font-14);
       height: 3rem;
       padding: 0.9375rem 1rem;
@@ -125,6 +126,7 @@
       summary {
         color: var(--charcoal-gray);
         font-size: var(--font-16);
+        line-height: 2rem;
         padding: 0;
       }
 
@@ -186,7 +188,7 @@
   &:nth-of-type(4) {
     padding: 7.5rem 1.25rem 0;
 
-    & > div {
+    & > main {
       & > div {
         display: flex;
         flex-direction: column;
@@ -382,12 +384,12 @@
           top: 28px;
           height: auto;
           left: 132px;
-          width: 85px;
+          width: 86px;
           z-index: 1;
         }
 
         .bag {
-          top: 75px;
+          top: 74px;
           height: auto;
           left: 40px;
           width: 142px;
@@ -399,10 +401,10 @@
         }
 
         .receipt {
-          left: 170px;
-          top: 121px;
+          left: 165px;
+          top: 117px;
           height: auto;
-          width: 155px;
+          width: 162px;
           z-index: 2;
         }
 
@@ -426,6 +428,163 @@
       summary {
         padding-top: 0.5rem;
       }
+    }
+  }
+
+  &:nth-of-type(6) {
+    margin-bottom: 0;
+
+    & > div {
+      .categories {
+        & > ul {
+          display: flex;
+          flex-direction: row;
+          overflow: auto;
+          gap: 0.625rem;
+          margin: 0 -1.25rem;
+          padding: 0 1.25rem;
+          padding-top: 2rem;
+
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+    }
+
+    & > main {
+      display: flex;
+      flex-direction: column;
+      gap: 3.75rem;
+      padding-top: 2.75rem;
+
+      article {
+        .rectangle {
+          align-items: center;
+          background-color: var(--lighter-gray);
+          border-radius: var(--border-radius-10);
+          display: flex;
+          justify-content: center;
+          margin: auto;
+          height: 316px;
+          position: relative;
+          width: 335px;
+
+          button {
+            border: none;
+
+            .favorite {
+              position: absolute;
+              top: 16px;
+              right: 16px;
+            }
+          }
+        }
+
+        h6 {
+          padding-top: 1.5rem;
+        }
+
+        summary {
+          padding-top: 0.5rem;
+          line-height: 22px;
+        }
+
+        .prices {
+          display: flex;
+          flex-direction: column;
+
+          .priceTitle {
+            display: flex;
+            justify-content: space-between;
+
+            h6 {
+              color: var(--medium-gray);
+              font-family: 'Spoqa Han Sans Neo', sans-serif;
+              font-size: var(--font-13);
+              font-weight: 400;
+            }
+          }
+
+          .priceNumber {
+            display: flex;
+            justify-content: space-between;
+
+            h5 {
+              font-size: var(--font-24);
+              font-weight: 700;
+              padding-top: 0.25rem;
+            }
+          }
+        }
+
+        .save {
+          align-items: center;
+          border-radius: 0.25rem;
+          background: rgba(226, 73, 50, 0.1);
+          display: flex;
+          justify-content: center;
+          gap: 0.25rem;
+          height: 1.375rem;
+          margin-left: auto;
+          margin-top: 0.5rem;
+          width: 6rem;
+
+          h6 {
+            color: var(--vivid-coral);
+            font-size: var(--font-13);
+            font-weight: 500;
+            padding: 0;
+          }
+        }
+      }
+
+      & > a {
+        height: 40px;
+        font-size: var(--font-13);
+        font-weight: 200;
+        line-height: 22px;
+        letter-spacing: 0.39px;
+        margin: auto;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  &:nth-of-type(7) {
+    background-color: var(--black);
+    border-radius: var(--border-radius-20);
+    height: 547px;
+    margin: auto;
+    padding: 3.75rem 1rem 10rem;
+    position: relative;
+    width: 335px;
+
+    fieldset {
+      margin-top: 3.75rem;
+    }
+
+    .background,
+    .line,
+    .dot {
+      position: absolute;
+    }
+
+    .background {
+      bottom: 0;
+      left: 0;
+    }
+
+    .line {
+      bottom: 75px;
+      left: 0;
+    }
+
+    .dot {
+      bottom: 158px;
+      right: 0;
     }
   }
 }
