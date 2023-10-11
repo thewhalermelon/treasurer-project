@@ -268,7 +268,7 @@ const HomePage: React.FC<HomePageProps> = () => {
       </section>
 
       <section className={styles.section}>
-        <h2 className='title-34-black-center'>3 Step</h2>
+        <h2 className='title-34-black-center'>3 Step (WIP)</h2>
         <h2 className='title-34-black-center'>Investment Process</h2>
 
         <Steps
