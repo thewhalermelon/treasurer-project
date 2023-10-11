@@ -31,7 +31,7 @@ import OrangeLineImg from 'public/images/orange-line.png';
 import NHBrandImg from 'public/images/nh-brand.png';
 import CoinoneBrandImg from 'public/images/coinone-brand.png';
 import SKBrandImg from 'public/images/sk-brand.png';
-import KBBrandImg from 'public/images/KB-brand.png';
+import KBBrandImg from 'public/images/kb-brand.png';
 import PostechBrandImg from 'public/images/postech-brand.png';
 import LivexBrandImg from 'public/images/livex-brand.png';
 import SmallRolexImg from 'public/images/rolex-small.png';
