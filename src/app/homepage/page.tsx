@@ -114,26 +114,31 @@ const FEATURES = [
       'When recruiting pieces for each product, we receive consulting from experts to understand scarcity value, marketability, and transaction volume, and do our best to sell only collectible products.',
     images: [
       {
+        id: 0,
         src: GreyMagnifyingGlassImg,
         alt: 'Grey Glass',
         className: 'glass',
       },
       {
+        id: 1,
         src: GreyRectangleImg,
         alt: 'Rectangle',
         className: 'rectangle',
       },
       {
+        id: 2,
         src: RolexImg,
         alt: 'Watch',
         className: 'watch',
       },
       {
+        id: 3,
         src: HandBagImg,
         alt: 'Bag',
         className: 'bag',
       },
       {
+        id: 4,
         src: ReceiptImg,
         alt: 'Receipt',
         className: 'receipt',
@@ -148,26 +153,31 @@ const FEATURES = [
       'In the event of theft, damage, etc. during consign- ment storage of goods at Treasurer, the insured insurance will cover and the estimated return will cover the owners of the pieces as much as much as each piece owner.',
     images: [
       {
+        id: 5,
         src: ProtectSafeShieldImg,
         alt: 'Protect Safe Shield',
         className: 'safeShield',
       },
       {
+        id: 6,
         src: VerticalOrangeLineImg,
         alt: 'Vertical Orange Line 1',
         className: 'firstLine',
       },
       {
+        id: 7,
         src: VerticalOrangeLineImg,
         alt: 'Vertical Orange Line 2',
         className: 'secondLine',
       },
       {
+        id: 8,
         src: CircleShieldImg,
         alt: 'Circle Shield 1',
         className: 'firstCircleShield',
       },
       {
+        id: 9,
         src: CircleShieldImg,
         alt: 'Circle Shield 2',
         className: 'secondCircleShield',
@@ -182,21 +192,25 @@ const FEATURES = [
       "Treasurer's AI crawls transaction data of more than 1 million Second Hands items a day from major auctions, direct transaction sites, and communities not only at home but also abroad.",
     images: [
       {
+        id: 10,
         src: RolexPricesImg,
         alt: 'Rolex Prices',
         className: 'rolexPrices',
       },
       {
+        id: 11,
         src: BagPricesImg,
         alt: 'Bag Prices',
         className: 'bagPrices',
       },
       {
+        id: 12,
         src: AnalyticChartImg,
         alt: 'Analytic Chart',
         className: 'analyticChart',
       },
       {
+        id: 13,
         src: AnalyticChartImg,
         alt: 'Analytic Chart',
         className: 'analyticChart1',
@@ -263,7 +277,7 @@ const HomePage: React.FC<HomePageProps> = () => {
           return (
             <TreasurerFeatures icon={f.icon} title={f.title} summary={f.summary} key={f.id}>
               {f.images.map((img) => {
-                return <Image src={img.src} alt={img.alt} className={styles[`${img.className}`]} />;
+                return <Image src={img.src} alt={img.alt} className={styles[`${img.className}`]} key={img.id} />;
               })}
             </TreasurerFeatures>
           );
