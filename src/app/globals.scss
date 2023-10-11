@@ -1,0 +1,203 @@
+:root {
+  --primary-color: #18181b;
+  --secondary-color: #6a6a76;
+  --alt-primary-color: #18181a;
+  --white: #fff;
+  --black: #000;
+
+  --light-gray: #d9d9d9;
+  --gray: #f5f5f5;
+  --grayish-blue: #687083;
+  --charcoal-gray: #4d4d55;
+
+  --pink: #e1e1e1;
+  --orange: #fd7103;
+
+  --placeholder: #a6a6af;
+  --border-color: #ececee;
+
+  --font-12: 12px;
+  --font-13: 13px;
+  --font-14: 14px;
+  --font-16: 16px;
+  --font-20: 20px;
+  --font-32: 32px;
+  --font-34: 34px;
+  --font-40: 40px;
+  --font-42: 42px;
+  --font-60: 60px;
+
+  --border-radius-10: 10px;
+  --border-radius-16: 16px;
+  --border-radius-20: 20px;
+  --border-radius-25: 25px;
+  --border-radius-26: 26.5px;
+
+  --tablet-screen: 768px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'SUIT', sans-serif;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+a {
+  color: var(--primary-color);
+  font-size: var(--font-14);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+.outlined-button {
+  font-weight: 500;
+}
+
+.rounded-button {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius-20);
+  color: var(--white);
+  font-weight: 500;
+  padding: 0.625rem 0.75rem;
+}
+
+.rounded-arrow-button {
+  align-items: center;
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius-20);
+  color: var(--white);
+  display: flex;
+  font-weight: 400;
+  gap: 1rem;
+  padding: 0.625rem 1rem;
+  width: fit-content;
+}
+
+// TITLE
+.title-34-black-center {
+  color: var(--black);
+  font-size: var(--font-34);
+  font-weight: 600;
+  text-align: center;
+  line-height: 44px;
+}
+
+.title-14-grey {
+  color: var(--secondary-color);
+  font-size: var(--font-14);
+  font-weight: 600;
+  letter-spacing: 0.7px;
+}
+
+.title-20-black {
+  color: var(--black);
+  font-size: var(--font-20);
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.title-13-orange-left {
+  color: var(--orange);
+  font-size: var(--font-13);
+  line-height: 22px;
+  letter-spacing: 1.3px;
+  padding-bottom: 0.75rem;
+}
+
+.title-13-orange-center {
+  color: var(--orange);
+  font-size: var(--font-13);
+  line-height: 22px;
+  letter-spacing: 1.3px;
+  text-align: center;
+  padding-bottom: 0.75rem;
+}
+
+// SUMMARY
+.summary-14-primary {
+  color: var(--primary-color);
+  font-size: var(--font-14);
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.summary-16-primary {
+  color: var(--primary-color);
+  font-size: var(--font-16);
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0.16px;
+  padding-top: 1.5rem;
+  max-width: 481px;
+}
+
+@font-face {
+  font-family: 'SUIT';
+  src: url('../../public/fonts/SUIT-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SUIT';
+  src: url('../../public/fonts/SUIT-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SUIT';
+  src: url('../../public/fonts/SUIT-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SUIT';
+  src: url('../../public/fonts/SUIT-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SUIT';
+  src: url('../../public/fonts/SUIT-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SUIT';
+  src: url('../../public/fonts/SUIT-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SUIT';
+  src: url('../../public/fonts/SUIT-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,446 @@
+.section {
+  padding: 3.75rem 1.25rem 10rem;
+  margin-bottom: 5rem;
+
+  h1 {
+    color: var(--primary-color);
+    font-size: var(--font-42);
+    font-weight: 700;
+    letter-spacing: -1.26px;
+    line-height: 51px;
+    padding-top: 1.25rem;
+    max-width: 611px;
+  }
+
+  fieldset {
+    border: none;
+    position: relative;
+    margin-top: 2.5rem;
+    max-width: 382px;
+    width: 100%;
+
+    input {
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-26);
+      height: 3.5rem;
+      width: 100%;
+
+      &::placeholder {
+        color: var(--placeholder);
+        font-size: var(--font-14);
+        padding-left: 1.125rem;
+      }
+    }
+
+    button {
+      border: none;
+      border-radius: var(--border-radius-25);
+      background-color: var(--orange);
+      color: var(--white);
+      font-family: 'SUIT';
+      font-size: var(--font-14);
+      height: 3rem;
+      padding: 0.9375rem 1rem;
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      width: 112px;
+    }
+  }
+
+  .itemsGroup {
+    padding-top: 3.9375rem;
+    position: relative;
+    max-width: 335px;
+    margin: auto;
+
+    .line,
+    .safe,
+    .wine,
+    .bag,
+    .watch {
+      position: absolute;
+    }
+
+    .dot {
+      position: absolute;
+      left: 333px;
+    }
+
+    .safe {
+      height: 201px;
+      width: 146px;
+      left: 175px;
+      top: 167px;
+    }
+
+    .wine {
+      height: 195px;
+      width: 68px;
+      left: 92px;
+      top: 169px;
+    }
+
+    .bag {
+      height: 88px;
+      width: 125px;
+      left: 13px;
+      top: 280px;
+      z-index: 1;
+    }
+
+    .watch {
+      height: 154px;
+      width: 89px;
+      top: 228px;
+      left: 125px;
+      z-index: 1;
+    }
+  }
+
+  &:nth-of-type(odd) {
+    background-color: var(--gray);
+  }
+
+  &:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 2.875rem 1.25rem 0;
+    margin-bottom: 2.875rem;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+
+      h2 {
+        font-size: var(--font-32);
+        font-weight: 700;
+        text-align: center;
+        line-height: 44px;
+      }
+
+      summary {
+        color: var(--charcoal-gray);
+        font-size: var(--font-16);
+        padding: 0;
+      }
+
+      &:first-child {
+        gap: 0.4375rem;
+      }
+
+      &:not(:first-child) {
+        h2 {
+          font-size: var(--font-40);
+          letter-spacing: -1.2px;
+        }
+
+        summary {
+          color: var(--secondary-color);
+          font-size: var(--font-14);
+          letter-spacing: 1.12px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  &:nth-of-type(3) {
+    padding: 5rem 0 0;
+    position: relative;
+    margin: 5rem 0 0;
+
+    h2 {
+      font-size: var(--font-40);
+      line-height: 48px;
+      letter-spacing: -1.2px;
+      text-align: center;
+
+      &:nth-of-type(2) {
+        margin: auto;
+        width: 220px;
+      }
+    }
+
+    summary {
+      color: var(--charcoal-gray);
+      line-height: 32px;
+      letter-spacing: 0.16px;
+      margin: auto;
+      padding-top: 2rem;
+      text-align: center;
+      width: 223px;
+    }
+
+    .smallIphone {
+      bottom: 0;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+  }
+
+  &:nth-of-type(4) {
+    padding: 7.5rem 1.25rem 0;
+
+    & > div {
+      & > div {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          font-size: var(--font-34);
+          font-weight: 600;
+          line-height: 44px;
+          padding-top: 2rem;
+          text-align: center;
+          width: 185px;
+        }
+
+        summary {
+          padding-top: 1rem;
+        }
+
+        a {
+          margin-top: 2.75rem;
+        }
+      }
+
+      .imagesGroup {
+        margin: auto;
+        padding-top: 7.5rem;
+        position: relative;
+        width: 335px;
+
+        .watch,
+        .glass,
+        .bag,
+        .receipt {
+          position: absolute;
+        }
+
+        .watch {
+          bottom: 18px;
+          height: auto;
+          left: 111px;
+          width: 93px;
+          z-index: 1;
+        }
+
+        .bag {
+          bottom: 21px;
+          height: auto;
+          left: 11px;
+          width: 154px;
+        }
+
+        .glass {
+          bottom: 62px;
+          left: 241px;
+        }
+
+        .receipt {
+          height: auto;
+          left: 114px;
+          top: 185px;
+          width: 240px;
+          z-index: 2;
+        }
+      }
+
+      &:nth-of-type(2) {
+        padding-top: 16.5rem;
+
+        & > div {
+          h2 {
+            text-align: start;
+            width: 299px;
+          }
+        }
+
+        .imagesGroup {
+          .safeShield {
+            position: relative;
+            top: 100px;
+            left: 84px;
+          }
+
+          .firstLine,
+          .secondLine,
+          .firstCircleShield,
+          .secondCircleShield {
+            position: absolute;
+          }
+
+          .firstLine {
+            bottom: 79px;
+            left: 166px;
+          }
+
+          .secondLine {
+            left: 166px;
+            top: 399px;
+          }
+
+          .firstCircleShield {
+            left: 117px;
+            top: 60px;
+          }
+
+          .secondCircleShield {
+            left: 117px;
+            top: 459px;
+          }
+        }
+      }
+
+      &:nth-of-type(3) {
+        padding-top: 25.5rem;
+
+        & > div {
+          h2 {
+            text-align: start;
+            width: 100%;
+          }
+
+          a {
+            margin-top: 4.125rem;
+          }
+        }
+
+        .imagesGroup {
+          padding-top: 3.75rem;
+
+          .rolexPrices {
+            position: relative;
+            bottom: 7px;
+            left: 49px;
+          }
+
+          .bagPrices,
+          .analyticChart,
+          .analyticChart1 {
+            position: absolute;
+          }
+
+          .bagPrices {
+            left: 9px;
+            top: 158px;
+          }
+
+          .analyticChart {
+            top: 326px;
+            right: 22px;
+
+            &:nth-of-type(2) {
+              right: 21px;
+            }
+          }
+
+          .analyticChart1 {
+            top: 326px;
+            right: 21px;
+          }
+        }
+      }
+    }
+  }
+
+  &:nth-of-type(5) {
+    margin-top: 293px;
+    padding: 7.5rem 1.25rem;
+
+    article {
+      margin: 3.75rem auto 0;
+
+      .imagesGroup {
+        background-color: var(--white);
+        border-radius: var(--border-radius-16);
+        height: 260px;
+        position: relative;
+        width: 335px;
+
+        .rectangle,
+        .watch,
+        .glass,
+        .bag,
+        .receipt {
+          position: absolute;
+        }
+
+        .rectangle {
+          left: 30px;
+          top: 86px;
+          width: 210px;
+          height: 107px;
+        }
+
+        .watch {
+          top: 28px;
+          height: auto;
+          left: 132px;
+          width: 85px;
+          z-index: 1;
+        }
+
+        .bag {
+          top: 75px;
+          height: auto;
+          left: 40px;
+          width: 142px;
+        }
+
+        .glass {
+          top: 84px;
+          left: 255px;
+        }
+
+        .receipt {
+          left: 170px;
+          top: 121px;
+          height: auto;
+          width: 155px;
+          z-index: 2;
+        }
+
+        .purchaseProcess {
+          position: absolute;
+          left: 30px;
+          top: 33px;
+        }
+      }
+
+      &:not(:nth-of-type(1)) {
+        margin: 5rem auto 0;
+      }
+    }
+
+    & > article {
+      h3 {
+        padding: 2.75rem 0 0.5rem;
+      }
+
+      summary {
+        padding-top: 0.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .section {
+    h1 {
+      font-size: var(--font-60);
+      letter-spacing: unset;
+      line-height: 74px;
+      text-transform: capitalize;
+    }
+
+    summary {
+      font-size: var(--font-14);
+    }
+  }
+}

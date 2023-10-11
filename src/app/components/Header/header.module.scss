@@ -1,0 +1,42 @@
+.header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  height: 58px;
+  max-width: 1240px;
+  margin: auto;
+  padding: 0.75rem 1.25rem 1.5rem;
+
+  .hamburger {
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .header {
+    height: 74px;
+
+    .hamburger {
+      display: none;
+    }
+
+    nav {
+      display: block;
+
+      ul {
+        flex-direction: row;
+        gap: 3.75rem;
+
+        &.actions {
+          align-items: center;
+          display: flex;
+          gap: 2rem;
+        }
+      }
+    }
+  }
+}
