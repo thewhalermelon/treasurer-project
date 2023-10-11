@@ -5,7 +5,7 @@ import styles from './page.module.scss';
 import SmallIphoneImg from 'public/images/iphone-small.png';
 import RightArrowImg from 'public/images/right-arrow.png';
 
-import { BANNER_IMAGES, FEATURES, FEEDBACK, ORANGE_CHART, PRODUCTS, STEPS } from '@/app/constants';
+import { FEATURES, FEEDBACK, ORANGE_CHART, PRODUCTS, STEPS } from '@/app/constants';
 import Header from '@/app/components/Header/Header';
 import Footer from '@/app/components/Footer/Footer';
 import Divider from '@/app/components/Divider/Divider';
@@ -15,6 +15,7 @@ import Steps from '@/app/components/Steps/Steps';
 import Categories from '@/app/components/Categories/Categories';
 import ProductCard from '@/app/components/ProductCard/ProductCard';
 import BrandsSlider from '@/app/components/BrandsSlider/BrandsSlider';
+import TreasurerBanner from '@/app/components/TreasurerBanner/TreasurerBanner';
 
 interface HomePageProps {}
 
@@ -23,25 +24,7 @@ const HomePage: React.FC<HomePageProps> = () => {
     <>
       <Header />
 
-      <section className={styles.section}>
-        <article>
-          <h3 className='title-14-grey'>55,000+ TRUSTED BUSINESSES</h3>
-          <h1>Separate ownership of valuable items</h1>
-          <summary className='summary-16-primary'>
-            Treasurer is a platform that allows anyone to easily own and invest in world -recognized luxury goods such
-            as Chanel, Rolex, and Romanée-Conti.
-          </summary>
-          <fieldset>
-            <input type='email' placeholder='Enter your email address' />
-            <button>Get Started</button>
-          </fieldset>
-        </article>
-        <div className={styles.itemsGroup}>
-          {BANNER_IMAGES.map((img) => {
-            return <Image src={img.src} alt={img.alt} className={styles[`${img.className}`]} key={img.id} />;
-          })}
-        </div>
-      </section>
+      <TreasurerBanner />
 
       <div style={{ padding: '0 1.25rem' }}>
         <Divider color='var(--light-gray)' />

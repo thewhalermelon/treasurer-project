@@ -1,5 +1,3 @@
-import LineGraphImg from 'public/images/line-graph.svg';
-
 import RolexImg from 'public/images/rolex.svg';
 import RolexImg1 from 'public/images/rolex-1.svg';
 
@@ -11,7 +9,6 @@ import HandBag5Img from 'public/images/hand-bag-5.png';
 
 import WineImg from 'public/images/wine.svg';
 import Wine1Img from 'public/images/wine-1.svg';
-import LineImg from 'public/images/line.svg';
 import DotImg from 'public/images/dot.svg';
 import MagnifyingGlassImg from 'public/images/magnifying-glass.png';
 import GreyRectangleImg from 'public/images/grey-rectangle.png';
@@ -45,24 +42,6 @@ import SmallWineImg from 'public/images/wine-small.png';
 import SneakerImg from 'public/images/sneaker.png';
 
 export const BANNER_IMAGES = [
-  {
-    id: 0,
-    src: DotImg,
-    alt: 'Line',
-    className: 'dot',
-  },
-  {
-    id: 1,
-    src: LineImg,
-    alt: 'Line',
-    className: 'line',
-  },
-  {
-    id: 2,
-    src: LineGraphImg,
-    alt: 'Line Chart',
-    className: 'graph',
-  },
   {
     id: 3,
     src: RolexImg,

@@ -49,6 +49,10 @@
     }
   }
 
+  article {
+    margin-top: 3.75rem;
+  }
+
   .itemsGroup {
     padding-top: 3.9375rem;
     position: relative;
@@ -601,5 +605,53 @@
     summary {
       font-size: var(--font-14);
     }
+  }
+}
+
+.fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 1s forwards 1s;
+}
+
+.fade-in-bottom {
+  opacity: 0;
+  animation: fadeInBottom 1s forwards 1.2s;
+}
+
+.fade-in-right {
+  opacity: 0;
+  animation: fadeInRight 1s forwards 1.8s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

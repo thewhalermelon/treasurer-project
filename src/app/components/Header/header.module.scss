@@ -1,11 +1,44 @@
 .header {
   align-items: center;
+  background-color: var(--white);
   display: flex;
   justify-content: space-between;
   height: 58px;
   max-width: 1240px;
   margin: auto;
   padding: 0.75rem 1.25rem 1.5rem;
+  top: 0;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+
+  .hamburger {
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+  }
+
+  &.scrolled {
+    top: -60px;
+  }
+}
+
+.header-scrolled {
+  align-items: center;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  height: 58px;
+  max-width: 1240px;
+  margin: auto;
+  padding: 0.75rem 1.25rem 1.5rem;
+  top: 0;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
 
   .hamburger {
     cursor: pointer;
