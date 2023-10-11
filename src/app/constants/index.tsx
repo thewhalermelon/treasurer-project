@@ -70,25 +70,23 @@ export const BANNER_IMAGES = [
 
 export const FEEDBACK = [
   {
-    id: 0,
-    title: '500,000+ happy customers.',
-    summary: 'Using Sublime everyday and loving it!',
-  },
-  {
     id: 1,
-    title: '42.1%',
+    title: 42.1,
+    unit: '%',
     summary: 'highest return',
   },
 
   {
     id: 2,
-    title: '14.6%',
+    title: 14.6,
+    unit: '%',
     summary: 'average return',
   },
 
   {
     id: 3,
-    title: '48%',
+    title: 48,
+    unit: '%',
     summary: 'Reinvestment rate',
   },
 ];

@@ -16,6 +16,7 @@ import Categories from '@/app/components/Categories/Categories';
 import ProductCard from '@/app/components/ProductCard/ProductCard';
 import BrandsSlider from '@/app/components/BrandsSlider/BrandsSlider';
 import TreasurerBanner from '@/app/components/TreasurerBanner/TreasurerBanner';
+import TreasurerData from '@/app/components/TreasurerData/TreasurerData';
 
 interface HomePageProps {}
 
@@ -30,16 +31,7 @@ const HomePage: React.FC<HomePageProps> = () => {
         <Divider color='var(--light-gray)' />
       </div>
 
-      <section className={styles.section}>
-        {FEEDBACK.map((f) => {
-          return (
-            <article key={f.id}>
-              <h2>{f.title}</h2>
-              <summary>{f.summary}</summary>
-            </article>
-          );
-        })}
-      </section>
+      <TreasurerData />
 
       <div style={{ padding: '0 1.25rem' }}>
         <Divider color='var(--light-gray)' />
