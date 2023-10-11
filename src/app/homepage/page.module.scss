@@ -49,10 +49,6 @@
     }
   }
 
-  article {
-    margin-top: 3.75rem;
-  }
-
   .itemsGroup {
     padding-top: 3.9375rem;
     position: relative;
@@ -101,6 +97,10 @@
       left: 125px;
       z-index: 1;
     }
+  }
+
+  &:nth-of-type(1) {
+    margin-top: 3.75rem;
   }
 
   &:nth-of-type(odd) {
@@ -542,6 +542,9 @@
             font-weight: 500;
             padding: 0;
           }
+        }
+
+        &:nth-of-type(1) {
         }
       }
 
