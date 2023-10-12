@@ -171,6 +171,7 @@
           font-size: var(--font-14);
           letter-spacing: 1.12px;
           text-transform: uppercase;
+          font-weight: 600;
         }
       }
     }
@@ -346,6 +347,7 @@
 
           a {
             margin-top: 4.125rem;
+            width: 124px;
           }
         }
 
@@ -580,7 +582,8 @@
       }
 
       & > a {
-        height: 40px;
+        width: 157px;
+        height: 38px;
         font-size: var(--font-13);
         font-weight: 200;
         line-height: 22px;
