@@ -21,7 +21,7 @@ const TreasurerData: React.FC<TreasurerDataProps> = () => {
         return (
           <article key={f.id}>
             <h2>
-              <CountUp start={0} end={f.title} duration={5} />
+              <CountUp start={5.5} end={f.title} duration={5} decimals={f.title % 1 !== 0 ? 1 : 0} />
               {f.unit}
             </h2>
             <summary>{f.summary}</summary>
