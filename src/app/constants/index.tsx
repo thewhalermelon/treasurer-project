@@ -1,5 +1,4 @@
 import RolexImg from 'public/images/rolex.svg';
-import RolexImg1 from 'public/images/rolex-1.svg';
 
 import SafeImg from 'public/images/safe.svg';
 
@@ -10,30 +9,30 @@ import HandBag5Img from 'public/images/hand-bag-5.png';
 import WineImg from 'public/images/wine.svg';
 import Wine1Img from 'public/images/wine-1.svg';
 import DotImg from 'public/images/dot.svg';
-import MagnifyingGlassImg from 'public/images/magnifying-glass.png';
+import MagnifyingGlassImg from 'public/images/magnifying-glass.svg';
 import GreyRectangleImg from 'public/images/grey-rectangle.png';
-import GreyMagnifyingGlassImg from 'public/images/grey-magnifying-glass.png';
-import BlackMagnifyingGlassImg from 'public/images/black-magnifying-glass.png';
+import GreyMagnifyingGlassImg from 'public/images/grey-magnifying-glass.svg';
+import BlackMagnifyingGlassImg from 'public/images/black-magnifying-glass.svg';
 import ReceiptImg from 'public/images/receipt.svg';
 import ReceiptImg1 from 'public/images/receipt-1.svg';
-import ProtectShieldImg from 'public/images/protect-shield.png';
+import ProtectShieldImg from 'public/images/protect-shield.svg';
 import ProtectSafeShieldImg from 'public/images/protect-safe-shield.svg';
 import VerticalOrangeLineImg from 'public/images/vertical-orange-line.png';
 import CircleShieldImg from 'public/images/circle-shield.svg';
-import DataBaseImg from 'public/images/database.png';
+import DataBaseImg from 'public/images/database.svg';
 import RolexPricesImg from 'public/images/rolex-prices.svg';
 import BagPricesImg from 'public/images/bag-prices.svg';
 import AnalyticChartImg from 'public/images/analytic-chart.svg';
-import BagPurchaseProcessImg from 'public/images/bag-purchase-process.png';
+import BagPurchaseProcessImg from 'public/images/bag-purchase-process.svg';
 import RepaymentImg from 'public/images/repayment.svg';
 import OrangeFadeBackgroundImg from 'public/images/orange-fade-background.png';
 import OrangeLineImg from 'public/images/orange-line.png';
-import NHBrandImg from 'public/images/nh-brand.png';
-import CoinoneBrandImg from 'public/images/coinone-brand.png';
-import SKBrandImg from 'public/images/sk-brand.png';
-import KBBrandImg from 'public/images/kb-brand.png';
-import PostechBrandImg from 'public/images/postech-brand.png';
-import LivexBrandImg from 'public/images/livex-brand.png';
+import NHBrandImg from 'public/images/nh-brand.svg';
+import CoinoneBrandImg from 'public/images/coinone-brand.svg';
+import SKBrandImg from 'public/images/sk-brand.svg';
+import KBBrandImg from 'public/images/kb-brand.svg';
+import PostechBrandImg from 'public/images/postech-brand.svg';
+import LivexBrandImg from 'public/images/livex-brand.svg';
 import SmallRolexImg from 'public/images/rolex-small.png';
 import SmallHandBagImg from 'public/images/hand-bag-small.png';
 import HandBag2Img from 'public/images/hand-bag-2.png';
@@ -95,6 +94,7 @@ export const FEATURES = [
   {
     id: 0,
     icon: MagnifyingGlassImg,
+    alt: 'Orange Magnifying Glass',
     title: 'Convenient & Smart',
     summary:
       'When recruiting pieces for each product, we receive consulting from experts to understand scarcity value, marketability, and transaction volume, and do our best to sell only collectible products.',
@@ -134,6 +134,7 @@ export const FEATURES = [
   {
     id: 1,
     icon: ProtectShieldImg,
+    alt: 'Protect Shield',
     title: 'Thorough security & compensation system',
     summary:
       'In the event of theft, damage, etc. during consign- ment storage of goods at Treasurer, the insured insurance will cover and the estimated return will cover the owners of the pieces as much as much as each piece owner.',
@@ -173,6 +174,7 @@ export const FEATURES = [
   {
     id: 2,
     icon: DataBaseImg,
+    alt: 'DataBase',
     title: 'Blue chip product sourcing by thorough analysis',
     summary:
       "Treasurer's AI crawls transaction data of more than 1 million Second Hands items a day from major auctions, direct transaction sites, and communities not only at home but also abroad.",
@@ -215,7 +217,7 @@ export const STEPS = [
     images: [
       { id: 0, src: BlackMagnifyingGlassImg, alt: 'Black Glass', className: 'glass' },
       { id: 1, src: GreyRectangleImg, alt: 'Rectangle', className: 'rectangle' },
-      { id: 2, src: RolexImg1, alt: 'Watch', className: 'watch' },
+      { id: 2, src: RolexImg, alt: 'Watch', className: 'watch' },
       { id: 3, src: HandBagImg, alt: 'Bag', className: 'bag' },
       { id: 4, src: ReceiptImg1, alt: 'Receipt', className: 'receipt' },
     ],

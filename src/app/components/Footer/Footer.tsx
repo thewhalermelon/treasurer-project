@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import styles from './footer.module.scss';
 
-import FacebookImg from 'public/images/facebook.png';
+import FacebookImg from 'public/images/facebook.svg';
 import InstagramImg from 'public/images/instagram.svg';
 import TreasureeBrandImg from 'public/images/treasurer-brand.svg';
 

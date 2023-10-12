@@ -10,13 +10,14 @@ interface TreasurerFeaturesProps {
   title: string;
   summary: string;
   children: ReactNode;
+  alt: string;
 }
 
-const TreasurerFeatures: React.FC<TreasurerFeaturesProps> = ({ icon, title, summary, children }) => {
+const TreasurerFeatures: React.FC<TreasurerFeaturesProps> = ({ icon, title, summary, children, alt }) => {
   return (
     <main>
       <div>
-        <Image src={icon} alt='Grey Glass' className={styles.glass} />
+        <Image src={icon} alt={alt} className={styles.orangeImg} />
         <h2>{title}</h2>
         <summary className='summary-14-primary'>{summary}</summary>
         <a className='rounded-arrow-button'>

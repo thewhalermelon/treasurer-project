@@ -181,11 +181,12 @@
       width: 223px;
     }
 
-    .smallIphone {
-      bottom: 0;
+    .iphone {
+      bottom: -86px;
       left: 50%;
       position: absolute;
       transform: translateX(-50%);
+      width: 200px;
     }
   }
 
@@ -213,6 +214,11 @@
         a {
           margin-top: 2.75rem;
         }
+      }
+
+      .orangeImg {
+        height: 2rem;
+        width: 2rem;
       }
 
       .imagesGroup {
@@ -338,17 +344,13 @@
           }
 
           .analyticChart {
-            top: 326px;
-            right: 22px;
-
-            &:nth-of-type(2) {
-              right: 21px;
-            }
+            top: 289px;
+            right: -8px;
           }
 
           .analyticChart1 {
-            top: 326px;
-            right: 21px;
+            top: 289px;
+            right: -9px;
           }
         }
       }

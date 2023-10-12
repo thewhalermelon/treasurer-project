@@ -5,8 +5,8 @@ import Image, { StaticImageData } from 'next/image';
 
 import styles from '@/app/homepage/page.module.scss';
 
-import FilledSaveImg from 'public/images/filled-save.png';
-import OutlinedSaveImg from 'public/images/outlined-save.png';
+import FilledSaveImg from 'public/images/filled-save.svg';
+import OutlinedSaveImg from 'public/images/outlined-save.svg';
 import OrangeTriangleImg from 'public/images/orange-triangle.png';
 
 interface ProductCardProps {

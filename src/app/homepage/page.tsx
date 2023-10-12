@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import styles from './page.module.scss';
 
-import SmallIphoneImg from 'public/images/iphone-small.png';
+import IphoneImg from 'public/images/iphone.svg';
 import RightArrowImg from 'public/images/right-arrow.svg';
 
 import { FEATURES, ORANGE_CHART, PRODUCTS, STEPS } from '@/app/constants';
@@ -43,13 +43,13 @@ const HomePage: React.FC<HomePageProps> = () => {
         <h2>one share at a time</h2>
         <summary>Treasureers provide easy and sensual collection investment opportunities for anyone.</summary>
         <Slider />
-        <Image src={SmallIphoneImg} alt='Iphone' className={styles.smallIphone} />
+        <Image src={IphoneImg} alt='Iphone' className={styles.iphone} />
       </section>
 
       <section className={styles.section}>
         {FEATURES.map((f) => {
           return (
-            <TreasurerFeatures icon={f.icon} title={f.title} summary={f.summary} key={f.id}>
+            <TreasurerFeatures icon={f.icon} title={f.title} summary={f.summary} alt={f.alt} key={f.id}>
               {f.images.map((img) => {
                 return <Image src={img.src} alt={img.alt} className={styles[`${img.className}`]} key={img.id} />;
               })}
