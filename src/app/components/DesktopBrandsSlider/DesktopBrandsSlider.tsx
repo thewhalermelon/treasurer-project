@@ -7,14 +7,17 @@ import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import styles from './brandsSlider.module.scss';
 
+import LinearLeftRectangleImg from 'public/images/linear-left-rectangle.svg';
+import LinearRightRectangleImg from 'public/images/linear-right-rectangle.svg';
+
 import { BRANDS } from '@/app/constants';
 import useWindowWidth from '@/app/hooks/useWindowWidth';
 
 const animation = { duration: 5000, easing: (t: number) => t };
 
-interface BrandsSliderProps {}
+interface DesktopBrandsSliderProps {}
 
-const BrandsSlider: React.FC<BrandsSliderProps> = () => {
+const DesktopBrandsSlider: React.FC<DesktopBrandsSliderProps> = () => {
   const windowWidth = useWindowWidth();
   const [sliderRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
@@ -22,7 +25,7 @@ const BrandsSlider: React.FC<BrandsSliderProps> = () => {
     drag: false,
     slides: {
       perView: 'auto',
-      spacing: 10,
+      spacing: 60,
     },
     created(s) {
       s.moveToIdx(5, true, animation);
@@ -35,9 +38,13 @@ const BrandsSlider: React.FC<BrandsSliderProps> = () => {
     },
   });
 
-  if (windowWidth && windowWidth < 1920) {
+  if (windowWidth && windowWidth >= 1920) {
     return (
-      <div ref={sliderRef} className='keen-slider' style={{ paddingTop: '3.75rem', paddingBottom: '7.5rem' }}>
+      <div
+        ref={sliderRef}
+        className='keen-slider'
+        style={{ paddingTop: '140px', paddingBottom: '160px', maxWidth: 1200, margin: 'auto' }}
+      >
         {BRANDS.map((item, index) => {
           return (
             <div
@@ -54,4 +61,4 @@ const BrandsSlider: React.FC<BrandsSliderProps> = () => {
   } else return null;
 };
 
-export default BrandsSlider;
+export default DesktopBrandsSlider;

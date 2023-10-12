@@ -12,3 +12,12 @@
     width: fit-content;
   }
 }
+
+.floating-element-3rd-right {
+  opacity: 0;
+  transition: opacity 1s 2s, transform 1s 2s;
+}
+
+.floating-element-3rd-right.visible {
+  opacity: 1;
+}

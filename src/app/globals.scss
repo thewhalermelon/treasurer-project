@@ -92,7 +92,7 @@ li {
     text-transform: uppercase;
     width: fit-content;
     white-space: nowrap;
-  
+
     &.selected {
       background-color: var(--black);
       color: var(--white);
@@ -124,7 +124,7 @@ li {
   font-weight: 400;
   justify-content: space-between;
   padding: 0.625rem 1rem;
-  width: fit-content;
+  width: 124px;
 }
 
 // TITLE

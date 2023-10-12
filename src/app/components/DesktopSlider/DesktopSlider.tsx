@@ -3,6 +3,7 @@
 import Image from 'next/image';
 
 import { useKeenSlider } from 'keen-slider/react';
+import { useInView } from 'react-intersection-observer';
 
 import 'keen-slider/keen-slider.min.css';
 import styles from './slider.module.scss';
@@ -37,27 +38,40 @@ const DesktopSlider: React.FC<DesktopSliderProps> = () => {
       s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
   });
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
   if (windowWidth && windowWidth >= 1920) {
     return (
-      <div
-        ref={sliderRef}
-        className='keen-slider'
-        style={{ paddingTop: '14.5rem', paddingBottom: '4.0625rem', maxWidth: 1200, margin: 'auto' }}
-      >
-        <Image src={LinearLeftRectangleImg} alt='Linear Rectangle' className={styles.linearRectangle} />
-        {SLIDER_ARRAY.map((item, index) => {
-          return (
-            <div
-              className={`keen-slider__slide number-slide${index} ${styles['keen-slider']}`}
-              style={{ width: 140, height: 140 }}
-              key={item.id}
-            >
-              <Image src={item.src} alt={item.alt} />
-            </div>
-          );
-        })}
-        <Image src={LinearRightRectangleImg} alt='Linear Rectangle' className={styles.linearRectangle} />
+      <div ref={ref} className={`${styles['floating-element-3rd-right']} ${inView ? styles.visible : ''}`}>
+        <div
+          ref={sliderRef}
+          className='keen-slider'
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            paddingBottom: 55,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: 1290,
+          }}
+        >
+          <Image src={LinearLeftRectangleImg} alt='Linear Rectangle' className={styles.linearRectangle} />
+          {SLIDER_ARRAY.map((item, index) => {
+            return (
+              <div
+                className={`keen-slider__slide number-slide${index} ${styles['keen-slider']}`}
+                style={{ width: 140, height: 140 }}
+                key={item.id}
+              >
+                <Image src={item.src} alt={item.alt} />
+              </div>
+            );
+          })}
+          <Image src={LinearRightRectangleImg} alt='Linear Rectangle' className={styles.linearRectangle} />
+        </div>
       </div>
     );
   } else return null;

@@ -2,12 +2,14 @@
 
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
+import { useInView } from 'react-intersection-observer';
 
 import styles from '@/app/homepage/page.module.scss';
 
 import FilledSaveImg from 'public/images/filled-save.svg';
 import OutlinedSaveImg from 'public/images/outlined-save.svg';
 import OrangeTriangleImg from 'public/images/orange-triangle.png';
+import useWindowWidth from '@/app/hooks/useWindowWidth';
 
 interface ProductCardProps {
   src: StaticImageData;
@@ -17,17 +19,28 @@ interface ProductCardProps {
   marketPrice: string;
   piecePrice: string;
   save: string;
+  index: number;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketPrice, piecePrice, save }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketPrice, piecePrice, save, index }) => {
+  const windowWidth = useWindowWidth();
   const [isSelected, setIsSelected] = React.useState<Boolean>(false);
+  const [ref, inView] = useInView({
+    threshold: 1,
+    triggerOnce: true,
+  });
 
   const handleFavorite = () => {
     setIsSelected(!isSelected);
   };
 
   return (
-    <article>
+    <article
+      ref={ref}
+      className={`${
+        windowWidth && windowWidth >= 1920 ? styles[`appear-element-desktop-${index}`] : styles['appear-element']
+      } ${inView ? styles.visible : ''}`}
+    >
       <div className={styles.rectangle}>
         <Image src={src} alt={alt} />
         <button onClick={handleFavorite}>

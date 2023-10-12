@@ -6,6 +6,9 @@ import IphoneImg from 'public/images/iphone.png';
 import IphoneDesktopImg from 'public/images/iphone__desktop.svg';
 import RightArrowImg from 'public/images/right-arrow.svg';
 
+import OrangeFadeBackgroundDesktopImg from 'public/images/orange-fade-background__desktop.svg';
+import OrangeLineDesktopImg from 'public/images/orange-line__desktop.svg';
+
 import { FEATURES, ORANGE_CHART, PRODUCTS, STEPS } from '@/app/constants';
 import Header from '@/app/components/Header/Header';
 import Footer from '@/app/components/Footer/Footer';
@@ -19,6 +22,9 @@ import BrandsSlider from '@/app/components/BrandsSlider/BrandsSlider';
 import TreasurerBanner from '@/app/components/TreasurerBanner/TreasurerBanner';
 import TreasurerData from '@/app/components/TreasurerData/TreasurerData';
 import DesktopSlider from '@/app/components/DesktopSlider/DesktopSlider';
+import DesktopBrandsSlider from '@/app/components/DesktopBrandsSlider/DesktopBrandsSlider';
+import TreasurerInvest from '@/app/components/TreasurerInvest/TreasurerInvest';
+import TreasurerSubscribe from '@/app/components/TreasurerSubscribe/TreasurerSubscribe';
 
 interface HomePageProps {}
 
@@ -42,16 +48,7 @@ const HomePage: React.FC<HomePageProps> = () => {
       </div>
 
       {/* SECTION 3RD */}
-      <section className={styles.section}>
-        <h3 className='title-13-orange-center'>WHO WE ARE</h3>
-        <h2>Invest in your passions,</h2>
-        <h2>one share at a time</h2>
-        <summary>Treasureers provide easy and sensual collection investment opportunities for anyone.</summary>
-        <Slider />
-        <DesktopSlider />
-        <Image src={IphoneImg} alt='Iphone' className={styles.iphone} />
-        <Image src={IphoneDesktopImg} alt='Iphone Desktop' className={styles['iphone-desktop']} />
-      </section>
+      <TreasurerInvest />
 
       {/* SECTION 4TH */}
       <section className={styles.section}>
@@ -60,6 +57,16 @@ const HomePage: React.FC<HomePageProps> = () => {
             <TreasurerFeatures icon={f.icon} title={f.title} summary={f.summary} alt={f.alt} key={f.id}>
               {f.images.map((img) => {
                 return <Image src={img.src} alt={img.alt} className={styles[`${img.className}`]} key={img.id} />;
+              })}
+              {f.images.map((img) => {
+                return (
+                  <Image
+                    src={img.desktopSrc}
+                    alt={img.alt}
+                    className={`${styles[`${img.className}`]} ${styles.desktop}`}
+                    key={img.id}
+                  />
+                );
               })}
             </TreasurerFeatures>
           );
@@ -70,29 +77,37 @@ const HomePage: React.FC<HomePageProps> = () => {
       <section className={styles.section}>
         <h2 className='title-34-black-center'>3 Step</h2>
         <h2 className='title-34-black-center'>Investment Process</h2>
+        <h2 className={`title-34-black-center ${styles.desktop}`}>3 Step Investment Process</h2>
 
-        {STEPS.map((s) => {
-          return (
-            <Steps step={s.step} title={s.title} summary={s.summary} key={s.id}>
-              {s.images.map((i) => {
-                return <Image src={i.src} alt={i.alt} className={styles[`${i.className}`]} key={i.id} />;
-              })}
-            </Steps>
-          );
-        })}
+        <div>
+          {STEPS.map((s, i) => {
+            return (
+              <Steps step={s.step} title={s.title} summary={s.summary} key={s.id} index={i}>
+                {s.images.map((i) => {
+                  return <Image src={i.src} alt={i.alt} className={styles[`${i.className}`]} key={i.id} />;
+                })}
+
+                <Image
+                  src={s.desktopImage.src}
+                  alt={s.desktopImage.alt}
+                  className={`${styles[`${s.desktopImage.className}`]} ${styles.steps}`}
+                />
+              </Steps>
+            );
+          })}
+        </div>
       </section>
 
       {/* SECTION 6TH */}
       <section className={styles.section}>
         <div>
           <div>
-            <h2 className='title-34-black-center'>Investment</h2>
-            <h2 className='title-34-black-center'>Products</h2>
+            <h2 className='title-34-black-center'>Investment Products</h2>
           </div>
           <Categories />
         </div>
         <main aria-label='Product List'>
-          {PRODUCTS.map((p) => {
+          {PRODUCTS.map((p, i) => {
             return (
               <ProductCard
                 key={p.id}
@@ -103,31 +118,22 @@ const HomePage: React.FC<HomePageProps> = () => {
                 marketPrice={p.marketPrice}
                 piecePrice={p.piecePrice}
                 save={p.save}
+                index={i}
               />
             );
           })}
-          <a className='rounded-arrow-button'>
-            ALL Products
-            <Image src={RightArrowImg} alt='Arrow' className={styles['right-arrow']} />
-          </a>
         </main>
+        <a className='rounded-arrow-button'>
+          ALL Products
+          <Image src={RightArrowImg} alt='Arrow' className={styles['right-arrow']} />
+        </a>
       </section>
 
       {/* SECTION 7TH */}
-      <section className={styles.section}>
-        <h2 className='title-34-white-center'>Own a piece</h2>
-        <h2 className='title-34-white-center'>of rare collectibles</h2>
-        <h2 className='title-34-white-center'>without breaking the bank.</h2>
-        <fieldset>
-          <input type='email' placeholder='Enter your email address' />
-          <button>Get Started</button>
-        </fieldset>
-        {ORANGE_CHART.map((i, index) => {
-          return <Image src={i.src} alt={i.alt} className={styles[`${i.className}`]} key={index} />;
-        })}
-      </section>
+      <TreasurerSubscribe />
 
       <BrandsSlider />
+      <DesktopBrandsSlider />
       <Footer />
     </>
   );
