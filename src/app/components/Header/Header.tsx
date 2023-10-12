@@ -47,8 +47,7 @@ const Header: React.FC<HeaderProps> = () => {
   }, [lastScrollTop]);
 
   return (
-    // <header className={`${styles.header}${scrolled ? ' scrolled' : ''}`}>
-    <header className={`${styles.header} ${scrolled && styles.scrolled}`}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <Link scroll={false} href='/'>
         <Image src={TreasureeBrandImg} alt='Treasurer' priority={true} />
       </Link>

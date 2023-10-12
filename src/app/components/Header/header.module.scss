@@ -4,10 +4,12 @@
   display: flex;
   justify-content: space-between;
   height: 58px;
+  left: 50%;
   max-width: 1240px;
   margin: auto;
   padding: 0.75rem 1.25rem 1.5rem;
   top: 0;
+  transform: translateX(-50%);
   transition: 0.4s;
   position: fixed;
   width: 100%;
@@ -52,6 +54,7 @@
 @media screen and (min-width: 769px) {
   .header {
     height: 74px;
+    padding: 0 1.25rem;
 
     .hamburger {
       display: none;

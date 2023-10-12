@@ -645,22 +645,44 @@
     summary {
       font-size: var(--font-14);
     }
+
+    &:nth-of-type(1) {
+      border-radius: var(--border-radius-16);
+      margin: 4.625rem 2.5rem;
+
+      article {
+        margin: auto;
+        max-width: 1200px;
+      }
+    }
+
+    &:nth-of-type(6) {
+      margin-bottom: 0;
+
+      & > div {
+        .categories {
+          & > ul {
+            justify-content: center;
+          }
+        }
+      }
+    }
   }
 }
 
 .fade-in-left {
   opacity: 0;
-  animation: fadeInLeft 1s forwards 1s;
+  animation: fadeInLeft 1s forwards 1.5s;
 }
 
 .fade-in-bottom {
   opacity: 0;
-  animation: fadeInBottom 1s forwards 1.2s;
+  animation: fadeInBottom 1s forwards 1.7s;
 }
 
 .fade-in-right {
   opacity: 0;
-  animation: fadeInRight 1s forwards 1.8s;
+  animation: fadeInRight 1s forwards 2.3s;
 }
 
 @keyframes fadeInLeft {
