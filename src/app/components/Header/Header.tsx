@@ -47,42 +47,43 @@ const Header: React.FC<HeaderProps> = () => {
   }, [lastScrollTop]);
 
   return (
-    // <header className={`${styles.header}${scrolled ? ' scrolled' : ''}`}>
-    <header className={`${styles.header} ${scrolled && styles.scrolled}`}>
-      <Link scroll={false} href='/'>
-        <Image src={TreasureeBrandImg} alt='Treasurer' priority={true} />
-      </Link>
-      <Image src={HamburgerImg} alt='Menu' className={styles.hamburger} onClick={handleHamburger} />
-      <nav>
-        <ul>
-          <li>
-            <a href='/'>Home</a>
-          </li>
-          <li>
-            <a href='/collections'>Collections</a>
-          </li>
-          <li>
-            <a href='/blog'>Blog</a>
-          </li>
-          <li>
-            <a href='/contact'>Contact</a>
-          </li>
-        </ul>
-      </nav>
-      <nav>
-        <ul className={styles.actions}>
-          <li>
-            <Link href='/signin' className='outlined-button'>
-              Sign In
-            </Link>
-          </li>
-          <li>
-            <Link href='/signup' className='rounded-button'>
-              Sign up for free
-            </Link>
-          </li>
-        </ul>
-      </nav>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+      <div>
+        <Link scroll={false} href='/'>
+          <Image src={TreasureeBrandImg} alt='Treasurer' priority={true} />
+        </Link>
+        <Image src={HamburgerImg} alt='Menu' className={styles.hamburger} onClick={handleHamburger} />
+        <nav>
+          <ul>
+            <li>
+              <a href='/'>Home</a>
+            </li>
+            <li>
+              <a href='/collections'>Collections</a>
+            </li>
+            <li>
+              <a href='/blog'>Blog</a>
+            </li>
+            <li>
+              <a href='/contact'>Contact</a>
+            </li>
+          </ul>
+        </nav>
+        <nav>
+          <ul className={styles.actions}>
+            <li>
+              <Link href='/signin' className='outlined-button'>
+                Sign In
+              </Link>
+            </li>
+            <li>
+              <Link href='/signup' className='rounded-button'>
+                Sign up for free
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

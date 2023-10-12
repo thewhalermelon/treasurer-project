@@ -4,7 +4,11 @@ import DotImg from 'public/images/dot.svg';
 import LineImg from 'public/images/line.svg';
 import LineGraphImg from 'public/images/line-graph.svg';
 
-import { BANNER_IMAGES } from '@/app/constants';
+import DotDesktopImg from 'public/images/dot__desktop.svg';
+import LineDesktopImg from 'public/images/line__desktop.svg';
+import LineGraphDesktopImg from 'public/images/line-graph__desktop.svg';
+
+import { BANNER_IMAGES, DESKTOP_BANNER_IMAGES } from '@/app/constants';
 import styles from '@/app/homepage/page.module.scss';
 
 interface TreasurerBannerProps {}
@@ -26,11 +30,26 @@ const TreasurerBanner: React.FC<TreasurerBannerProps> = () => {
       </article>
       <div className={styles.itemsGroup}>
         <div className={styles['fade-in-bottom']}>
+          {/* MOBILE */}
           <Image src={DotImg} alt='Dot' className={styles.dot} />
           <Image src={LineImg} alt='Line' className={styles.line} />
           <Image src={LineGraphImg} alt='Line Chart' className={styles.graph} />
+          {/* DESKTOP */}
+          <Image src={DotDesktopImg} alt='Dot' className={styles['dot-desktop']} />
+          <Image src={LineDesktopImg} alt='Line' className={styles['line-desktop']} />
+          <Image src={LineGraphDesktopImg} alt='Line Chart' className={styles['graph-desktop']} />
         </div>
         {BANNER_IMAGES.map((img) => {
+          return (
+            <Image
+              src={img.src}
+              alt={img.alt}
+              className={`${styles[`${img.className}`]} ${styles['fade-in-right']}`}
+              key={img.id}
+            />
+          );
+        })}
+        {DESKTOP_BANNER_IMAGES.map((img) => {
           return (
             <Image
               src={img.src}
