@@ -127,7 +127,9 @@ const HomePage: React.FC<HomePageProps> = () => {
         })}
       </section>
 
-      <BrandsSlider />
+      <div className='slider-container'>
+        <BrandsSlider />
+      </div>
       <Footer />
     </>
   );
