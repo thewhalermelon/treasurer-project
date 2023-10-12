@@ -10,6 +10,11 @@
     line-height: 51px;
     padding-top: 1.25rem;
     max-width: 611px;
+    margin: 0;
+  }
+
+  summary {
+    list-style-type:none;
   }
 
   fieldset {
@@ -17,6 +22,7 @@
     position: relative;
     margin-top: 2.5rem;
     max-width: 382px;
+    padding: 0;
     width: 100%;
 
     input {
@@ -63,9 +69,13 @@
       position: absolute;
     }
 
+    .line {
+      width: 335px;
+    }
+
     .dot {
       position: absolute;
-      left: 333px;
+      left: 332px;
     }
 
     .safe {
