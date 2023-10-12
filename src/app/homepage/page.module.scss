@@ -10,13 +10,19 @@
     line-height: 51px;
     padding-top: 1.25rem;
     max-width: 611px;
+    margin: 0;
+  }
+
+  summary {
+    list-style-type: none;
   }
 
   fieldset {
     border: none;
     position: relative;
-    margin-top: 2.5rem;
+    margin: 2.5rem auto 0;
     max-width: 382px;
+    padding: 0;
     width: 100%;
 
     input {
@@ -63,9 +69,13 @@
       position: absolute;
     }
 
+    .line {
+      width: 335px;
+    }
+
     .dot {
       position: absolute;
-      left: 333px;
+      left: 332px;
     }
 
     .safe {
@@ -368,6 +378,7 @@
         background-color: var(--white);
         border-radius: var(--border-radius-16);
         height: 260px;
+        margin: auto;
         position: relative;
         width: 335px;
 
@@ -467,6 +478,9 @@
       padding-top: 2.75rem;
 
       article {
+        margin: auto;
+        width: 335px;
+
         .rectangle {
           align-items: center;
           background-color: var(--lighter-gray);
@@ -476,7 +490,6 @@
           margin: auto;
           height: 316px;
           position: relative;
-          width: 335px;
 
           button {
             border: none;
@@ -594,6 +607,28 @@
     .dot {
       bottom: 158px;
       right: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 376px) {
+  .section {
+    &:nth-of-type(4) {
+      & > main {
+        & > div {
+          h2 {
+            width: fit-content;
+          }
+        }
+
+        &:nth-of-type(2) {
+          & > div {
+            h2 {
+              width: fit-content;
+            }
+          }
+        }
+      }
     }
   }
 }

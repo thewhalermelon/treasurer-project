@@ -25,18 +25,21 @@ const HomePage: React.FC<HomePageProps> = () => {
     <>
       <Header />
 
+      {/* SECTION 1ST */}
       <TreasurerBanner />
 
       <div style={{ padding: '0 1.25rem' }}>
         <Divider color='var(--light-gray)' />
       </div>
 
+      {/* SECTION 2ND */}
       <TreasurerData />
 
       <div style={{ padding: '0 1.25rem' }}>
         <Divider color='var(--light-gray)' />
       </div>
 
+      {/* SECTION 3RD */}
       <section className={styles.section}>
         <h3 className='title-13-orange-center'>WHO WE ARE</h3>
         <h2>Invest in your passions,</h2>
@@ -46,6 +49,7 @@ const HomePage: React.FC<HomePageProps> = () => {
         <Image src={IphoneImg} alt='Iphone' className={styles.iphone} />
       </section>
 
+      {/* SECTION 4TH */}
       <section className={styles.section}>
         {FEATURES.map((f) => {
           return (
@@ -58,6 +62,7 @@ const HomePage: React.FC<HomePageProps> = () => {
         })}
       </section>
 
+      {/* SECTION 5TH */}
       <section className={styles.section}>
         <h2 className='title-34-black-center'>3 Step</h2>
         <h2 className='title-34-black-center'>Investment Process</h2>
@@ -73,6 +78,7 @@ const HomePage: React.FC<HomePageProps> = () => {
         })}
       </section>
 
+      {/* SECTION 6TH */}
       <section className={styles.section}>
         <div>
           <div>
@@ -103,6 +109,7 @@ const HomePage: React.FC<HomePageProps> = () => {
         </main>
       </section>
 
+      {/* SECTION 7TH */}
       <section className={styles.section}>
         <h2 className='title-34-white-center'>Own a piece</h2>
         <h2 className='title-34-white-center'>of rare collectibles</h2>
