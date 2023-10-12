@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import styles from './page.module.scss';
 
-import IphoneImg from 'public/images/iphone.svg';
+import IphoneImg from 'public/images/iphone.png';
 import RightArrowImg from 'public/images/right-arrow.svg';
 
 import { FEATURES, ORANGE_CHART, PRODUCTS, STEPS } from '@/app/constants';
