@@ -3,6 +3,7 @@ import Image from 'next/image';
 import styles from './page.module.scss';
 
 import IphoneImg from 'public/images/iphone.png';
+import IphoneDesktopImg from 'public/images/iphone__desktop.svg';
 import RightArrowImg from 'public/images/right-arrow.svg';
 
 import { FEATURES, ORANGE_CHART, PRODUCTS, STEPS } from '@/app/constants';
@@ -17,6 +18,7 @@ import ProductCard from '@/app/components/ProductCard/ProductCard';
 import BrandsSlider from '@/app/components/BrandsSlider/BrandsSlider';
 import TreasurerBanner from '@/app/components/TreasurerBanner/TreasurerBanner';
 import TreasurerData from '@/app/components/TreasurerData/TreasurerData';
+import DesktopSlider from '@/app/components/DesktopSlider/DesktopSlider';
 
 interface HomePageProps {}
 
@@ -46,7 +48,9 @@ const HomePage: React.FC<HomePageProps> = () => {
         <h2>one share at a time</h2>
         <summary>Treasureers provide easy and sensual collection investment opportunities for anyone.</summary>
         <Slider />
+        <DesktopSlider />
         <Image src={IphoneImg} alt='Iphone' className={styles.iphone} />
+        <Image src={IphoneDesktopImg} alt='Iphone Desktop' className={styles['iphone-desktop']} />
       </section>
 
       {/* SECTION 4TH */}

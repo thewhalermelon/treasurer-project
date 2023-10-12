@@ -40,6 +40,11 @@ import HandBag3Img from 'public/images/hand-bag-3.png';
 import SmallWineImg from 'public/images/wine-small.png';
 import SneakerImg from 'public/images/sneaker.png';
 
+import RolexDesktopImg from 'public/images/rolex__desktop.svg';
+import SafeDesktopImg from 'public/images/safe__desktop.svg';
+import HandBadDesktopImg from 'public/images/hand-bag__desktop.svg';
+import WineDesktopImg from 'public/images/wine__desktop.svg';
+
 export const BANNER_IMAGES = [
   {
     id: 3,
@@ -64,6 +69,33 @@ export const BANNER_IMAGES = [
     src: WineImg,
     alt: 'Wine',
     className: 'wine',
+  },
+];
+
+export const DESKTOP_BANNER_IMAGES = [
+  {
+    id: 0,
+    src: RolexDesktopImg,
+    alt: 'Rolex Watch',
+    className: 'watch-desktop',
+  },
+  {
+    id: 1,
+    src: SafeDesktopImg,
+    alt: 'Safe',
+    className: 'safe-desktop',
+  },
+  {
+    id: 2,
+    src: HandBadDesktopImg,
+    alt: 'Hand Bag',
+    className: 'bag-desktop',
+  },
+  {
+    id: 3,
+    src: WineDesktopImg,
+    alt: 'Wine',
+    className: 'wine-desktop',
   },
 ];
 
