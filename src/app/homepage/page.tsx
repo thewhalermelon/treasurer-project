@@ -4,7 +4,6 @@ import styles from './page.module.scss';
 
 import RightArrowImg from 'public/images/right-arrow.svg';
 
-
 import { FEATURES, PRODUCTS, STEPS } from '@/app/constants';
 import Header from '@/app/components/Header/Header';
 import Footer from '@/app/components/Footer/Footer';
@@ -126,8 +125,10 @@ const HomePage: React.FC<HomePageProps> = () => {
       {/* SECTION 7TH */}
       <TreasurerSubscribe />
 
-      <BrandsSlider />
-      <DesktopBrandsSlider />
+      <div className='slider-container'>
+        <BrandsSlider />
+        <DesktopBrandsSlider />
+      </div>
       <Footer />
     </>
   );
