@@ -8,15 +8,17 @@ import styles from '@/app/homepage/page.module.scss';
 
 import RightArrowImg from 'public/images/right-arrow.svg';
 
+import TreasurerImage from '@/app/components/TreasurerImage/TreasurerImage';
+
 interface TreasurerFeaturesProps {
   icon: StaticImageData;
   title: string;
   summary: string;
-  children: ReactNode;
   alt: string;
+  images: { id: number; src: any; desktopSrc: any; alt: string; className: string }[];
 }
 
-const TreasurerFeatures: React.FC<TreasurerFeaturesProps> = ({ icon, title, summary, children, alt }) => {
+const TreasurerFeatures: React.FC<TreasurerFeaturesProps> = ({ icon, title, summary, alt, images }) => {
   const [ref, inView] = useInView({
     threshold: 1,
     triggerOnce: true,
@@ -33,7 +35,30 @@ const TreasurerFeatures: React.FC<TreasurerFeaturesProps> = ({ icon, title, summ
           <Image src={RightArrowImg} alt='Arrow' className={styles['right-arrow']} />
         </a>
       </div>
-      <div className={styles.imagesGroup}>{children}</div>
+      <div className={styles.imagesGroup}>
+        {images.map((img, index) => {
+          return (
+            <TreasurerImage
+              src={img.src}
+              alt={img.alt}
+              className={`${styles[`${img.className}`]} ${styles[`appear-element-desktop-${index + 1}`]} `}
+              key={img.id}
+            />
+          );
+        })}
+        {images.map((img, index) => {
+          return (
+            <TreasurerImage
+              src={img.desktopSrc}
+              alt={img.alt}
+              className={`${styles[`${img.className}`]} ${styles.desktop} ${
+                styles[`appear-element-desktop-${index + 1}`]
+              } `}
+              key={img.id}
+            />
+          );
+        })}
+      </div>
     </main>
   );
 };

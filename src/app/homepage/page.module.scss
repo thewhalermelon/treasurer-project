@@ -1671,9 +1671,29 @@
 // -------------------------------------------------------------
 .appear-element-desktop-3 {
   opacity: 0;
-  transition: opacity 1s 1s, transform 1s 1s;
+  transition: opacity 2s 2s, transform 2s 2s;
 }
 
 .appear-element-desktop-3.visible {
+  opacity: 1;
+}
+
+// -------------------------------------------------------------
+.appear-element-desktop-4 {
+  opacity: 0;
+  transition: opacity 3s 3s, transform 3s 3s;
+}
+
+.appear-element-desktop-4.visible {
+  opacity: 1;
+}
+
+// -------------------------------------------------------------
+.appear-element-desktop-5 {
+  opacity: 0;
+  transition: opacity 4s 4s, transform 4s 4s;
+}
+
+.appear-element-desktop-5.visible {
   opacity: 1;
 }

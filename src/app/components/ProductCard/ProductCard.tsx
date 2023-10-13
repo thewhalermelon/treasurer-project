@@ -38,7 +38,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketP
     <article
       ref={ref}
       className={`${
-        windowWidth && windowWidth >= 1920 ? styles[`appear-element-desktop-${index}`] : styles['appear-element']
+        windowWidth && windowWidth >= 1920 ? styles[`appear-element-desktop-${index + 1}`] : styles['appear-element']
       } ${inView ? styles.visible : ''}`}
     >
       <div className={styles.rectangle}>
