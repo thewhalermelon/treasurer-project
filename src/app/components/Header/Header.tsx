@@ -21,6 +21,10 @@ const Header: React.FC<HeaderProps> = () => {
   };
 
   React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  React.useEffect(() => {
     const handleScroll = () => {
       let currentScrollTop = window.scrollY;
 
