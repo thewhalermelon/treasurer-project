@@ -20,9 +20,21 @@ const Header: React.FC<HeaderProps> = () => {
     alert('Not implemeted!');
   };
 
+  const timeoutRef = React.useRef<number | NodeJS.Timeout>();
+
+  const clearTimer = React.useCallback(() => clearTimeout(timeoutRef.current), []);
+
   React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+    if (timeoutRef.current) clearTimer();
+
+    timeoutRef.current = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 1000);
+
+    return () => {
+      clearTimer();
+    };
+  }, [clearTimer]);
 
   React.useEffect(() => {
     const handleScroll = () => {
