@@ -72,6 +72,12 @@
           flex-direction: row;
           gap: 1.25rem;
 
+          li {
+            a {
+              font-weight: 500;
+            }
+          }
+
           &.actions {
             align-items: center;
             display: flex;
@@ -93,6 +99,12 @@
       nav {
         ul {
           gap: 3.75rem;
+
+          li {
+            a {
+              font-weight: 500;
+            }
+          }
 
           &.actions {
             gap: 2rem;
