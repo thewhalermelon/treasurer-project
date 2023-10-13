@@ -17,6 +17,16 @@ const TreasurerData: React.FC<TreasurerDataProps> = () => {
     triggerOnce: true,
   });
 
+  const [timeoutState, setTimeoutState] = React.useState<Boolean>(false);
+
+  React.useEffect(() => {
+    if (inView) {
+      setTimeout(() => {
+        setTimeoutState(true);
+      }, 500);
+    }
+  }, [inView]);
+
   return (
     <section className={styles.section}>
       <article className={`${styles['floating-element']} ${inView ? styles.visible : ''}`} ref={ref}>
@@ -27,7 +37,16 @@ const TreasurerData: React.FC<TreasurerDataProps> = () => {
         return (
           <article key={f.id}>
             <h2>
-              <CountUp start={5.5} end={f.title} duration={5} decimals={f.title % 1 !== 0 ? 1 : 0} />
+              {timeoutState ? (
+                <CountUp
+                  start={timeoutState ? 5.5 : undefined}
+                  end={f.title}
+                  duration={5}
+                  decimals={f.title % 1 !== 0 ? 1 : 0}
+                />
+              ) : (
+                0
+              )}
               {f.unit}
             </h2>
             <summary>{f.summary}</summary>

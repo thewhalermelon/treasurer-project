@@ -17,17 +17,17 @@ interface TreasurerInvestProps {}
 
 const TreasurerInvest: React.FC<TreasurerInvestProps> = () => {
   const [ref, inView] = useInView({
-    threshold: 1,
+    threshold: 0.1,
     triggerOnce: true,
   });
 
   const [imageRef, imageInView] = useInView({
-    threshold: 1,
+    threshold: 0.1,
     triggerOnce: true,
   });
 
   const [imageDesktopRef, imageDesktopInView] = useInView({
-    threshold: 1,
+    threshold: 0.1,
     triggerOnce: true,
   });
 

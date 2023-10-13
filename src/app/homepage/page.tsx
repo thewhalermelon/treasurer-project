@@ -47,21 +47,14 @@ const HomePage: React.FC<HomePageProps> = () => {
       <section className={styles.section}>
         {FEATURES.map((f) => {
           return (
-            <TreasurerFeatures icon={f.icon} title={f.title} summary={f.summary} alt={f.alt} key={f.id}>
-              {f.images.map((img) => {
-                return <Image src={img.src} alt={img.alt} className={styles[`${img.className}`]} key={img.id} />;
-              })}
-              {f.images.map((img) => {
-                return (
-                  <Image
-                    src={img.desktopSrc}
-                    alt={img.alt}
-                    className={`${styles[`${img.className}`]} ${styles.desktop}`}
-                    key={img.id}
-                  />
-                );
-              })}
-            </TreasurerFeatures>
+            <TreasurerFeatures
+              icon={f.icon}
+              title={f.title}
+              summary={f.summary}
+              alt={f.alt}
+              key={f.id}
+              images={f.images}
+            />
           );
         })}
       </section>
