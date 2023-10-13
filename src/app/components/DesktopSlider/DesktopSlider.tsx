@@ -43,7 +43,7 @@ const DesktopSlider: React.FC<DesktopSliderProps> = () => {
     triggerOnce: true,
   });
 
-  if (windowWidth && windowWidth >= 1920) {
+  if (windowWidth && windowWidth >= 1440) {
     return (
       <div ref={ref} className={`${styles['floating-element-3rd-right']} ${inView ? styles.visible : ''}`}>
         <div

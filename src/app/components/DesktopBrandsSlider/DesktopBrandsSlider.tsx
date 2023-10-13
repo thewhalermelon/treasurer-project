@@ -38,7 +38,7 @@ const DesktopBrandsSlider: React.FC<DesktopBrandsSliderProps> = () => {
     },
   });
 
-  if (windowWidth && windowWidth >= 1920) {
+  if (windowWidth && windowWidth >= 1440) {
     return (
       <div
         ref={sliderRef}

@@ -40,12 +40,12 @@ const Slider: React.FC<SliderProps> = () => {
     triggerOnce: true,
   });
 
-  if (windowWidth && windowWidth < 1920) {
+  if (windowWidth && windowWidth < 1440) {
     return (
       <div ref={ref} className={`${styles['floating-element-3rd-right']} ${inView ? styles.visible : ''}`}>
         <div
           ref={sliderRef}
-          className='keen-slider'
+          className={`keen-slider ${styles['customize-keen-slider']}`}
           style={{
             position: 'absolute',
             bottom: 0,
