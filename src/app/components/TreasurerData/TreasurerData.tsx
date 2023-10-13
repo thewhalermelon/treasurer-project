@@ -23,7 +23,7 @@ const TreasurerData: React.FC<TreasurerDataProps> = () => {
     if (inView) {
       setTimeout(() => {
         setTimeoutState(true);
-      }, 500);
+      }, 1000);
     }
   }, [inView]);
 
@@ -33,23 +33,20 @@ const TreasurerData: React.FC<TreasurerDataProps> = () => {
         <h2>500.000+ happy customers.</h2>
         <summary>Using Sublime everyday and loving it!</summary>
       </article>
+      <div className={styles['fake-article']}></div>
       {FEEDBACK.map((f) => {
         return (
           <article key={f.id}>
-            <h2>
-              {timeoutState ? (
-                <CountUp
-                  start={timeoutState ? 5.5 : undefined}
-                  end={f.title}
-                  duration={5}
-                  decimals={f.title % 1 !== 0 ? 1 : 0}
-                />
-              ) : (
-                0
-              )}
+            <h2 style={{ visibility: timeoutState ? 'visible' : 'hidden' }}>
+              <CountUp
+                start={timeoutState ? 5.5 : undefined}
+                end={f.title}
+                duration={5}
+                decimals={f.title % 1 !== 0 ? 1 : 0}
+              />
               {f.unit}
             </h2>
-            <summary>{f.summary}</summary>
+            <summary style={{ visibility: timeoutState ? 'visible' : 'hidden' }}>{f.summary}</summary>
           </article>
         );
       })}

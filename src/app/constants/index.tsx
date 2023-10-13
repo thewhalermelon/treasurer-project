@@ -192,11 +192,25 @@ export const FEATURES = [
       'In the event of theft, damage, etc. during consign- ment storage of goods at Treasurer, the insured insurance will cover and the estimated return will cover the owners of the pieces as much as much as each piece owner.',
     images: [
       {
+        id: 5,
+        src: ProtectSafeShieldImg,
+        desktopSrc: ProtectSafeShieldDesktopImg,
+        alt: 'Protect Safe Shield',
+        className: 'safeShield',
+      },
+      {
         id: 8,
         src: CircleShieldImg,
         desktopSrc: CircleShieldImg,
         alt: 'Circle Shield 1',
         className: 'firstCircleShield',
+      },
+      {
+        id: 9,
+        src: CircleShieldImg,
+        desktopSrc: CircleShieldImg,
+        alt: 'Circle Shield 2',
+        className: 'secondCircleShield',
       },
       {
         id: 6,
@@ -206,25 +220,11 @@ export const FEATURES = [
         className: 'firstLine',
       },
       {
-        id: 5,
-        src: ProtectSafeShieldImg,
-        desktopSrc: ProtectSafeShieldDesktopImg,
-        alt: 'Protect Safe Shield',
-        className: 'safeShield',
-      },
-      {
         id: 7,
         src: VerticalOrangeLineImg,
         desktopSrc: HorizontalOrangeLineDesktopImg,
         alt: 'Vertical Orange Line 2',
         className: 'secondLine',
-      },
-      {
-        id: 9,
-        src: CircleShieldImg,
-        desktopSrc: CircleShieldImg,
-        alt: 'Circle Shield 2',
-        className: 'secondCircleShield',
       },
     ],
   },

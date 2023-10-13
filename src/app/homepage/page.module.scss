@@ -135,6 +135,10 @@
     padding: 2.875rem 1.25rem 0;
     margin-bottom: 2.875rem;
 
+    .fake-article {
+      display: none;
+    }
+
     article {
       display: flex;
       flex-direction: column;
@@ -1105,16 +1109,29 @@
       flex-direction: row;
       justify-content: center;
       gap: unset;
-      height: fit-content;
+      height: 174px;
       max-width: 1200px;
       margin-left: auto;
       margin-right: auto;
 
+      .fake-article {
+        width: 406px;
+        height: 128px;
+        display: block;
+      }
+
       article {
+        width: fit-content;
+
         &:first-child {
           align-items: start;
           gap: 0.5rem;
           padding-right: 111px;
+          width: 406px;
+
+          position: absolute;
+          top: 46px;
+          left: 92px;
 
           h2 {
             font-size: var(--font-36);
@@ -1343,11 +1360,13 @@
             &.firstCircleShield {
               left: 58px;
               top: 151px;
+              z-index: 1;
             }
 
             &.secondCircleShield {
               left: 385px;
               top: 151px;
+              z-index: 1;
             }
 
             &.rolexPrices {
@@ -1651,7 +1670,7 @@
 // -------------------------------------------------------------
 .appear-element-desktop-1 {
   opacity: 0;
-  transition: opacity 1s, transform 1s;
+  transition: opacity 0.5s, transform 0.5s;
 }
 
 .appear-element-desktop-1.visible {
@@ -1661,7 +1680,7 @@
 // -------------------------------------------------------------
 .appear-element-desktop-2 {
   opacity: 0;
-  transition: opacity 1s 1s, transform 1s 1s;
+  transition: opacity 0.2s 0.2s, transform 0.2s 0.2s;
 }
 
 .appear-element-desktop-2.visible {
@@ -1671,7 +1690,7 @@
 // -------------------------------------------------------------
 .appear-element-desktop-3 {
   opacity: 0;
-  transition: opacity 2s 2s, transform 2s 2s;
+  transition: opacity 0.4s 0.4s, transform 0.4s 0.4s;
 }
 
 .appear-element-desktop-3.visible {
@@ -1681,7 +1700,7 @@
 // -------------------------------------------------------------
 .appear-element-desktop-4 {
   opacity: 0;
-  transition: opacity 3s 3s, transform 3s 3s;
+  transition: opacity 0.6s 0.6s, transform 0.6s 0.6s;
 }
 
 .appear-element-desktop-4.visible {
@@ -1691,7 +1710,7 @@
 // -------------------------------------------------------------
 .appear-element-desktop-5 {
   opacity: 0;
-  transition: opacity 4s 4s, transform 4s 4s;
+  transition: opacity 0.8s 0.8s, transform 0.8s 0.8s;
 }
 
 .appear-element-desktop-5.visible {
