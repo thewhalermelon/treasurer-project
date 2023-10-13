@@ -20,10 +20,9 @@
   fieldset {
     border: none;
     position: relative;
-    margin-top: 2.5rem;
-    max-width: 382px;
+    margin: 2.5rem auto 0;
+    max-width: 335px;
     padding: 0;
-    width: 100%;
 
     input {
       border: 1px solid var(--border-color);
@@ -778,6 +777,11 @@
       }
     }
 
+    fieldset {
+      margin-left: 0;
+      width: 382px;
+    }
+
     &:nth-of-type(2) {
       align-items: center;
       flex-direction: row;
@@ -1194,6 +1198,9 @@
 
       fieldset {
         margin: 2.25rem auto 0;
+        max-width: 382px;
+        position: relative;
+        z-index: 1;
       }
 
       .title-desktop {
