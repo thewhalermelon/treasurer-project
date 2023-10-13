@@ -28,7 +28,10 @@ const Header: React.FC<HeaderProps> = () => {
     if (timeoutRef.current) clearTimer();
 
     timeoutRef.current = setTimeout(() => {
-      window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
     }, 1000);
 
     return () => {
