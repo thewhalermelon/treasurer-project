@@ -21,3 +21,14 @@
 .floating-element-3rd-right.visible {
   opacity: 1;
 }
+
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+  .customize-keen-slider {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .keen-slider {
+    max-width: 1000px;
+  }
+}

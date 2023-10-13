@@ -35,7 +35,7 @@ const BrandsSlider: React.FC<BrandsSliderProps> = () => {
     },
   });
 
-  if (windowWidth && windowWidth < 1920) {
+  if (windowWidth && windowWidth < 1440) {
     return (
       <div ref={sliderRef} className='keen-slider' style={{ paddingTop: '3.75rem', paddingBottom: '7.5rem' }}>
         {BRANDS.map((item, index) => {

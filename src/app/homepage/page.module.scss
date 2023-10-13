@@ -710,6 +710,319 @@
   }
 }
 
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+  .section {
+    align-items: center;
+    display: flex;
+
+    fieldset {
+      margin-left: 0;
+      max-width: 382px;
+    }
+
+    .itemsGroup {
+      padding-top: 0;
+      max-width: unset;
+      margin: 0 auto;
+
+      .safe {
+        top: 106px;
+      }
+
+      .bag {
+        top: 220px;
+      }
+
+      .wine {
+        top: 109px;
+      }
+
+      .watch {
+        top: 168px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    &:nth-of-type(3) {
+      flex-direction: column;
+
+      h2 {
+        &:nth-of-type(2) {
+          width: unset;
+        }
+      }
+    }
+
+    &:nth-of-type(4) {
+      flex-direction: column;
+      height: fit-content;
+      padding-top: 15rem;
+
+      & > main {
+        display: flex;
+        max-width: 1200px;
+        width: 100%;
+        justify-content: space-between;
+
+        &:nth-of-type(2) {
+          flex-direction: row-reverse;
+          padding-top: 235px;
+
+          & > div {
+            &:nth-of-type(1) {
+              padding-left: 0.5rem;
+
+              & > img {
+                margin-top: 23px;
+              }
+
+              h2 {
+                line-height: 40px;
+                width: 408px;
+              }
+
+              summary {
+                width: 499px;
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(3) {
+          padding-top: 296px;
+
+          & > div {
+            &:nth-of-type(1) {
+              h2 {
+                line-height: 40px;
+              }
+            }
+          }
+
+          .imagesGroup {
+            .desktop {
+              display: block;
+            }
+          }
+        }
+
+        & > div {
+          width: 50%;
+
+          &:nth-of-type(1) {
+            & > img {
+              margin-top: 25px;
+              height: 3rem;
+              width: 3rem;
+            }
+
+            h2 {
+              font-size: var(--font-36);
+              line-height: 36px;
+              padding-top: 2.5rem;
+            }
+
+            summary {
+              font-size: var(--font-13);
+              letter-spacing: 0.39px;
+              line-height: 22px;
+              padding-top: 1.25rem;
+              width: 429px;
+            }
+
+            a {
+              margin-top: 2.5rem;
+            }
+          }
+        }
+
+        .imagesGroup {
+          margin: unset;
+          padding-top: unset;
+          width: 50%;
+
+          .rectangle,
+          .watch,
+          .glass,
+          .bag,
+          .receipt,
+          .safeShield,
+          .firstLine,
+          .secondLine,
+          .firstCircleShield,
+          .secondCircleShield,
+          .rolexPrices,
+          .bagPrices,
+          .analyticChart,
+          .analyticChart1 {
+            display: none;
+          }
+
+          .desktop {
+            display: block;
+
+            &.watch {
+              bottom: unset;
+              left: 165px;
+              position: relative;
+              width: 131px;
+            }
+
+            &.rectangle {
+              position: absolute;
+              top: 85px;
+              left: 8px;
+            }
+
+            &.bag {
+              bottom: 90px;
+              left: 23px;
+              width: 218px;
+            }
+
+            &.receipt {
+              top: 143px;
+              left: 224px;
+              width: 242px;
+            }
+
+            &.glass {
+              bottom: 183px;
+              left: 354px;
+            }
+
+            &.safeShield {
+              left: 188px;
+              top: 105px;
+              z-index: 1;
+            }
+
+            &.firstLine {
+              left: 125px;
+              top: 185px;
+            }
+
+            &.secondLine {
+              left: 338px;
+              top: 185px;
+            }
+
+            &.firstCircleShield {
+              left: 58px;
+              top: 151px;
+            }
+
+            &.secondCircleShield {
+              left: 385px;
+              top: 151px;
+            }
+
+            &.rolexPrices {
+              bottom: 41px;
+              left: 120px;
+            }
+
+            &.bagPrices {
+              left: 3px;
+              top: 115px;
+            }
+
+            &.analyticChart,
+            &.analyticChart1 {
+              top: 228px;
+              right: 117px;
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-of-type(5) {
+      flex-direction: column;
+
+      & > div {
+        display: flex;
+        gap: 20px;
+
+        & > article {
+          margin-top: 3.75rem;
+          width: 335px;
+
+          &:not(:nth-of-type(1)) {
+            margin-top: 3.75rem;
+          }
+        }
+      }
+    }
+
+    &:nth-of-type(6) {
+      flex-direction: column;
+      padding-bottom: 60px;
+
+      & > main {
+        flex-direction: row;
+      }
+
+      & > div {
+        h2 {
+          width: unset;
+        }
+      }
+    }
+
+    &:nth-of-type(7) {
+      height: 527px;
+      padding-top: 6.25rem;
+      width: 1200px;
+
+      h2 {
+        display: none;
+      }
+
+      fieldset {
+        margin: 2.25rem auto 0;
+        max-width: 382px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .title-desktop {
+        color: var(--white);
+        font-size: var(--font-52);
+        display: block;
+        line-height: 62px;
+        margin: auto;
+        text-align: center;
+        width: 780px;
+      }
+
+      img {
+        display: none;
+      }
+
+      .chart-desktop {
+        display: block;
+        position: absolute;
+
+        &.background {
+          bottom: 0;
+          left: 0;
+        }
+
+        &.line {
+          bottom: 50px;
+          left: -1px;
+          width: 1201px;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (min-width: 1920px) {
   .section {
     height: 713px;
