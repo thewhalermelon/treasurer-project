@@ -2,18 +2,13 @@ import Image from 'next/image';
 
 import styles from './page.module.scss';
 
-import IphoneImg from 'public/images/iphone.png';
-import IphoneDesktopImg from 'public/images/iphone__desktop.svg';
 import RightArrowImg from 'public/images/right-arrow.svg';
 
-import OrangeFadeBackgroundDesktopImg from 'public/images/orange-fade-background__desktop.svg';
-import OrangeLineDesktopImg from 'public/images/orange-line__desktop.svg';
 
-import { FEATURES, ORANGE_CHART, PRODUCTS, STEPS } from '@/app/constants';
+import { FEATURES, PRODUCTS, STEPS } from '@/app/constants';
 import Header from '@/app/components/Header/Header';
 import Footer from '@/app/components/Footer/Footer';
 import Divider from '@/app/components/Divider/Divider';
-import Slider from '@/app/components/Slider/Slider';
 import TreasurerFeatures from '@/app/components/TreasurerFeatures/TreasurerFeatures';
 import Steps from '@/app/components/Steps/Steps';
 import Categories from '@/app/components/Categories/Categories';
@@ -21,7 +16,6 @@ import ProductCard from '@/app/components/ProductCard/ProductCard';
 import BrandsSlider from '@/app/components/BrandsSlider/BrandsSlider';
 import TreasurerBanner from '@/app/components/TreasurerBanner/TreasurerBanner';
 import TreasurerData from '@/app/components/TreasurerData/TreasurerData';
-import DesktopSlider from '@/app/components/DesktopSlider/DesktopSlider';
 import DesktopBrandsSlider from '@/app/components/DesktopBrandsSlider/DesktopBrandsSlider';
 import TreasurerInvest from '@/app/components/TreasurerInvest/TreasurerInvest';
 import TreasurerSubscribe from '@/app/components/TreasurerSubscribe/TreasurerSubscribe';
