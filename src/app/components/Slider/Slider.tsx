@@ -3,6 +3,7 @@
 import Image from 'next/image';
 
 import { useKeenSlider } from 'keen-slider/react';
+import { useInView } from 'react-intersection-observer';
 
 import 'keen-slider/keen-slider.min.css';
 import styles from './slider.module.scss';
@@ -34,21 +35,35 @@ const Slider: React.FC<SliderProps> = () => {
       s.moveToIdx(s.track.details.abs + 5, true, animation);
     },
   });
+  const [ref, inView] = useInView({
+    threshold: 1,
+    triggerOnce: true,
+  });
 
   if (windowWidth && windowWidth < 1920) {
     return (
-      <div ref={sliderRef} className='keen-slider' style={{ paddingTop: '10rem', paddingBottom: '4.0625rem' }}>
-        {SLIDER_ARRAY.map((item, index) => {
-          return (
-            <div
-              className={`keen-slider__slide number-slide${index} ${styles['keen-slider']}`}
-              style={{ minWidth: 80 }}
-              key={item.id}
-            >
-              <Image src={item.src} alt={item.alt} />
-            </div>
-          );
-        })}
+      <div ref={ref} className={`${styles['floating-element-3rd-right']} ${inView ? styles.visible : ''}`}>
+        <div
+          ref={sliderRef}
+          className='keen-slider'
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            paddingBottom: 65,
+          }}
+        >
+          {SLIDER_ARRAY.map((item, index) => {
+            return (
+              <div
+                className={`keen-slider__slide number-slide${index} ${styles['keen-slider']}`}
+                style={{ minWidth: 80 }}
+                key={item.id}
+              >
+                <Image src={item.src} alt={item.alt} />
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   } else return null;

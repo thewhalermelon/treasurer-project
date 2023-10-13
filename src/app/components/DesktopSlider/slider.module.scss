@@ -21,3 +21,12 @@
     left: 1px;
   }
 }
+
+.floating-element-3rd-right {
+  opacity: 0;
+  transition: opacity 1s 3s, transform 1s 3s;
+}
+
+.floating-element-3rd-right.visible {
+  opacity: 1;
+}

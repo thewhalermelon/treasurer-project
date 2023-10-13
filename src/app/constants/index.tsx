@@ -45,6 +45,21 @@ import SafeDesktopImg from 'public/images/safe__desktop.svg';
 import HandBadDesktopImg from 'public/images/hand-bag__desktop.svg';
 import WineDesktopImg from 'public/images/wine__desktop.svg';
 
+import GreyMagnifyingGlassDesktopImg from 'public/images/grey-magnifying-glass__desktop.svg';
+import GreyRectangleDesktopImg from 'public/images/grey-rectangle__desktop.svg';
+import Rolex1DesktopImg from 'public/images/rolex-1__desktop.svg';
+import HandBag1DesktopImg from 'public/images/hand-bag-1__desktop.svg';
+import ReceiptDesktopImg from 'public/images/receipt__desktop.svg';
+
+import ProtectSafeShieldDesktopImg from 'public/images/protect-safe-shield__desktop.svg';
+import HorizontalOrangeLineDesktopImg from 'public/images/horizontal-orange-line.svg';
+
+import RolexPricesDesktopDesktopImg from 'public/images/rolex-prices__desktop.svg';
+import BagPricesDesktopDesktopImg from 'public/images/bag-prices__desktop.svg';
+import AnalyticChartDesktopDesktopImg from 'public/images/analytic-chart__desktop.svg';
+
+import Step1Desktop from 'public/images/step1__desktop.svg';
+
 export const BANNER_IMAGES = [
   {
     id: 3,
@@ -134,30 +149,35 @@ export const FEATURES = [
       {
         id: 0,
         src: GreyMagnifyingGlassImg,
+        desktopSrc: GreyMagnifyingGlassDesktopImg,
         alt: 'Grey Glass',
         className: 'glass',
       },
       {
         id: 1,
         src: GreyRectangleImg,
+        desktopSrc: GreyRectangleDesktopImg,
         alt: 'Rectangle',
         className: 'rectangle',
       },
       {
         id: 2,
         src: RolexImg,
+        desktopSrc: Rolex1DesktopImg,
         alt: 'Watch',
         className: 'watch',
       },
       {
         id: 3,
         src: HandBagImg,
+        desktopSrc: HandBag1DesktopImg,
         alt: 'Bag',
         className: 'bag',
       },
       {
         id: 4,
         src: ReceiptImg,
+        desktopSrc: ReceiptDesktopImg,
         alt: 'Receipt',
         className: 'receipt',
       },
@@ -174,30 +194,35 @@ export const FEATURES = [
       {
         id: 5,
         src: ProtectSafeShieldImg,
+        desktopSrc: ProtectSafeShieldDesktopImg,
         alt: 'Protect Safe Shield',
         className: 'safeShield',
       },
       {
         id: 6,
         src: VerticalOrangeLineImg,
+        desktopSrc: HorizontalOrangeLineDesktopImg,
         alt: 'Vertical Orange Line 1',
         className: 'firstLine',
       },
       {
         id: 7,
         src: VerticalOrangeLineImg,
+        desktopSrc: HorizontalOrangeLineDesktopImg,
         alt: 'Vertical Orange Line 2',
         className: 'secondLine',
       },
       {
         id: 8,
         src: CircleShieldImg,
+        desktopSrc: CircleShieldImg,
         alt: 'Circle Shield 1',
         className: 'firstCircleShield',
       },
       {
         id: 9,
         src: CircleShieldImg,
+        desktopSrc: CircleShieldImg,
         alt: 'Circle Shield 2',
         className: 'secondCircleShield',
       },
@@ -214,24 +239,28 @@ export const FEATURES = [
       {
         id: 10,
         src: RolexPricesImg,
+        desktopSrc: RolexPricesDesktopDesktopImg,
         alt: 'Rolex Prices',
         className: 'rolexPrices',
       },
       {
         id: 11,
         src: BagPricesImg,
+        desktopSrc: BagPricesDesktopDesktopImg,
         alt: 'Bag Prices',
         className: 'bagPrices',
       },
       {
         id: 12,
         src: AnalyticChartImg,
+        desktopSrc: AnalyticChartDesktopDesktopImg,
         alt: 'Analytic Chart',
         className: 'analyticChart',
       },
       {
         id: 13,
         src: AnalyticChartImg,
+        desktopSrc: AnalyticChartDesktopDesktopImg,
         alt: 'Analytic Chart',
         className: 'analyticChart1',
       },
@@ -253,6 +282,7 @@ export const STEPS = [
       { id: 3, src: HandBagImg, alt: 'Bag', className: 'bag' },
       { id: 4, src: ReceiptImg1, alt: 'Receipt', className: 'receipt' },
     ],
+    desktopImage: { src: Step1Desktop, alt: 'Step 01', className: 'step-01' },
   },
   {
     id: 1,
@@ -260,6 +290,7 @@ export const STEPS = [
     title: 'Ownership of piece open',
     summary: 'Divide ownership of high-priced in-kind assets into $1 units to proceed with joint purchase',
     images: [{ id: 5, src: BagPurchaseProcessImg, alt: 'Bag Purchase Process', className: 'purchaseProcess' }],
+    desktopImage: { src: BagPurchaseProcessImg, alt: 'Step 02', className: 'step-02' },
   },
   {
     id: 2,
@@ -268,6 +299,7 @@ export const STEPS = [
     summary:
       'Products that have been recruited for sculptures will be sold in the future, which will be judged to have risen in value, and the profits generated will be repaid.',
     images: [{ id: 6, src: RepaymentImg, alt: 'Repayment', className: 'purchaseProcess' }],
+    desktopImage: { src: RepaymentImg, alt: 'Step 03', className: 'step-03' },
   },
 ];
 

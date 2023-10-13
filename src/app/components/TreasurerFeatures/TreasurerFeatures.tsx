@@ -1,5 +1,8 @@
+'use client';
+
 import { ReactNode } from 'react';
 import Image, { StaticImageData } from 'next/image';
+import { useInView } from 'react-intersection-observer';
 
 import styles from '@/app/homepage/page.module.scss';
 
@@ -14,9 +17,14 @@ interface TreasurerFeaturesProps {
 }
 
 const TreasurerFeatures: React.FC<TreasurerFeaturesProps> = ({ icon, title, summary, children, alt }) => {
+  const [ref, inView] = useInView({
+    threshold: 1,
+    triggerOnce: true,
+  });
+
   return (
     <main>
-      <div>
+      <div ref={ref} className={`${styles['floating-element']} ${inView ? styles.visible : ''}`}>
         <Image src={icon} alt={alt} className={styles.orangeImg} />
         <h2>{title}</h2>
         <summary className='summary-14-primary'>{summary}</summary>

@@ -1,6 +1,9 @@
 'use client';
 
+import React from 'react';
+
 import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 
 import styles from '@/app/homepage/page.module.scss';
 
@@ -9,12 +12,15 @@ import { FEEDBACK } from '@/app/constants';
 interface TreasurerDataProps {}
 
 const TreasurerData: React.FC<TreasurerDataProps> = () => {
+  const [ref, inView] = useInView({
+    threshold: 1,
+    triggerOnce: true,
+  });
+
   return (
     <section className={styles.section}>
-      <article>
-        <h2>
-          <CountUp start={250000} end={500000} duration={5} />+ happy customers.
-        </h2>
+      <article className={`${styles['floating-element']} ${inView ? styles.visible : ''}`} ref={ref}>
+        <h2>500.000+ happy customers.</h2>
         <summary>Using Sublime everyday and loving it!</summary>
       </article>
       {FEEDBACK.map((f) => {

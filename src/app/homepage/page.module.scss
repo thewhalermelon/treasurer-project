@@ -20,10 +20,9 @@
   fieldset {
     border: none;
     position: relative;
-    margin-top: 2.5rem;
-    max-width: 382px;
+    margin: 2.5rem auto 0;
+    max-width: 335px;
     padding: 0;
-    width: 100%;
 
     input {
       border: 1px solid var(--border-color);
@@ -205,11 +204,11 @@
     }
 
     .iphone {
-      bottom: 0;
-      left: 50%;
-      position: absolute;
-      transform: translateX(-50%);
+      display: block;
+      margin: 42px auto 0;
+      position: relative;
       width: 200px;
+      z-index: 1;
     }
 
     .iphone-desktop {
@@ -254,6 +253,10 @@
         padding-top: 7.5rem;
         position: relative;
         width: 335px;
+
+        .desktop {
+          display: none;
+        }
 
         .watch,
         .glass,
@@ -355,6 +358,10 @@
         .imagesGroup {
           padding-top: 3.75rem;
 
+          .desktop {
+            display: none;
+          }
+
           .rolexPrices {
             position: relative;
             bottom: 7px;
@@ -390,8 +397,16 @@
     margin-top: 293px;
     padding: 7.5rem 1.25rem;
 
+    h2.desktop {
+      display: none;
+    }
+
     article {
       margin: 3.75rem auto 0;
+
+      h3 {
+        margin-top: 44px;
+      }
 
       .imagesGroup {
         background-color: var(--white);
@@ -400,6 +415,10 @@
         margin: auto;
         position: relative;
         width: 335px;
+
+        .steps {
+          display: none;
+        }
 
         .rectangle,
         .watch,
@@ -455,22 +474,18 @@
         margin: 5rem auto 0;
       }
     }
-
-    & > article {
-      h3 {
-        padding: 2.75rem 0 0.5rem;
-      }
-
-      summary {
-        padding-top: 0.5rem;
-      }
-    }
   }
 
   &:nth-of-type(6) {
     margin-bottom: 0;
+    padding-bottom: 159px;
 
     & > div {
+      h2 {
+        margin: auto;
+        width: 191px;
+      }
+
       .categories {
         & > ul {
           display: flex;
@@ -577,21 +592,18 @@
             padding: 0;
           }
         }
-
-        &:nth-of-type(1) {
-        }
       }
+    }
 
-      & > a {
-        width: 157px;
-        height: 38px;
-        font-size: var(--font-13);
-        font-weight: 400;
-        line-height: 22px;
-        letter-spacing: 0.39px;
-        margin: auto;
-        text-transform: uppercase;
-      }
+    & > a {
+      width: 157px;
+      height: 38px;
+      font-size: var(--font-13);
+      font-weight: 200;
+      line-height: 22px;
+      letter-spacing: 0.39px;
+      margin: 60px auto 0;
+      text-transform: uppercase;
     }
   }
 
@@ -627,6 +639,11 @@
     .dot {
       bottom: 158px;
       right: 0;
+    }
+
+    .chart-desktop,
+    .title-desktop {
+      display: none;
     }
   }
 }
@@ -762,6 +779,11 @@
       }
     }
 
+    fieldset {
+      margin-left: 0;
+      width: 382px;
+    }
+
     &:nth-of-type(2) {
       align-items: center;
       flex-direction: row;
@@ -834,17 +856,383 @@
         font-weight: 500;
         line-height: 30px;
         letter-spacing: 0.56px;
-        // margin-bottom: 4.5rem;
         padding-top: 1.5rem;
         width: 337px;
       }
 
+      .iphone {
+        display: none;
+      }
+
       .iphone-desktop {
-        bottom: 0;
         display: block;
-        left: 50%;
+        margin: 60px auto 0;
+        position: relative;
+        z-index: 1;
+      }
+    }
+
+    &:nth-of-type(4) {
+      height: fit-content;
+      padding-top: 15rem;
+
+      & > main {
+        display: flex;
+        max-width: 1200px;
+        margin: auto;
+
+        &:nth-of-type(2) {
+          flex-direction: row-reverse;
+          padding-top: 235px;
+
+          & > div {
+            &:nth-of-type(1) {
+              padding-left: 0.5rem;
+
+              & > img {
+                margin-top: 23px;
+              }
+
+              h2 {
+                line-height: 40px;
+                width: 408px;
+              }
+
+              summary {
+                width: 499px;
+              }
+            }
+          }
+        }
+
+        &:nth-of-type(3) {
+          padding-top: 296px;
+
+          & > div {
+            &:nth-of-type(1) {
+              h2 {
+                line-height: 40px;
+              }
+            }
+          }
+
+          .imagesGroup {
+            .desktop {
+              display: block;
+            }
+          }
+        }
+
+        & > div {
+          width: 50%;
+
+          &:nth-of-type(1) {
+            & > img {
+              margin-top: 25px;
+              height: 3rem;
+              width: 3rem;
+            }
+
+            h2 {
+              font-size: var(--font-36);
+              line-height: 36px;
+              padding-top: 2.5rem;
+            }
+
+            summary {
+              font-size: var(--font-13);
+              letter-spacing: 0.39px;
+              line-height: 22px;
+              padding-top: 1.25rem;
+              width: 429px;
+            }
+
+            a {
+              margin-top: 2.5rem;
+            }
+          }
+        }
+
+        .imagesGroup {
+          margin: unset;
+          padding-top: unset;
+          width: 50%;
+
+          .rectangle,
+          .watch,
+          .glass,
+          .bag,
+          .receipt,
+          .safeShield,
+          .firstLine,
+          .secondLine,
+          .firstCircleShield,
+          .secondCircleShield,
+          .rolexPrices,
+          .bagPrices,
+          .analyticChart,
+          .analyticChart1 {
+            display: none;
+          }
+
+          .desktop {
+            display: block;
+
+            &.watch {
+              bottom: unset;
+              left: 165px;
+              position: relative;
+              width: 131px;
+            }
+
+            &.rectangle {
+              position: absolute;
+              top: 85px;
+              left: 8px;
+            }
+
+            &.bag {
+              bottom: 90px;
+              left: 23px;
+              width: 218px;
+            }
+
+            &.receipt {
+              top: 143px;
+              left: 224px;
+              width: 242px;
+            }
+
+            &.glass {
+              bottom: 183px;
+              left: 354px;
+            }
+
+            &.safeShield {
+              left: 188px;
+              top: 105px;
+              z-index: 1;
+            }
+
+            &.firstLine {
+              left: 125px;
+              top: 185px;
+            }
+
+            &.secondLine {
+              left: 338px;
+              top: 185px;
+            }
+
+            &.firstCircleShield {
+              left: 58px;
+              top: 151px;
+            }
+
+            &.secondCircleShield {
+              left: 385px;
+              top: 151px;
+            }
+
+            &.rolexPrices {
+              bottom: 41px;
+              left: 120px;
+            }
+
+            &.bagPrices {
+              left: 3px;
+              top: 115px;
+            }
+
+            &.analyticChart,
+            &.analyticChart1 {
+              top: 228px;
+              right: 117px;
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-of-type(5) {
+      height: 820px;
+      margin-top: 266px;
+      padding-top: 130px;
+
+      & > h2 {
+        display: none;
+
+        &.desktop {
+          display: block;
+          font-size: var(--font-42);
+          line-height: 44px;
+          letter-spacing: 2.52px;
+        }
+      }
+
+      & > div {
+        display: flex;
+        gap: 1.25rem;
+        max-width: 1200px;
+        margin: auto;
+
+        & > article {
+          margin-top: 46px;
+
+          .imagesGroup {
+            height: 280px;
+            width: 387px;
+
+            img {
+              display: none;
+
+              &.steps {
+                display: block;
+                position: relative;
+                left: 49px;
+                top: 34px;
+
+                &:nth-of-type(2) {
+                  left: 41px;
+                  top: 37px;
+                  height: auto;
+                  width: 328px;
+                }
+
+                &:nth-of-type(3) {
+                  left: 41px;
+                  top: 36px;
+                  height: auto;
+                  width: 325px;
+                }
+              }
+            }
+          }
+
+          h3 {
+            margin-top: 0;
+            padding: 1.75rem 0 0.5rem;
+          }
+
+          summary {
+            font-size: var(--font-13);
+            padding-top: 0.5rem;
+            font-weight: 400;
+            line-height: 22px;
+            letter-spacing: 0.01px;
+          }
+
+          &:not(:nth-of-type(1)) {
+            margin-top: 46px;
+          }
+
+          &:nth-of-type(1) {
+            summary {
+              width: 313px;
+            }
+          }
+
+          &:nth-of-type(2) {
+            summary {
+              width: 278px;
+            }
+          }
+
+          &:nth-of-type(3) {
+            summary {
+              width: 355px;
+            }
+          }
+        }
+      }
+    }
+
+    &:nth-of-type(6) {
+      height: auto;
+      padding: 5rem 0 0;
+      max-width: 1200px;
+      margin: auto;
+
+      & > div {
+        align-items: end;
+        display: flex;
+        justify-content: space-between;
+
+        h2 {
+          font-size: var(--font-52);
+          line-height: 62px;
+        }
+      }
+
+      & > main {
+        flex-direction: row;
+        gap: 1.25rem;
+        padding-top: 2.5rem;
+
+        article {
+          margin: 0;
+          width: 387px;
+
+          summary {
+            font-size: var(--font-20);
+            font-weight: 700;
+            line-height: 22px;
+          }
+        }
+      }
+
+      a {
+        margin: auto;
+        margin-top: 3.75rem;
+        width: 157px;
+      }
+    }
+
+    &:nth-of-type(7) {
+      height: 527px;
+      margin-top: 10rem;
+      padding-top: 6.25rem;
+      width: 1200px;
+
+      h2 {
+        display: none;
+      }
+
+      fieldset {
+        margin: 2.25rem auto 0;
+        max-width: 382px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .title-desktop {
+        color: var(--white);
+        font-size: var(--font-52);
+        display: block;
+        line-height: 62px;
+        margin: auto;
+        text-align: center;
+        width: 780px;
+      }
+
+      img {
+        display: none;
+      }
+
+      .chart-desktop {
+        display: block;
         position: absolute;
-        transform: translateX(-50%);
+
+        &.background {
+          bottom: 0;
+          left: 0;
+        }
+
+        &.line {
+          bottom: 50px;
+          left: -1px;
+          width: 1201px;
+        }
       }
     }
   }
@@ -896,4 +1284,80 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
+
+// -------------------------------------------------------------
+.floating-element {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s, transform 1s;
+}
+
+.floating-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// -------------------------------------------------------------
+.floating-element-2nd {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s 1s, transform 1s 1s;
+}
+
+.floating-element-2nd.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// -------------------------------------------------------------
+.floating-element-3rd {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s 2s, transform 1s 2s;
+}
+
+.floating-element-3rd.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// -------------------------------------------------------------
+.appear-element {
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+}
+
+.appear-element.visible {
+  opacity: 1;
+}
+
+// -------------------------------------------------------------
+.appear-element-desktop-1 {
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+}
+
+.appear-element-desktop-1.visible {
+  opacity: 1;
+}
+
+// -------------------------------------------------------------
+.appear-element-desktop-2 {
+  opacity: 0;
+  transition: opacity 1s 1s, transform 1s 1s;
+}
+
+.appear-element-desktop-2.visible {
+  opacity: 1;
+}
+
+// -------------------------------------------------------------
+.appear-element-desktop-3 {
+  opacity: 0;
+  transition: opacity 1s 1s, transform 1s 1s;
+}
+
+.appear-element-desktop-3.visible {
+  opacity: 1;
 }
