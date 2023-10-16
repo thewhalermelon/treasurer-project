@@ -100,7 +100,7 @@ const SignUp: React.FC<SignUpProps> = () => {
           </form>
           <aside>
             <p>
-              By continuing, you acknowledge that you have read and understood, and agree to Treasurer's{' '}
+              By continuing, you acknowledge that you have read and understood, and agree to Treasurer&apos;s{' '}
               <Link href='/signup'>Terms of Service</Link> and <Link href='signup'>Privacy Policy</Link>.
             </p>
           </aside>

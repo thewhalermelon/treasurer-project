@@ -76,7 +76,7 @@ const SignIn: React.FC<SignInProps> = () => {
               Forgot password?
             </Link>
             <span className={styles.signIn}>
-              Don't have an account? <Link href='/signup'>Sign in</Link>
+              Don&apos;t have an account? <Link href='/signup'>Sign in</Link>
             </span>
           </form>
         </main>
