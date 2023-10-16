@@ -59,6 +59,7 @@ const ProductList: React.FC<ProductListProps> = () => {
                   <button
                     className={`borderred-oulined-rounded-button ${index === selectedCategory ? 'selected' : ''}`}
                     onClick={() => handleSelecteCategory(index)}
+                    style={{ minWidth: 78, width: '100%' }}
                   >
                     {c}
                   </button>
