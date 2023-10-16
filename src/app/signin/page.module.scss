@@ -80,9 +80,12 @@
       }
 
       .input {
+        background-color: var(--ghost-white);
         border-radius: 0.5rem;
         border: 1px solid var(--pale-gray);
-        background-color: var(--ghost-white);
+        font-size: var(--font-14);
+        font-weight: 500;
+        font-family: 'SUIT', sans-serif;
         height: 2.75rem;
         margin-bottom: 1.25rem;
         outline: none;
@@ -115,8 +118,9 @@
         border: none;
         color: var(--white);
         cursor: pointer;
+        font-size: var(--font-14);
         font-family: 'SUIT', sans-serif;
-        font-weight: 500;
+        font-weight: 600;
       }
 
       .forgotPassword {
