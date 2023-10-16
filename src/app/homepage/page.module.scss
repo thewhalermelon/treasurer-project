@@ -603,7 +603,7 @@
       width: 157px;
       height: 38px;
       font-size: var(--font-13);
-      font-weight: 200;
+      font-weight: 400;
       line-height: 22px;
       letter-spacing: 0.39px;
       margin: 60px auto 0;
@@ -1625,7 +1625,7 @@
 .floating-element {
   opacity: 0;
   transform: translateY(100px);
-  transition: opacity 1s, transform 1s;
+  transition: opacity 0.5s, transform 0.5s;
 }
 
 .floating-element.visible {
@@ -1680,7 +1680,7 @@
 // -------------------------------------------------------------
 .appear-element-desktop-2 {
   opacity: 0;
-  transition: opacity 0.2s 0.2s, transform 0.2s 0.2s;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
 }
 
 .appear-element-desktop-2.visible {
@@ -1690,7 +1690,7 @@
 // -------------------------------------------------------------
 .appear-element-desktop-3 {
   opacity: 0;
-  transition: opacity 0.4s 0.4s, transform 0.4s 0.4s;
+  transition: opacity 1s 1s, transform 1s 1s;
 }
 
 .appear-element-desktop-3.visible {
@@ -1700,7 +1700,7 @@
 // -------------------------------------------------------------
 .appear-element-desktop-4 {
   opacity: 0;
-  transition: opacity 0.6s 0.6s, transform 0.6s 0.6s;
+  transition: opacity 1.5s 1.5s, transform 1.5s 1.5s;
 }
 
 .appear-element-desktop-4.visible {
@@ -1710,7 +1710,7 @@
 // -------------------------------------------------------------
 .appear-element-desktop-5 {
   opacity: 0;
-  transition: opacity 0.8s 0.8s, transform 0.8s 0.8s;
+  transition: opacity 2s 2s, transform 2s 2s;
 }
 
 .appear-element-desktop-5.visible {

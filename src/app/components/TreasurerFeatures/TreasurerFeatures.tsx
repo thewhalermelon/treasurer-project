@@ -20,7 +20,7 @@ interface TreasurerFeaturesProps {
 
 const TreasurerFeatures: React.FC<TreasurerFeaturesProps> = ({ icon, title, summary, alt, images }) => {
   const [ref, inView] = useInView({
-    threshold: 1,
+    threshold: 0.1,
     triggerOnce: true,
   });
 
