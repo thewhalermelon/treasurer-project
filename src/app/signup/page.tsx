@@ -98,13 +98,13 @@ const SignUp: React.FC<SignUpProps> = () => {
               Do you have an account? <Link href='/signin'>Login</Link>
             </span>
           </form>
+          <aside>
+            <p>
+              By continuing, you acknowledge that you have read and understood, and agree to Treasurer's{' '}
+              <Link href='/signup'>Terms of Service</Link> and <Link href='signup'>Privacy Policy</Link>.
+            </p>
+          </aside>
         </main>
-        <aside>
-          <p>
-            By continuing, you acknowledge that you have read and understood, and agree to Treasurer's{' '}
-            <Link href='/signup'>Terms of Service</Link> and <Link href='signup'>Privacy Policy</Link>.
-          </p>
-        </aside>
       </section>
     </>
   );
