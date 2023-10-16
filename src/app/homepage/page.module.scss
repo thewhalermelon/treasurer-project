@@ -657,8 +657,7 @@
   background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
-  margin-top: 4.625rem;
-  padding: 2.625rem 0 2.5rem;
+  padding: 7.25rem 0 2.5rem;
 
   h1 {
     color: var(--white);
@@ -755,10 +754,14 @@
   max-width: 1200px;
   padding: 2.5rem 0 0;
 
-  nav ul {
-    flex-direction: row;
-    justify-content: center;
-    gap: 0.625rem;
+  nav {
+    padding-bottom: 3.75rem;
+
+    ul {
+      flex-direction: row;
+      justify-content: center;
+      gap: 0.625rem;
+    }
   }
 }
 
