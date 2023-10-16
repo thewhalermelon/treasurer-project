@@ -92,7 +92,7 @@ const HomePage: React.FC<HomePageProps> = () => {
           </div>
           <Categories />
         </div>
-        <main aria-label='Product List'>
+        <main aria-label='Product List' className={styles.productList}>
           {PRODUCTS.map((p, i) => {
             return (
               <ProductCard

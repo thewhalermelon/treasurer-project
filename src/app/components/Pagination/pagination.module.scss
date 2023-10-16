@@ -1,0 +1,27 @@
+.pagination {
+  max-width: 1200px;
+  margin: 2.5rem auto 10rem;
+
+  ul {
+    flex-direction: row;
+    gap: 13px;
+    margin: auto;
+    width: fit-content;
+
+    button {
+      background-color: var(--white);
+      border: none;
+      cursor: pointer;
+      font-size: var(--font-14);
+      font-family: 'Spoqa Han Sans Neo', sans-serif;
+      height: 1.25rem;
+      width: 1.25rem;
+
+      &.selected {
+        background-color: var(--black);
+        border-radius: 0.25rem;
+        color: var(--white);
+      }
+    }
+  }
+}

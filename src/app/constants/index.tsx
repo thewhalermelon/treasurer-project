@@ -407,3 +407,22 @@ export const SLIDER_ARRAY = [
     alt: 'Watch',
   },
 ];
+
+export const TRENDING_SEARCHES = [
+  {
+    id: 0,
+    content: 'AI recommendation',
+  },
+  {
+    id: 1,
+    content: 'stable item',
+  },
+  {
+    id: 2,
+    content: 'aggressive item',
+  },
+];
+
+export const PRODUCT_CATEGORIES = ['ALL', 'BAG', 'WINE', 'WATCH', 'GOLD/SILVER', 'OTHERS'];
+
+export const OPTIONS = ['Popular', 'Popular 1', 'Popular 2', 'Popular 3'];
