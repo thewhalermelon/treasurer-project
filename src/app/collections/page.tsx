@@ -57,9 +57,10 @@ const ProductList: React.FC<ProductListProps> = () => {
               return (
                 <li key={index}>
                   <button
-                    className={`borderred-oulined-rounded-button ${index === selectedCategory ? 'selected' : ''}`}
+                    className={`borderred-oulined-rounded-button ${styles.button} ${
+                      index === selectedCategory ? 'selected' : ''
+                    }`}
                     onClick={() => handleSelecteCategory(index)}
-                    style={{ minWidth: 78, width: '100%' }}
                   >
                     {c}
                   </button>
@@ -72,7 +73,7 @@ const ProductList: React.FC<ProductListProps> = () => {
         <div
           aria-label='Product List'
           className={styles.productList}
-          style={{ paddingTop: '1rem', paddingBottom: '5rem' }}
+          style={{ paddingTop: '1rem', paddingBottom: '4rem' }}
         >
           {PRODUCTS.map((p, i) => {
             return (
@@ -93,7 +94,7 @@ const ProductList: React.FC<ProductListProps> = () => {
         <div
           aria-label='Product List'
           className={styles.productList}
-          style={{ paddingTop: '1rem', paddingBottom: '5rem' }}
+          style={{ paddingTop: '1rem', paddingBottom: '4rem' }}
         >
           {PRODUCTS.map((p, i) => {
             return (
@@ -114,7 +115,7 @@ const ProductList: React.FC<ProductListProps> = () => {
         <div
           aria-label='Product List'
           className={styles.productList}
-          style={{ paddingTop: '1rem', paddingBottom: '5rem' }}
+          style={{ paddingTop: '1rem', paddingBottom: '4rem' }}
         >
           {PRODUCTS.map((p, i) => {
             return (
@@ -135,7 +136,7 @@ const ProductList: React.FC<ProductListProps> = () => {
         <div
           aria-label='Product List'
           className={styles.productList}
-          style={{ paddingTop: '1rem', paddingBottom: '5rem' }}
+          style={{ paddingTop: '1rem', paddingBottom: '4rem' }}
         >
           {PRODUCTS.map((p, i) => {
             return (

@@ -425,4 +425,19 @@ export const TRENDING_SEARCHES = [
 
 export const PRODUCT_CATEGORIES = ['ALL', 'BAG', 'WINE', 'WATCH', 'GOLD/SILVER', 'OTHERS'];
 
-export const OPTIONS = ['Popular', 'Popular 1', 'Popular 2', 'Popular 3'];
+export const OPTIONS = ['Popular', 'New', 'High price', 'Low price'];
+
+export const PRODUCT_LIST = [
+  {
+    id: 1,
+    name: 'Product 1',
+    description: 'Description of Product 1',
+    price: 19.99,
+  },
+  {
+    id: 2,
+    name: 'Product 2',
+    description: 'Description of Product 2',
+    price: 24.99,
+  },
+];
