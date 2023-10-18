@@ -41,16 +41,45 @@ const Collection: React.FC<CollectionProps> = () => {
   const imagesArray = Array.from({ length: 4 }, (_, i) => i + 1);
 
   const [currentSlide, setCurrentSlide] = React.useState(0);
-  const [loaded, setLoaded] = React.useState(false);
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
-    initial: 0,
-    slideChanged(slider) {
-      setCurrentSlide(slider.track.details.rel);
+  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
+    {
+      initial: 0,
+      loop: true,
+      slideChanged(slider) {
+        setCurrentSlide(slider.track.details.rel);
+      },
     },
-    created() {
-      setLoaded(true);
-    },
-  });
+    [
+      (slider) => {
+        let timeout: ReturnType<typeof setTimeout>;
+        let mouseOver = false;
+        function clearNextTimeout() {
+          clearTimeout(timeout);
+        }
+        function nextTimeout() {
+          clearTimeout(timeout);
+          if (mouseOver) return;
+          timeout = setTimeout(() => {
+            slider.next();
+          }, 1000);
+        }
+        slider.on('created', () => {
+          slider.container.addEventListener('mouseover', () => {
+            mouseOver = true;
+            clearNextTimeout();
+          });
+          slider.container.addEventListener('mouseout', () => {
+            mouseOver = false;
+            nextTimeout();
+          });
+          nextTimeout();
+        });
+        slider.on('dragStarted', clearNextTimeout);
+        slider.on('animationEnded', nextTimeout);
+        slider.on('updated', nextTimeout);
+      },
+    ],
+  );
 
   const handleFavorite = (i: number) => {
     setIsSelected(i === isSelected ? 0 : i);
@@ -88,7 +117,7 @@ const Collection: React.FC<CollectionProps> = () => {
       <Header />
       <aside className={styles.categorySearch}>
         <div className={styles.searchInput}>
-          <Image src={WhiteMagnifyingGlassImg} alt='White Magnifying Glass' />
+          <Image src={WhiteMagnifyingGlassImg} alt='White Magnifying Glass' width={17} height={17} />
           <label htmlFor='text'>Search:</label>
           <input type='text' id='text' name='text' placeholder='Search' />
         </div>
@@ -123,21 +152,19 @@ const Collection: React.FC<CollectionProps> = () => {
               );
             })}
           </div>
-          {loaded && instanceRef.current && (
-            <div className={`dots ${styles.dots}`}>
-              {imagesArray.map((idx) => {
-                return (
-                  <button
-                    key={idx}
-                    onClick={() => {
-                      instanceRef.current?.moveToIdx(idx);
-                    }}
-                    className={`dot ${styles.dot}` + (currentSlide === idx - 1 ? ` active ${styles.active}` : '')}
-                  ></button>
-                );
-              })}
-            </div>
-          )}
+          <div className={`dots ${styles.dots}`}>
+            {imagesArray.map((idx) => {
+              return (
+                <button
+                  key={idx}
+                  onClick={() => {
+                    instanceRef.current?.moveToIdx(idx);
+                  }}
+                  className={`dot ${styles.dot}` + (currentSlide === idx - 1 ? ` active ${styles.active}` : '')}
+                ></button>
+              );
+            })}
+          </div>
         </div>
 
         <div className={styles.productPrices}>
@@ -155,7 +182,7 @@ const Collection: React.FC<CollectionProps> = () => {
             </div>
 
             <div className={styles.save}>
-              <Image src={OrangeTriangleImg} alt='Triangle' />
+              <Image src={OrangeTriangleImg} alt='Triangle' width={10} height={8} />
               <h6>$1 (23.08%)</h6>
             </div>
 
@@ -175,9 +202,9 @@ const Collection: React.FC<CollectionProps> = () => {
               </div>
             </div>
 
-            <Link href='' className={styles.buyButton}>
+            <button className={styles.buyButton} onClick={handlePopup}>
               Buy now
-            </Link>
+            </button>
           </div>
 
           <div className={styles.notice}>
@@ -291,9 +318,6 @@ const Collection: React.FC<CollectionProps> = () => {
               <Image src={OfferImg} alt='Offer' />
               <h3>Offers</h3>
             </div>
-
-            <hr />
-
             <div className={styles.body}>
               <div className={styles['body-header']}>
                 <span style={{ minWidth: 111 }}>Price</span>
@@ -369,63 +393,62 @@ const Collection: React.FC<CollectionProps> = () => {
             </div>
           </div>
         </div>
-
-        <div className={styles.productPurchase}>
-          <div className={styles.header}>
-            <h2>Purchase Value</h2>
-            <Image src={BigGreyNoticeImg} alt='Notice' />
-          </div>
-          <div className={styles.body}>
-            <div className={styles.inclination}>
-              <h3>Product Inclination</h3>
-              <h2>Stable</h2>
-            </div>
-
-            <hr />
-
-            <div className={styles.rate}>
-              <h3>Expected Rate Of Return (1 Year)</h3>
-              <h2>
-                <Image src={BigOrangeTriangleImg} alt='Big Orange Triangle' />
-                20%
-              </h2>
-            </div>
-
-            <hr />
-
-            <div className={styles.period}>
-              <h3>Expected monetization period</h3>
-              <h2>12 months</h2>
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.productCollections}>
-          <h2>Related Collections</h2>
-          <div aria-label='Product List' className={classes.productList} style={{ paddingTop: '1.5rem' }}>
-            {PRODUCTS.map((p, i) => {
-              return (
-                <ProductCard
-                  key={p.id}
-                  src={p.imageSrc}
-                  alt={p.imageAtl}
-                  name={p.name}
-                  desc={p.desc}
-                  marketPrice={p.marketPrice}
-                  piecePrice={p.piecePrice}
-                  save={p.save}
-                  index={i}
-                />
-              );
-            })}
-          </div>
-        </div>
-
-        <Link className={`rounded-arrow-button ${styles.moreButton}`} href={'/collections'}>
-          MORE
-          <Image src={RightArrowImg} alt='Arrow' className={classes['right-arrow']} />
-        </Link>
       </main>
+      <div className={`container ${styles.productPurchase}`}>
+        <div className={styles.header}>
+          <h2>Purchase Value</h2>
+          <Image src={BigGreyNoticeImg} alt='Notice' />
+        </div>
+        <div className={styles.body}>
+          <div className={styles.inclination}>
+            <h3>Product Inclination</h3>
+            <h2>Stable</h2>
+          </div>
+
+          <hr />
+
+          <div className={styles.rate}>
+            <h3>Expected Rate Of Return (1 Year)</h3>
+            <h2>
+              <Image src={BigOrangeTriangleImg} alt='Big Orange Triangle' />
+              20%
+            </h2>
+          </div>
+
+          <hr />
+
+          <div className={styles.period}>
+            <h3>Expected monetization period</h3>
+            <h2>12 months</h2>
+          </div>
+        </div>
+      </div>
+
+      <div className={`container ${styles.productCollections}`}>
+        <h2>Related Collections</h2>
+        <div aria-label='Product List' className={classes.productList} style={{ paddingTop: '1.5rem' }}>
+          {PRODUCTS.map((p, i) => {
+            return (
+              <ProductCard
+                key={p.id}
+                src={p.imageSrc}
+                alt={p.imageAtl}
+                name={p.name}
+                desc={p.desc}
+                marketPrice={p.marketPrice}
+                piecePrice={p.piecePrice}
+                save={p.save}
+                index={i}
+              />
+            );
+          })}
+        </div>
+      </div>
+
+      <Link className={`rounded-arrow-button ${styles.moreButton}`} href={'/collections'}>
+        MORE
+        <Image src={RightArrowImg} alt='Arrow' className={classes['right-arrow']} />
+      </Link>
       <Footer />
       {popup ? <Popup setOpen={setPopup} title='Coming Soon!' /> : null}
     </>

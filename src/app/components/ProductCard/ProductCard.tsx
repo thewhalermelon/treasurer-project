@@ -62,7 +62,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketP
           </div>
         </div>
         <div className={styles.save}>
-          <Image src={OrangeTriangleImg} alt='Triangle' />
+          <Image src={OrangeTriangleImg} alt='Triangle' height={8} width={10} />
           <h6>{save}</h6>
         </div>
       </article>

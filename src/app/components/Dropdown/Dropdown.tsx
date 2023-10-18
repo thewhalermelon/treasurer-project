@@ -42,8 +42,6 @@ const Dropdown: React.FC<DropdownProps> = () => {
     };
   }, []);
 
-  console.log('selectedOption: ', selectedOption);
-
   return (
     <div className={styles.dropdown} ref={myRef}>
       <button className={styles['dropdown-toggle']} onClick={handleDropdown}>
@@ -62,7 +60,7 @@ const Dropdown: React.FC<DropdownProps> = () => {
             className={selectedOption === option ? styles.active : ''}
           >
             {option}
-            {selectedOption === option ? <Image src={CheckedIconImg} alt='Check Icon' /> : null}
+            {selectedOption === option ? <Image src={CheckedIconImg} alt='Check Icon' width={9} height={5.5} /> : null}
           </li>
         ))}
       </ul>
