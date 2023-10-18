@@ -5,7 +5,7 @@ import React from 'react';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
 
-import styles from '@/app/homepage/page.module.scss';
+import styles from './treasurerData.module.scss';
 
 import { FEEDBACK } from '@/app/constants';
 
@@ -28,8 +28,8 @@ const TreasurerData: React.FC<TreasurerDataProps> = () => {
   }, [inView]);
 
   return (
-    <section className={styles.section}>
-      <article className={`${styles['floating-element']} ${inView ? styles.visible : ''}`} ref={ref}>
+    <section className={styles.secondSection}>
+      <article className={`floating-element ${inView ? 'visible' : ''}`} ref={ref}>
         <h2>500.000+ happy customers.</h2>
         <summary>Using Sublime everyday and loving it!</summary>
       </article>

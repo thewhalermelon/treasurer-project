@@ -45,6 +45,7 @@ const HomePage: React.FC<HomePageProps> = () => {
       <TreasurerInvest />
 
       {/* SECTION 4TH */}
+      {/* <TreasurerFeatures /> */}
       <section className={styles.section}>
         {FEATURES.map((f) => {
           return (
@@ -59,70 +60,6 @@ const HomePage: React.FC<HomePageProps> = () => {
           );
         })}
       </section>
-
-      {/* SECTION 5TH */}
-      <section className={styles.section}>
-        <h2 className='title-34-black-center'>3 Step</h2>
-        <h2 className='title-34-black-center'>Investment Process</h2>
-        <h2 className={`title-34-black-center ${styles.desktop}`}>3 Step Investment Process</h2>
-
-        <div>
-          {STEPS.map((s, i) => {
-            return (
-              <Steps step={s.step} title={s.title} summary={s.summary} key={s.id} index={i}>
-                {s.images.map((i) => {
-                  return <Image src={i.src} alt={i.alt} className={styles[`${i.className}`]} key={i.id} />;
-                })}
-
-                <Image
-                  src={s.desktopImage.src}
-                  alt={s.desktopImage.alt}
-                  className={`${styles[`${s.desktopImage.className}`]} ${styles.steps}`}
-                />
-              </Steps>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* SECTION 6TH */}
-      <section className={styles.section}>
-        <div>
-          <div>
-            <h2 className='title-34-black-center'>Investment Products</h2>
-          </div>
-          <Categories />
-        </div>
-        <main aria-label='Product List' className={styles.productList}>
-          {PRODUCTS.map((p, i) => {
-            return (
-              <ProductCard
-                key={p.id}
-                src={p.imageSrc}
-                alt={p.imageAtl}
-                name={p.name}
-                desc={p.desc}
-                marketPrice={p.marketPrice}
-                piecePrice={p.piecePrice}
-                save={p.save}
-                index={i}
-              />
-            );
-          })}
-        </main>
-        <Link className='rounded-arrow-button' href={'/collections'}>
-          ALL Products
-          <Image src={RightArrowImg} alt='Arrow' className={styles['right-arrow']} />
-        </Link>
-      </section>
-
-      {/* SECTION 7TH */}
-      <TreasurerSubscribe />
-
-      <div className='slider-container'>
-        <BrandsSlider />
-        <DesktopBrandsSlider />
-      </div>
       <Footer />
     </>
   );
