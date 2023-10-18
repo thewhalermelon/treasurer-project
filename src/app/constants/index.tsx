@@ -407,3 +407,37 @@ export const SLIDER_ARRAY = [
     alt: 'Watch',
   },
 ];
+
+export const TRENDING_SEARCHES = [
+  {
+    id: 0,
+    content: 'AI recommendation',
+  },
+  {
+    id: 1,
+    content: 'stable item',
+  },
+  {
+    id: 2,
+    content: 'aggressive item',
+  },
+];
+
+export const PRODUCT_CATEGORIES = ['ALL', 'BAG', 'WINE', 'WATCH', 'GOLD/SILVER', 'OTHERS'];
+
+export const OPTIONS = ['Popular', 'New', 'High price', 'Low price'];
+
+export const PRODUCT_LIST = [
+  {
+    id: 1,
+    name: 'Product 1',
+    description: 'Description of Product 1',
+    price: 19.99,
+  },
+  {
+    id: 2,
+    name: 'Product 2',
+    description: 'Description of Product 2',
+    price: 24.99,
+  },
+];

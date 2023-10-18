@@ -14,11 +14,31 @@
       ul {
         flex-direction: row;
         gap: 2.5rem;
+
+        a {
+          transition: 0.4s;
+
+          &:hover {
+            color: var(--orange);
+          }
+        }
       }
     }
 
     .menu {
       padding-top: 4.125rem;
+
+      ul {
+        gap: 46px;
+
+        a {
+          transition: 0.4s;
+
+          &:hover {
+            color: var(--orange);
+          }
+        }
+      }
     }
   }
 
@@ -32,6 +52,16 @@
       padding-top: 2.5rem;
       font-size: var(--font-12);
       font-weight: 400;
+    }
+
+    ul {
+      a {
+        transition: 0.4s;
+
+        &:hover {
+          color: var(--orange);
+        }
+      }
     }
   }
 }
@@ -77,6 +107,7 @@
       margin: 1.5rem auto 0;
 
       small {
+        font-size: var(--font-13);
         order: 1;
         padding-top: 0;
       }

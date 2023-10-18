@@ -21,6 +21,18 @@
 
     nav {
       display: none;
+
+      a {
+        transition: 0.4s;
+
+        &:hover {
+          color: var(--orange);
+        }
+      }
+
+      & .selectedPage {
+        color: var(--orange);
+      }
     }
   }
 

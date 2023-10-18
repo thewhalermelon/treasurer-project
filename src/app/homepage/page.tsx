@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import styles from './page.module.scss';
 
@@ -92,7 +93,7 @@ const HomePage: React.FC<HomePageProps> = () => {
           </div>
           <Categories />
         </div>
-        <main aria-label='Product List'>
+        <main aria-label='Product List' className={styles.productList}>
           {PRODUCTS.map((p, i) => {
             return (
               <ProductCard
@@ -109,10 +110,10 @@ const HomePage: React.FC<HomePageProps> = () => {
             );
           })}
         </main>
-        <a className='rounded-arrow-button'>
+        <Link className='rounded-arrow-button' href={'/collections'}>
           ALL Products
           <Image src={RightArrowImg} alt='Arrow' className={styles['right-arrow']} />
-        </a>
+        </Link>
       </section>
 
       {/* SECTION 7TH */}

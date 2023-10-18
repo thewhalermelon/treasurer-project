@@ -7,6 +7,10 @@
   --ghost-white: #f7f7f8;
   --white: #fff;
 
+  --navy-blue: #f0f0f0;
+  --silver-sand: #eaeaea;
+  --soft-gray: #fafafa;
+  --gainsboro: #e3e3e3;
   --slate-gray: #9e9ea8;
   --light-state-gray: #b3b3bb;
   --pale-gray: #e6e6e6;
@@ -14,9 +18,12 @@
   --lighter-gray: #f8f8f8;
   --light-gray: #d9d9d9;
   --medium-gray: #a6a6a6;
+  --pigeon-gray: #7f7f7f;
+  --dark-gray: #545454;
   --ash-gray: #7a7a7a;
   --gray: #f5f5f5;
   --grayish-blue: #687083;
+  --dim-gray: #494949;
 
   --dark-green: #212521;
   --dark-charcoal-green: #21211e;
@@ -35,9 +42,11 @@
   --font-12: 12px;
   --font-13: 13px;
   --font-14: 14px;
+  --font-15: 15px;
   --font-16: 16px;
   --font-20: 20px;
   --font-24: 24px;
+  --font-28: 28px;
   --font-32: 32px;
   --font-34: 34px;
   --font-36: 36px;
@@ -47,8 +56,10 @@
   --font-54: 54px;
   --font-60: 60px;
 
+  --border-radius-6: 6px;
   --border-radius-10: 10px;
   --border-radius-16: 16px;
+  --border-radius-16-5: 16.5px;
   --border-radius-20: 20px;
   --border-radius-25: 25px;
   --border-radius-26: 26.5px;
@@ -64,6 +75,7 @@
 
 body {
   font-family: 'SUIT', sans-serif;
+  scrollbar-color: #888 #f1f1f1;
 }
 
 ul {
@@ -91,11 +103,17 @@ a {
 // BUTTON
 .outlined-button {
   font-weight: 500;
+  transition: 0.4s;
+
+  &:hover {
+    color: var(--dim-gray);
+  }
 }
 
 li {
   .borderred-oulined-rounded-button {
     color: var(--black);
+    cursor: pointer;
     background-color: var(--white);
     border: 1px solid var(--dark-charcoal-green);
     border-radius: 18.5px;
@@ -106,10 +124,15 @@ li {
     text-transform: uppercase;
     width: fit-content;
     white-space: nowrap;
+    transition: 0.4s;
 
     &.selected {
       background-color: var(--black);
       color: var(--white);
+    }
+
+    &:hover {
+      color: var(--orange);
     }
   }
 
@@ -126,6 +149,11 @@ li {
   color: var(--white);
   font-weight: 500;
   padding: 0.625rem 0.75rem;
+  transition: 0.4s;
+
+  &:hover {
+    color: var(--orange);
+  }
 }
 
 .rounded-arrow-button {

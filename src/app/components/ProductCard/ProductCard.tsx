@@ -2,13 +2,14 @@
 
 import React from 'react';
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 
 import styles from '@/app/homepage/page.module.scss';
 
 import FilledSaveImg from 'public/images/filled-save.svg';
 import OutlinedSaveImg from 'public/images/outlined-save.svg';
-import OrangeTriangleImg from 'public/images/orange-triangle.png';
+import OrangeTriangleImg from 'public/images/orange-triangle.svg';
 import useWindowWidth from '@/app/hooks/useWindowWidth';
 
 interface ProductCardProps {
@@ -35,35 +36,37 @@ const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketP
   };
 
   return (
-    <article
-      ref={ref}
-      className={`${
-        windowWidth && windowWidth >= 1920 ? styles[`appear-element-desktop-${index + 1}`] : styles['appear-element']
-      } ${inView ? styles.visible : ''}`}
-    >
-      <div className={styles.rectangle}>
-        <Image src={src} alt={alt} />
-        <button onClick={handleFavorite}>
-          <Image src={isSelected ? FilledSaveImg : OutlinedSaveImg} alt='Outlined Save' className={styles.favorite} />
-        </button>
-      </div>
-      <h6 className='title-14-medium-grey'>{name}</h6>
-      <summary className='title-20-black'>{desc}</summary>
-      <div className={styles.prices}>
-        <div className={styles.priceTitle}>
-          <h6>market price</h6>
-          <h6>piece price</h6>
+    <Link href={`/collection`}>
+      <article
+        ref={ref}
+        className={`${
+          windowWidth && windowWidth >= 1920 ? styles[`appear-element-desktop-${index + 1}`] : styles['appear-element']
+        } ${inView ? styles.visible : ''}`}
+      >
+        <div className={styles.rectangle}>
+          <Image src={src} alt={alt} />
+          <button onClick={handleFavorite}>
+            <Image src={isSelected ? FilledSaveImg : OutlinedSaveImg} alt='Outlined Save' className={styles.favorite} />
+          </button>
         </div>
-        <div className={styles.priceNumber}>
-          <h5>{marketPrice}</h5>
-          <h5>{piecePrice}</h5>
+        <h6 className='title-14-medium-grey'>{name}</h6>
+        <summary className='title-20-black'>{desc}</summary>
+        <div className={styles.prices}>
+          <div className={styles.priceTitle}>
+            <h6>market price</h6>
+            <h6>piece price</h6>
+          </div>
+          <div className={styles.priceNumber}>
+            <h5>{marketPrice}</h5>
+            <h5>{piecePrice}</h5>
+          </div>
         </div>
-      </div>
-      <div className={styles.save}>
-        <Image src={OrangeTriangleImg} alt='Triangle' />
-        <h6>{save}</h6>
-      </div>
-    </article>
+        <div className={styles.save}>
+          <Image src={OrangeTriangleImg} alt='Triangle' />
+          <h6>{save}</h6>
+        </div>
+      </article>
+    </Link>
   );
 };
 
