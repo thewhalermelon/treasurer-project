@@ -666,6 +666,7 @@
     font-size: var(--font-52);
     font-weight: 600;
     line-height: 62px;
+    margin: 0;
     text-align: center;
     width: 570px;
   }
@@ -771,7 +772,7 @@
           width: 100%;
         }
 
-        &:nth-of-type() {
+        &:nth-of-type(3) {
           .button {
             min-width: 76px;
           }
