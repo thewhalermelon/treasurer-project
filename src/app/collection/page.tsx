@@ -29,12 +29,14 @@ import { PRODUCTS, TRENDING_SEARCHES } from '@/app/constants';
 import Footer from '@/app/components/Footer/Footer';
 import Header from '@/app/components/Header/Header';
 import ProductCard from '@/app/components/ProductCard/ProductCard';
+import Popup from '@/app/components/Popup/Popup';
 
 interface CollectionProps {}
 
 const Collection: React.FC<CollectionProps> = () => {
   const [isSelected, setIsSelected] = React.useState<number>(0);
   const [amount, setAmount] = React.useState<number>(1);
+  const [popup, setPopup] = React.useState<Boolean>(false);
 
   const imagesArray = Array.from({ length: 4 }, (_, i) => i + 1);
 
@@ -65,6 +67,21 @@ const Collection: React.FC<CollectionProps> = () => {
   const increaseAmount = () => {
     setAmount(amount + 1);
   };
+
+  const handlePopup = () => {
+    setPopup(!popup);
+  };
+
+  React.useEffect(() => {
+    if (popup) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [popup]);
 
   return (
     <>
@@ -168,7 +185,7 @@ const Collection: React.FC<CollectionProps> = () => {
             <h5>
               If this is your first visit, <span>we will tell you in detail!</span>
             </h5>
-            <button>
+            <button onClick={handlePopup}>
               <Image src={ArrowLeftImg} alt='Arrow Left' />
             </button>
           </div>
@@ -410,6 +427,7 @@ const Collection: React.FC<CollectionProps> = () => {
         </Link>
       </main>
       <Footer />
+      {popup ? <Popup setOpen={setPopup} title='Coming Soon!' /> : null}
     </>
   );
 };
