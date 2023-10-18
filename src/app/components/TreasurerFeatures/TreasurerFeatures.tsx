@@ -1,65 +1,28 @@
 'use client';
 
-import { ReactNode } from 'react';
-import Image, { StaticImageData } from 'next/image';
-import { useInView } from 'react-intersection-observer';
+import styles from './treasurerFeatures.module.scss';
 
-import styles from '@/app/homepage/page.module.scss';
+import { FEATURES } from '@/app/constants';
+import TreasurerFeature from './TreasurerFeature/TreasurerFeature';
 
-import RightArrowImg from 'public/images/right-arrow.svg';
+interface TreasurerFeaturesProps {}
 
-import TreasurerImage from '@/app/components/TreasurerImage/TreasurerImage';
-
-interface TreasurerFeaturesProps {
-  icon: StaticImageData;
-  title: string;
-  summary: string;
-  alt: string;
-  images: { id: number; src: any; desktopSrc: any; alt: string; className: string }[];
-}
-
-const TreasurerFeatures: React.FC<TreasurerFeaturesProps> = ({ icon, title, summary, alt, images }) => {
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
-
+const TreasurerFeatures: React.FC<TreasurerFeaturesProps> = () => {
   return (
-    <main>
-      <div ref={ref} className={`${styles['floating-element']} ${inView ? styles.visible : ''}`}>
-        <Image src={icon} alt={alt} className={styles.orangeImg} />
-        <h2>{title}</h2>
-        <summary className='summary-14-primary'>{summary}</summary>
-        <a className='rounded-arrow-button'>
-          Start now
-          <Image src={RightArrowImg} alt='Arrow' className={styles['right-arrow']} />
-        </a>
-      </div>
-      <div className={styles.imagesGroup}>
-        {images.map((img, index) => {
-          return (
-            <TreasurerImage
-              src={img.src}
-              alt={img.alt}
-              className={`${styles[`${img.className}`]} ${styles[`appear-element-desktop-${index + 1}`]} `}
-              key={img.id}
-            />
-          );
-        })}
-        {images.map((img, index) => {
-          return (
-            <TreasurerImage
-              src={img.desktopSrc}
-              alt={img.alt}
-              className={`${styles[`${img.className}`]} ${styles.desktop} ${
-                styles[`appear-element-desktop-${index + 1}`]
-              } `}
-              key={img.id}
-            />
-          );
-        })}
-      </div>
-    </main>
+    <section className={styles.forthSection}>
+      {FEATURES.map((f) => {
+        return (
+          <TreasurerFeature
+            icon={f.icon}
+            title={f.title}
+            summary={f.summary}
+            alt={f.alt}
+            key={f.id}
+            images={f.images}
+          />
+        );
+      })}
+    </section>
   );
 };
 

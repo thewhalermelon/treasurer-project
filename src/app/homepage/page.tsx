@@ -45,21 +45,7 @@ const HomePage: React.FC<HomePageProps> = () => {
       <TreasurerInvest />
 
       {/* SECTION 4TH */}
-      {/* <TreasurerFeatures /> */}
-      <section className={styles.section}>
-        {FEATURES.map((f) => {
-          return (
-            <TreasurerFeatures
-              icon={f.icon}
-              title={f.title}
-              summary={f.summary}
-              alt={f.alt}
-              key={f.id}
-              images={f.images}
-            />
-          );
-        })}
-      </section>
+      <TreasurerFeatures />
       <Footer />
     </>
   );

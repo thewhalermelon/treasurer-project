@@ -3,7 +3,7 @@
 import Image, { StaticImageData } from 'next/image';
 import { useInView } from 'react-intersection-observer';
 
-import styles from '@/app/homepage/page.module.scss';
+import styles from '../treasurerFeatures.module.scss';
 
 import RightArrowImg from 'public/images/right-arrow.svg';
 
@@ -40,9 +40,7 @@ const TreasurerFeature: React.FC<TreasurerFeatureProps> = ({ icon, title, summar
             <TreasurerImage
               src={img.src}
               alt={img.alt}
-              className={`${styles[`${img.className}`]} ${`appear-element-desktop-${index + 1}`} ${
-                inView ? 'visible' : ''
-              }`}
+              className={`${styles[`${img.className}`]} ${`appear-element-desktop-${index + 1}`}`}
               key={img.id}
             />
           );

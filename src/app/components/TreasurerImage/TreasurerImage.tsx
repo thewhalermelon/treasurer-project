@@ -16,7 +16,7 @@ const TreasurerImage: React.FC<ImageProps> = ({ src, alt, className }) => {
     triggerOnce: true,
   });
 
-  return <Image src={src} alt={alt} className={`${className} ${inView ? styles.visible : ''}`} ref={ref} />;
+  return <Image src={src} alt={alt} className={`${className} ${inView ? 'visible' : ''}`} ref={ref} />;
 };
 
 export default TreasurerImage;
