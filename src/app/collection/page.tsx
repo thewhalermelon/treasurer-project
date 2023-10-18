@@ -185,7 +185,7 @@ const Collection: React.FC<CollectionProps> = () => {
               <p>
                 Submariner White Gold Blue
                 <br />
-                Dial 'Smurf' 116619LB
+                Dial &apos;Smurf&apos; 116619LB
               </p>
             </div>
 
