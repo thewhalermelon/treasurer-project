@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import styles from '@/app/homepage/page.module.scss';
+import styles from './page.module.scss';
 
 import Header from '@/app/components/Header/Header';
 import Dropdown from '@/app/components/Dropdown/Dropdown';

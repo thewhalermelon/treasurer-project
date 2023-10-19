@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useKeenSlider } from 'keen-slider/react';
 
-import styles from './collection.module.scss';
+import styles from './page.module.scss';
 import classes from '@/app/homepage/page.module.scss';
 
 import WhiteMagnifyingGlassImg from 'public/images/white-magnifying-glass.svg';

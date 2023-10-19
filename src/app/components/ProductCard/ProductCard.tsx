@@ -5,7 +5,7 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 
-import styles from '@/app/homepage/page.module.scss';
+import styles from '@/app/components/TreasurerProducts/treasurerProducts.module.scss';
 
 import FilledSaveImg from 'public/images/filled-save.svg';
 import OutlinedSaveImg from 'public/images/outlined-save.svg';
@@ -39,9 +39,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketP
     <Link href={`/collection`}>
       <article
         ref={ref}
-        className={`${
-          windowWidth && windowWidth >= 1920 ? styles[`appear-element-desktop-${index + 1}`] : styles['appear-element']
-        } ${inView ? styles.visible : ''}`}
+        className={`${windowWidth && windowWidth >= 1440 ? `appear-element-desktop-${index + 1}` : 'appear-element'} ${
+          inView ? 'visible' : ''
+        }`}
       >
         <div className={styles.rectangle}>
           <Image src={src} alt={alt} />

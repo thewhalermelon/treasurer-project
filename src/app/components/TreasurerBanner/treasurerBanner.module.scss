@@ -28,45 +28,6 @@
       list-style-type: none;
       margin-top: 1.5rem;
     }
-
-    fieldset {
-      border: none;
-      position: relative;
-      margin: 2.5rem auto 0;
-      max-width: 335px;
-      padding: 0;
-
-      input {
-        border: 1px solid var(--border-color);
-        border-radius: var(--border-radius-26);
-        height: 56px;
-        padding-left: 1rem;
-        padding-right: 7.5rem;
-        width: 100%;
-
-        &::placeholder {
-          color: var(--placeholder);
-          font-family: 'SUIT', sans-serif;
-          font-size: var(--font-14);
-        }
-      }
-
-      button {
-        border: none;
-        border-radius: var(--border-radius-25);
-        background-color: var(--orange);
-        color: var(--white);
-        font-family: 'SUIT', sans-serif;
-        font-size: var(--font-14);
-        font-weight: 500;
-        height: 48px;
-        padding: 0.9375rem 1rem 1rem;
-        position: absolute;
-        right: 4px;
-        top: 4px;
-        width: 112px;
-      }
-    }
   }
 
   .itemsGroup {
@@ -134,6 +95,45 @@
       display: none;
     }
   }
+
+  fieldset {
+    border: none;
+    position: relative;
+    margin: 2.5rem auto 0;
+    max-width: 335px;
+    padding: 0;
+
+    input {
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-26);
+      height: 56px;
+      padding-left: 1rem;
+      padding-right: 7.5rem;
+      width: 100%;
+
+      &::placeholder {
+        color: var(--placeholder);
+        font-family: 'SUIT', sans-serif;
+        font-size: var(--font-14);
+      }
+    }
+
+    button {
+      border: none;
+      border-radius: var(--border-radius-25);
+      background-color: var(--orange);
+      color: var(--white);
+      font-family: 'SUIT', sans-serif;
+      font-size: var(--font-14);
+      font-weight: 500;
+      height: 48px;
+      padding: 0.9375rem 1rem 1rem;
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      width: 112px;
+    }
+  }
 }
 
 @media screen and (min-width: 1440px) {
@@ -151,6 +151,12 @@
       h3 {
         font-weight: 500;
         letter-spacing: 0.98px;
+      }
+
+      h1 {
+        font-size: var(--font-60);
+        letter-spacing: unset;
+        line-height: 74px;
       }
     }
 
@@ -218,8 +224,9 @@
     }
 
     fieldset {
+      height: 53px;
       margin-left: 0;
-      width: 382px;
+      max-width: 382px;
     }
   }
 }

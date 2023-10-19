@@ -19,6 +19,8 @@ import TreasurerData from '@/app/components/TreasurerData/TreasurerData';
 import DesktopBrandsSlider from '@/app/components/DesktopBrandsSlider/DesktopBrandsSlider';
 import TreasurerInvest from '@/app/components/TreasurerInvest/TreasurerInvest';
 import TreasurerSubscribe from '@/app/components/TreasurerSubscribe/TreasurerSubscribe';
+import TreasurerSteps from '@/app/components/TreasurerSteps/TreasurerSteps';
+import TreasurerProducts from '@/app/components/TreasurerProducts/TreasurerProducts';
 
 interface HomePageProps {}
 
@@ -46,6 +48,21 @@ const HomePage: React.FC<HomePageProps> = () => {
 
       {/* SECTION 4TH */}
       <TreasurerFeatures />
+
+      {/* SECTION 5TH */}
+      <TreasurerSteps />
+
+      {/* SECTION 6TH */}
+      <TreasurerProducts />
+
+      {/* SECTION 7TH */}
+      <TreasurerSubscribe />
+
+      <div className='slider-container'>
+        <BrandsSlider />
+        <DesktopBrandsSlider />
+      </div>
+
       <Footer />
     </>
   );

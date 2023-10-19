@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import styles from '@/app/homepage/page.module.scss';
+import styles from '@/app/components/TreasurerProducts/treasurerProducts.module.scss';
 
 import { CATEGORIES } from '@/app/constants';
 

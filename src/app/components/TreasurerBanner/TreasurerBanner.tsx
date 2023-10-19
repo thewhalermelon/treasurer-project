@@ -1,37 +1,42 @@
+'use client';
+
 import Image from 'next/image';
+
+import styles from './treasurerBanner.module.scss';
 
 import DotImg from 'public/images/dot.svg';
 import LineImg from 'public/images/line.svg';
 import LineGraphImg from 'public/images/line-graph.svg';
-
 import DotDesktopImg from 'public/images/dot__desktop.svg';
 import LineDesktopImg from 'public/images/line__desktop.svg';
 import LineGraphDesktopImg from 'public/images/line-graph__desktop.svg';
 
 import { BANNER_IMAGES, DESKTOP_BANNER_IMAGES } from '@/app/constants';
-import styles from './treasurerBanner.module.scss';
+import useWindowWidth from '@/app/hooks/useWindowWidth';
 
 interface TreasurerBannerProps {}
 
 const TreasurerBanner: React.FC<TreasurerBannerProps> = () => {
+  const windowWidth = useWindowWidth();
+
   return (
     <section className={styles.firstSection}>
       <article className='fade-in-left'>
         <h3>55,000+ TRUSTED BUSINESSES</h3>
         <h1>
           Separate
-          <br />
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
           ownership
           <br />
           of valuable items
         </h1>
         <summary>
           Treasurer is a platform that allows anyone
-          <br />
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
           to easily own and invest in world
           <br />
           -recognized luxury goods such as Chanel,
-          <br />
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
           Rolex, and Romanée-Conti.
         </summary>
         <fieldset>
