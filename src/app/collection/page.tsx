@@ -141,7 +141,7 @@ const Collection: React.FC<CollectionProps> = () => {
               return (
                 <div key={i} className={`keen-slider__slide number-slide${i} ${styles.slider}`}>
                   <Image src={RolexDetailImg} alt={'Rolex'} />
-                  <button onClick={() => handleFavorite(i)}>
+                  <button onClick={() => handleFavorite(i)} style={{ cursor: 'pointer' }}>
                     <Image
                       src={isSelected === i ? FilledSaveImg : OutlinedSaveImg}
                       alt='Outlined Save'
