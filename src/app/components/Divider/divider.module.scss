@@ -4,3 +4,9 @@
   margin: 0 auto;
   width: 331px;
 }
+
+@media screen and (min-width: 1440px) {
+  .divider {
+    width: 1200px;
+  }
+}
