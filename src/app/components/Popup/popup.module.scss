@@ -52,6 +52,7 @@
       border: 1px solid var(--pale-gray);
       border-radius: 0.5rem;
       display: block;
+      font-size: var(--font-14);
       font-family: 'SUIT', sans-serif;
       height: 44px;
       margin: 1.25rem auto 0;
@@ -62,6 +63,7 @@
       &::placeholder {
         color: var(--slate-gray);
         font-size: var(--font-14);
+        font-weight: 500;
       }
     }
 
