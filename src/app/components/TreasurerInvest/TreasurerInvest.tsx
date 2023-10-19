@@ -12,10 +12,13 @@ import DesktopSlider from '@/app/components/DesktopSlider/DesktopSlider';
 
 import IphoneImg from 'public/images/iphone.png';
 import IphoneDesktopImg from 'public/images/iphone__desktop.svg';
+import useWindowWidth from '@/app/hooks/useWindowWidth';
 
 interface TreasurerInvestProps {}
 
 const TreasurerInvest: React.FC<TreasurerInvestProps> = () => {
+  const windowWidth = useWindowWidth();
+
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -39,14 +42,16 @@ const TreasurerInvest: React.FC<TreasurerInvestProps> = () => {
           Invest in your passions,
           <br />
           one share
-          <br />
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
           at a time
         </h2>
         <summary>
           Treasureers provide easy and
-          <br />
-          sensual collection investment
-          <br />
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
+          sensual collection
+          {windowWidth && windowWidth >= 1440 ? <br /> : ' '}
+          investment
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
           opportunities for anyone.
         </summary>
       </div>

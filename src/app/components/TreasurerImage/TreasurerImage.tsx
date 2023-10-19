@@ -2,8 +2,6 @@ import Image from 'next/image';
 
 import { useInView } from 'react-intersection-observer';
 
-import styles from '@/app/homepage/page.module.scss';
-
 interface ImageProps {
   src: any;
   alt: string;

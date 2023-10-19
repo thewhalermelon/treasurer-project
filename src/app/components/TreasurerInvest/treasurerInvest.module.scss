@@ -27,6 +27,7 @@
   summary {
     color: var(--charcoal-gray);
     line-height: 32px;
+    list-style-type: none;
     letter-spacing: 0.16px;
     margin: 2rem auto 0;
     text-align: center;
@@ -42,5 +43,43 @@
 
   .iphone-desktop {
     display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .thirdSection {
+    margin-top: 3.75rem;
+    padding-top: 73px;
+
+    h3 {
+      padding-bottom: 1.25rem;
+    }
+
+    h2 {
+      font-size: var(--font-52);
+      font-weight: 600;
+      line-height: 62px;
+      margin-top: 0;
+    }
+
+    summary {
+      color: var(--dark-green);
+      font-size: var(--font-14);
+      font-weight: 500;
+      line-height: 30px;
+      letter-spacing: 0.56px;
+      margin-top: 1.5rem;
+    }
+
+    .iphone {
+      display: none;
+    }
+
+    .iphone-desktop {
+      display: block;
+      margin: 60px auto 0;
+      position: relative;
+      z-index: 1;
+    }
   }
 }

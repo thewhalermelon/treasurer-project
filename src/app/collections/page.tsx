@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 
 import styles from './page.module.scss';
+import classes from '@/app/components/TreasurerProducts/treasurerProducts.module.scss';
 
 import Header from '@/app/components/Header/Header';
 import Dropdown from '@/app/components/Dropdown/Dropdown';
@@ -72,7 +73,7 @@ const ProductList: React.FC<ProductListProps> = () => {
         <Dropdown />
         <div
           aria-label='Product List'
-          className={styles.productList}
+          className={classes.productList}
           style={{ paddingTop: '1rem', paddingBottom: '4rem' }}
         >
           {PRODUCTS.map((p, i) => {
@@ -93,7 +94,7 @@ const ProductList: React.FC<ProductListProps> = () => {
         </div>
         <div
           aria-label='Product List'
-          className={styles.productList}
+          className={classes.productList}
           style={{ paddingTop: '1rem', paddingBottom: '4rem' }}
         >
           {PRODUCTS.map((p, i) => {
@@ -114,7 +115,7 @@ const ProductList: React.FC<ProductListProps> = () => {
         </div>
         <div
           aria-label='Product List'
-          className={styles.productList}
+          className={classes.productList}
           style={{ paddingTop: '1rem', paddingBottom: '4rem' }}
         >
           {PRODUCTS.map((p, i) => {
@@ -135,7 +136,7 @@ const ProductList: React.FC<ProductListProps> = () => {
         </div>
         <div
           aria-label='Product List'
-          className={styles.productList}
+          className={classes.productList}
           style={{ paddingTop: '1rem', paddingBottom: '4rem' }}
         >
           {PRODUCTS.map((p, i) => {

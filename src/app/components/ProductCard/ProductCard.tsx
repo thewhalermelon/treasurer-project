@@ -40,9 +40,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketP
   return (
     <article
       ref={ref}
-      className={`${
-        windowWidth && windowWidth >= 1920 ? styles[`appear-element-desktop-${index + 1}`] : styles['appear-element']
-      } ${inView ? styles.visible : ''}`}
+      className={`${windowWidth && windowWidth >= 1440 ? `appear-element-desktop-${index + 1}` : 'appear-element'} ${
+        inView ? 'visible' : ''
+      }`}
     >
       <Link href={`/collection`}>
         <div className={styles.rectangle}>

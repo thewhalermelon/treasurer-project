@@ -604,3 +604,22 @@
   padding-left: 24px;
   width: 157px;
 }
+
+@media screen and (min-width: 1440px) {
+  .productList {
+    flex-direction: row;
+    gap: 1.25rem;
+    padding-top: 2.5rem;
+
+    article {
+      margin: 0;
+      width: 387px;
+
+      summary {
+        font-size: var(--font-20);
+        font-weight: 700;
+        line-height: 22px;
+      }
+    }
+  }
+}

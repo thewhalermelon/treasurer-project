@@ -70,3 +70,53 @@
     display: none;
   }
 }
+
+@media screen and (min-width: 1440px) {
+  .seventhSection {
+    height: 527px;
+    margin-top: 10rem;
+    padding-top: 6.25rem;
+    width: 1200px;
+
+    h2 {
+      display: none;
+    }
+
+    fieldset {
+      margin: 2.25rem auto 0;
+      max-width: 382px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-desktop {
+      color: var(--white);
+      font-size: var(--font-52);
+      display: block;
+      line-height: 62px;
+      margin: auto;
+      text-align: center;
+      width: 780px;
+    }
+
+    img {
+      display: none;
+    }
+
+    .chart-desktop {
+      display: block;
+      position: absolute;
+
+      &.background {
+        bottom: 0;
+        left: 0;
+      }
+
+      &.line {
+        bottom: 50px;
+        left: -1px;
+        width: 1201px;
+      }
+    }
+  }
+}
