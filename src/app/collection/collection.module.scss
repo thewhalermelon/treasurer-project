@@ -162,8 +162,12 @@
       .priceTitle {
         color: var(--medium-gray);
         display: flex;
-        font-size: var(--font-14);
         justify-content: space-between;
+
+        h6 {
+          font-size: var(--font-14);
+          font-weight: 600;
+        }
       }
 
       .priceNumber {
