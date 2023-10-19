@@ -59,7 +59,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketP
       </Link>
 
       <h6 className='title-14-medium-grey'>{name}</h6>
-      <summary className='title-20-black'>{desc}</summary>
+      <Link href={`/collection`}>
+        <summary className='title-20-black'>{desc}</summary>
+      </Link>
       <div className={styles.prices}>
         <div className={styles.priceTitle}>
           <h6>market price</h6>
