@@ -1,0 +1,177 @@
+.sixthSection {
+  margin: 5rem 0 0;
+  padding: 3.75rem 1.25rem 159px;
+  padding-bottom: 159px;
+
+  & > div {
+    h2 {
+      margin: auto;
+      width: 191px;
+    }
+
+    .categories {
+      & > ul {
+        display: flex;
+        flex-direction: row;
+        overflow: auto;
+        gap: 0.625rem;
+        margin: 0 -1.25rem;
+        padding: 0 1.25rem;
+        padding-top: 2rem;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+    }
+  }
+
+  & > a {
+    width: 157px;
+    height: 38px;
+    font-size: var(--font-13);
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.39px;
+    margin: 60px auto 0;
+    text-transform: uppercase;
+  }
+}
+
+.productList {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+  padding-top: 2.75rem;
+
+  article {
+    margin: auto;
+    width: 335px;
+
+    .rectangle {
+      align-items: center;
+      background-color: var(--lighter-gray);
+      border-radius: var(--border-radius-10);
+      display: flex;
+      justify-content: center;
+      margin: auto;
+      height: 316px;
+      position: relative;
+
+      button {
+        border: none;
+
+        .favorite {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+        }
+      }
+    }
+
+    h6 {
+      font-weight: 700;
+      padding-top: 1.5rem;
+    }
+
+    summary {
+      padding-top: 0.5rem;
+      line-height: 22px;
+      list-style-type: none;
+    }
+
+    .prices {
+      display: flex;
+      flex-direction: column;
+
+      .priceTitle {
+        display: flex;
+        justify-content: space-between;
+
+        h6 {
+          color: var(--medium-gray);
+          font-family: 'Spoqa Han Sans Neo', sans-serif;
+          font-size: var(--font-13);
+          font-weight: 400;
+        }
+      }
+
+      .priceNumber {
+        display: flex;
+        justify-content: space-between;
+
+        h5 {
+          font-size: var(--font-24);
+          font-weight: 700;
+          padding-top: 0.25rem;
+        }
+      }
+    }
+
+    .save {
+      align-items: center;
+      border-radius: 0.25rem;
+      background: rgba(226, 73, 50, 0.1);
+      display: flex;
+      justify-content: center;
+      gap: 0.25rem;
+      height: 1.375rem;
+      margin-left: auto;
+      margin-top: 0.5rem;
+      width: 6rem;
+
+      h6 {
+        color: var(--vivid-coral);
+        font-size: var(--font-13);
+        font-weight: 500;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .sixthSection {
+    height: auto;
+    padding: 5rem 0 0;
+    max-width: 1200px;
+    margin: auto;
+
+    & > div {
+      align-items: end;
+      display: flex;
+      justify-content: space-between;
+
+      h2 {
+        font-size: var(--font-52);
+        line-height: 62px;
+      }
+    }
+
+    & > a {
+      margin: auto;
+      margin-top: 3.75rem;
+      width: 157px;
+    }
+  }
+
+  .productList {
+    flex-direction: row;
+    gap: 1.25rem;
+    padding-top: 2.5rem;
+
+    article {
+      margin: 0;
+      width: 387px;
+
+      summary {
+        font-size: var(--font-20);
+        font-weight: 700;
+        // letter-spacing: 0.42px;
+        line-height: 22px;
+      }
+    }
+  }
+}

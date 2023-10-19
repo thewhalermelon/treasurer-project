@@ -1,0 +1,122 @@
+.secondSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+  padding: 2.875rem 1.25rem 2.875rem;
+
+  .fake-article {
+    display: none;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+
+    h2 {
+      font-size: var(--font-40);
+      font-weight: 700;
+      text-align: center;
+      line-height: 44px;
+      letter-spacing: -1.2px;
+    }
+
+    summary {
+      color: var(--secondary-color);
+      font-size: var(--font-14);
+      letter-spacing: 1.12px;
+      line-height: 2rem;
+      list-style-type: none;
+      text-transform: uppercase;
+    }
+
+    &:nth-of-type(1) {
+      gap: 0.4375rem;
+
+      h2 {
+        font-size: var(--font-32);
+        letter-spacing: unset;
+      }
+
+      summary {
+        text-transform: unset;
+      }
+    }
+
+    &:nth-of-type(2) {
+      summary {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .secondSection {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: unset;
+    height: 174px;
+    max-width: 1200px;
+    margin: 0 auto 2.875rem;
+    padding-bottom: 0;
+    position: relative;
+
+    .fake-article {
+      width: 406px;
+      height: 128px;
+      display: block;
+    }
+
+    article {
+      width: fit-content;
+
+      &:first-child {
+        align-items: start;
+        gap: 0.5rem;
+        padding-right: 111px;
+        width: 406px;
+
+        position: absolute;
+        top: 46px;
+        left: 92px;
+
+        h2 {
+          font-size: var(--font-36);
+          font-weight: 700;
+          width: 295px;
+          text-align: start;
+        }
+
+        summary {
+          color: var(--secondary-color);
+          font-size: var(--font-14);
+          font-weight: 500;
+          letter-spacing: 0.42px;
+        }
+      }
+
+      &:nth-of-type(2) {
+        padding-right: 63px;
+      }
+
+      &:nth-of-type(3) {
+        padding-right: 77px;
+      }
+
+      &:not(:first-child) {
+        h2 {
+          font-size: var(--font-54);
+          font-weight: 600;
+        }
+
+        summary {
+          font-weight: 500;
+          letter-spacing: 0.91px;
+        }
+      }
+    }
+  }
+}

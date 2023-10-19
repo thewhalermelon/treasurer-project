@@ -5,17 +5,20 @@ import Image from 'next/image';
 
 import { useInView } from 'react-intersection-observer';
 
-import styles from '@/app/homepage/page.module.scss';
+import styles from './treasurerInvest.module.scss';
 
 import Slider from '@/app/components/Slider/Slider';
 import DesktopSlider from '@/app/components/DesktopSlider/DesktopSlider';
 
 import IphoneImg from 'public/images/iphone.png';
 import IphoneDesktopImg from 'public/images/iphone__desktop.svg';
+import useWindowWidth from '@/app/hooks/useWindowWidth';
 
 interface TreasurerInvestProps {}
 
 const TreasurerInvest: React.FC<TreasurerInvestProps> = () => {
+  const windowWidth = useWindowWidth();
+
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -32,28 +35,39 @@ const TreasurerInvest: React.FC<TreasurerInvestProps> = () => {
   });
 
   return (
-    <section className={styles.section}>
-      <div ref={ref} className={`${styles['floating-element']} ${inView ? styles.visible : ''}`}>
-        <h3 className='title-13-orange-center'>WHO WE ARE</h3>
-        <h2>Invest in your passions,</h2>
-        <h2>one share at a time</h2>
-        <summary>Treasureers provide easy and sensual collection investment opportunities for anyone.</summary>
+    <section className={styles.thirdSection}>
+      <div ref={ref} className={`floating-element ${inView ? 'visible' : ''}`}>
+        <h3>WHO WE ARE</h3>
+        <h2>
+          Invest in your passions,
+          <br />
+          one share
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
+          at a time
+        </h2>
+        <summary>
+          Treasureers provide easy and
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
+          sensual collection
+          {windowWidth && windowWidth >= 1440 ? <br /> : ' '}
+          investment
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
+          opportunities for anyone.
+        </summary>
       </div>
       <Slider />
       <DesktopSlider />
       <Image
         src={IphoneImg}
         alt='Iphone'
-        className={`${styles.iphone} ${styles['floating-element-2nd']} ${imageInView ? styles.visible : ''}`}
+        className={`floating-element-2nd ${styles.iphone} ${imageInView ? 'visible' : ''}`}
         ref={imageRef}
       />
       <Image
         src={IphoneDesktopImg}
         alt='Iphone Desktop'
         ref={imageDesktopRef}
-        className={`${styles['iphone-desktop']} ${styles['floating-element-2nd']} ${
-          imageDesktopInView ? styles.visible : ''
-        }`}
+        className={`floating-element-2nd ${styles['iphone-desktop']} ${imageDesktopInView ? 'visible' : ''}`}
       />
     </section>
   );

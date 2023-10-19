@@ -1,27 +1,43 @@
+'use client';
+
 import Image from 'next/image';
+
+import styles from './treasurerBanner.module.scss';
 
 import DotImg from 'public/images/dot.svg';
 import LineImg from 'public/images/line.svg';
 import LineGraphImg from 'public/images/line-graph.svg';
-
 import DotDesktopImg from 'public/images/dot__desktop.svg';
 import LineDesktopImg from 'public/images/line__desktop.svg';
 import LineGraphDesktopImg from 'public/images/line-graph__desktop.svg';
 
 import { BANNER_IMAGES, DESKTOP_BANNER_IMAGES } from '@/app/constants';
-import styles from '@/app/homepage/page.module.scss';
+import useWindowWidth from '@/app/hooks/useWindowWidth';
 
 interface TreasurerBannerProps {}
 
 const TreasurerBanner: React.FC<TreasurerBannerProps> = () => {
+  const windowWidth = useWindowWidth();
+
   return (
-    <section className={styles.section}>
-      <article className={styles['fade-in-left']}>
-        <h3 className='title-14-grey'>55,000+ TRUSTED BUSINESSES</h3>
-        <h1>Separate ownership of valuable items</h1>
-        <summary className='summary-16-primary'>
-          Treasurer is a platform that allows anyone to easily own and invest in world -recognized luxury goods such as
-          Chanel, Rolex, and Romanée-Conti.
+    <section className={styles.firstSection}>
+      <article className='fade-in-left'>
+        <h3>55,000+ TRUSTED BUSINESSES</h3>
+        <h1>
+          Separate
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
+          ownership
+          <br />
+          of valuable items
+        </h1>
+        <summary>
+          Treasurer is a platform that allows anyone
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
+          to easily own and invest in world
+          <br />
+          -recognized luxury goods such as Chanel,
+          {windowWidth && windowWidth < 1440 ? <br /> : ' '}
+          Rolex, and Romanée-Conti.
         </summary>
         <fieldset>
           <input type='email' placeholder='Enter your email address' />
@@ -29,7 +45,7 @@ const TreasurerBanner: React.FC<TreasurerBannerProps> = () => {
         </fieldset>
       </article>
       <div className={styles.itemsGroup}>
-        <div className={styles['fade-in-bottom']}>
+        <div className='fade-in-bottom'>
           {/* MOBILE */}
           <Image src={DotImg} alt='Dot' className={styles.dot} />
           <Image src={LineImg} alt='Line' className={styles.line} />
@@ -41,22 +57,12 @@ const TreasurerBanner: React.FC<TreasurerBannerProps> = () => {
         </div>
         {BANNER_IMAGES.map((img) => {
           return (
-            <Image
-              src={img.src}
-              alt={img.alt}
-              className={`${styles[`${img.className}`]} ${styles['fade-in-right']}`}
-              key={img.id}
-            />
+            <Image src={img.src} alt={img.alt} className={`${styles[`${img.className}`]} fade-in-right`} key={img.id} />
           );
         })}
         {DESKTOP_BANNER_IMAGES.map((img) => {
           return (
-            <Image
-              src={img.src}
-              alt={img.alt}
-              className={`${styles[`${img.className}`]} ${styles['fade-in-right']}`}
-              key={img.id}
-            />
+            <Image src={img.src} alt={img.alt} className={`${styles[`${img.className}`]} fade-in-right`} key={img.id} />
           );
         })}
       </div>

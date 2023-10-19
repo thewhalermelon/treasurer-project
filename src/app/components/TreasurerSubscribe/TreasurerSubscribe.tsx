@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { useInView } from 'react-intersection-observer';
 
-import styles from '@/app/homepage/page.module.scss';
+import styles from './treasurerSubscribe.module.scss';
 
 import { ORANGE_CHART } from '@/app/constants';
 
@@ -21,7 +21,7 @@ const TreasurerSubscribe: React.FC<TreasurerSubscribeProps> = () => {
   });
 
   return (
-    <section ref={ref} className={`${styles.section} ${styles['floating-element']} ${inView ? styles.visible : ''}`}>
+    <section ref={ref} className={`${styles.seventhSection} floating-element ${inView ? 'visible' : ''}`}>
       <h2 className='title-34-white-center'>Own a piece</h2>
       <h2 className='title-34-white-center'>of rare collectibles</h2>
       <h2 className='title-34-white-center'>without breaking the bank.</h2>

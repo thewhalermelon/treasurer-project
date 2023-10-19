@@ -219,19 +219,6 @@ li {
   padding-bottom: 0.75rem;
 }
 
-.title-13-orange-center {
-  color: var(--orange);
-  font-size: var(--font-13);
-  line-height: 22px;
-  letter-spacing: 1.3px;
-  text-align: center;
-  padding-bottom: 0.75rem;
-
-  @media screen and (min-width: 1920px) {
-    padding-bottom: 1.25rem;
-  }
-}
-
 // SUMMARY
 .summary-14-primary {
   color: var(--primary-color);
@@ -251,6 +238,150 @@ li {
   @media screen and (min-width: 769px) {
     max-width: 510px;
   }
+}
+
+.fade-in-left {
+  opacity: 0;
+  animation: fadeInLeft 1s forwards 1.5s;
+}
+
+.fade-in-bottom {
+  opacity: 0;
+  animation: fadeInBottom 1s forwards 1.7s;
+}
+
+.fade-in-right {
+  opacity: 0;
+  animation: fadeInRight 1s forwards 2.3s;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// -------------------------------------------------------------
+.floating-element {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.floating-element.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// -------------------------------------------------------------
+.floating-element-2nd {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s 1s, transform 1s 1s;
+}
+
+.floating-element-2nd.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// -------------------------------------------------------------
+.floating-element-3rd {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s 2s, transform 1s 2s;
+}
+
+.floating-element-3rd.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+// -------------------------------------------------------------
+.appear-element {
+  opacity: 0;
+  transition: opacity 1s, transform 1s;
+}
+
+.appear-element.visible {
+  opacity: 1;
+}
+
+// -------------------------------------------------------------
+.appear-element-desktop-1 {
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.appear-element-desktop-1.visible {
+  opacity: 1;
+}
+
+// -------------------------------------------------------------
+.appear-element-desktop-2 {
+  opacity: 0;
+  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+}
+
+.appear-element-desktop-2.visible {
+  opacity: 1;
+}
+
+// -------------------------------------------------------------
+.appear-element-desktop-3 {
+  opacity: 0;
+  transition: opacity 1s 1s, transform 1s 1s;
+}
+
+.appear-element-desktop-3.visible {
+  opacity: 1;
+}
+
+// -------------------------------------------------------------
+.appear-element-desktop-4 {
+  opacity: 0;
+  transition: opacity 1.5s 1.5s, transform 1.5s 1.5s;
+}
+
+.appear-element-desktop-4.visible {
+  opacity: 1;
+}
+
+// -------------------------------------------------------------
+.appear-element-desktop-5 {
+  opacity: 0;
+  transition: opacity 2s 2s, transform 2s 2s;
+}
+
+.appear-element-desktop-5.visible {
+  opacity: 1;
 }
 
 @font-face {

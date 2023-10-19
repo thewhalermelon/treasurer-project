@@ -3,7 +3,7 @@
 import { ReactNode } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import styles from '@/app/homepage/page.module.scss';
+import styles from '@/app/components/TreasurerSteps/treasurerSteps.module.scss';
 import useWindowWidth from '@/app/hooks/useWindowWidth';
 
 interface StepsProps {
@@ -24,9 +24,9 @@ const Steps: React.FC<StepsProps> = ({ step, title, summary, children, index }) 
   return (
     <article
       ref={ref}
-      className={`${
-        windowWidth && windowWidth >= 1920 ? styles[`appear-element-desktop-${index + 1}`] : styles['appear-element']
-      } ${inView ? styles.visible : ''}`}
+      className={`${windowWidth && windowWidth >= 1440 ? `appear-element-desktop-${index + 1}` : 'appear-element'} ${
+        inView ? 'visible' : ''
+      }`}
     >
       <div className={styles.imagesGroup}>{children}</div>
       <h3 className='title-13-orange-left'>{step}</h3>

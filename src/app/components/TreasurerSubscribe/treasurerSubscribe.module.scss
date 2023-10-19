@@ -1,0 +1,122 @@
+.seventhSection {
+  background-color: var(--black);
+  border-radius: var(--border-radius-20);
+  height: 547px;
+  margin: auto;
+  padding: 3.75rem 1rem 10rem;
+  position: relative;
+  width: 335px;
+
+  fieldset {
+    border: none;
+    position: relative;
+    margin: 3.75rem auto 0;
+    max-width: 335px;
+    padding: 0;
+
+    input {
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-26);
+      height: 53px;
+      width: 100%;
+
+      &::placeholder {
+        color: var(--placeholder);
+        font-family: 'SUIT', sans-serif;
+        font-size: var(--font-14);
+        padding-left: 1rem;
+      }
+    }
+
+    button {
+      border: none;
+      border-radius: var(--border-radius-25);
+      background-color: var(--orange);
+      color: var(--white);
+      font-family: 'SUIT', sans-serif;
+      font-size: var(--font-13);
+      height: 45px;
+      padding: 0.9375rem 1rem;
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      width: 104px;
+    }
+  }
+
+  .background,
+  .line,
+  .dot {
+    position: absolute;
+  }
+
+  .background {
+    bottom: 0;
+    left: 0;
+  }
+
+  .line {
+    bottom: 75px;
+    left: 0;
+  }
+
+  .dot {
+    bottom: 158px;
+    right: 0;
+  }
+
+  .chart-desktop,
+  .title-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .seventhSection {
+    height: 527px;
+    margin-top: 10rem;
+    padding-top: 6.25rem;
+    width: 1200px;
+
+    h2 {
+      display: none;
+    }
+
+    fieldset {
+      margin: 2.25rem auto 0;
+      max-width: 382px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-desktop {
+      color: var(--white);
+      font-size: var(--font-52);
+      display: block;
+      line-height: 62px;
+      margin: auto;
+      text-align: center;
+      width: 780px;
+    }
+
+    img {
+      display: none;
+    }
+
+    .chart-desktop {
+      display: block;
+      position: absolute;
+
+      &.background {
+        bottom: 0;
+        left: 0;
+      }
+
+      &.line {
+        bottom: 50px;
+        left: -1px;
+        width: 1201px;
+      }
+    }
+  }
+}

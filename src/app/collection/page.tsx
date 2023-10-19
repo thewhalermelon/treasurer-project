@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useKeenSlider } from 'keen-slider/react';
 
-import styles from './collection.module.scss';
-import classes from '@/app/homepage/page.module.scss';
+import styles from './page.module.scss';
+import classes from '@/app/components/TreasurerProducts/treasurerProducts.module.scss';
 
 import WhiteMagnifyingGlassImg from 'public/images/white-magnifying-glass.svg';
 import RolexDetailImg from 'public/images/rolex-detail.svg';
@@ -447,7 +447,8 @@ const Collection: React.FC<CollectionProps> = () => {
 
       <Link className={`rounded-arrow-button ${styles.moreButton}`} href={'/collections'}>
         MORE
-        <Image src={RightArrowImg} alt='Arrow' className={classes['right-arrow']} />
+        {/* <Image src={RightArrowImg} alt='Arrow' className={classes['right-arrow']} /> */}
+        <Image src={RightArrowImg} alt='Arrow' />
       </Link>
       <Footer />
       {popup ? <Popup setOpen={setPopup} title='Coming Soon!' /> : null}
