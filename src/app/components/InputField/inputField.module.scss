@@ -1,0 +1,29 @@
+.input-field-container {
+  position: relative;
+
+  .input-field {
+    background-color: var(--ghost-white);
+    border-radius: 0.5rem;
+    border: 1px solid var(--pale-gray);
+    font-size: var(--font-14);
+    font-weight: 500;
+    font-family: 'SUIT', sans-serif;
+    height: 2.75rem;
+    outline: none;
+    padding-left: 1rem;
+
+    &-password {
+      padding-right: 40px;
+    }
+  }
+
+  .suffix-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
