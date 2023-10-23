@@ -113,6 +113,10 @@
         }
       }
 
+      .suffix-icon {
+        top: calc((100% - 1.25rem)/2);
+      }
+
       .login-button {
         background-color: var(--black);
         border: none;
