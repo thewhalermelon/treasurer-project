@@ -11,6 +11,7 @@ import Header from '@/app/components/Header/Header';
 import GoogleLogoImg from 'public/images/google-logo.svg';
 import ShowPasswordImg from 'public/images/show-password.svg';
 import HidePasswordImg from 'public/images/hide-password.svg';
+import InputField from '../components/InputField/InputField';
 
 interface SignUpProps {}
 
@@ -54,46 +55,61 @@ const SignUp: React.FC<SignUpProps> = () => {
 
             <div className={styles.signupForm}>
               <div className={styles.firstSection}>
-                <div style={{ position: 'relative' }}>
+                <div className={styles.inputContainer}>
                   <label htmlFor='firstName'>First Name:</label>
-                  <input
+                  <InputField
                     type='text'
                     id='firstName'
                     name='firstName'
                     required
                     placeholder='First Name'
-                    className={styles.input}
+                    className={`${styles.input} ${error ? styles.error : ''}`}
                   />
-                  {error ? <span className={styles.errorField}>Enter your first name</span> : null}
+                  {error ? (
+                    <span className={styles.passwordError}>Enter your first name</span>
+                  ) : null}
                 </div>
 
-                <div style={{ position: 'relative' }}>
+                <div className={styles.inputContainer}>
                   <label htmlFor='lastName'>Last Name:</label>
-                  <input
+                  <InputField
                     type='text'
                     id='lastName'
                     name='lastName'
                     required
                     placeholder='Last Name'
-                    className={styles.input}
+                    className={`${styles.input} ${error ? styles.error : ''}`}
                   />
-                  {error ? <span className={styles.errorField}>Enter your last name</span> : null}
+                  {error ? (
+                    <span className={styles.passwordError}>Enter your last name</span>
+                  ) : null}
                 </div>
               </div>
 
-              <label htmlFor='email'>Email:</label>
-              <input type='email' id='email' name='email' required placeholder='Email' className={styles.input} />
-              {error ? <span className={styles.errorField}>Invalid email</span> : null}
+              <div>
+                <label htmlFor='email'>Email:</label>
+                <InputField
+                  type='email'
+                  id='email'
+                  name='email'
+                  required
+                  placeholder='Email'
+                  className={`${styles.input} ${error ? styles.error : ''}`}
+                />
+                {error ? (
+                  <span className={styles.passwordError}>Invalid email</span>
+                ) : null}
+              </div>
 
               <div className={styles.secondSection}>
                 <label htmlFor='password'>Password:</label>
-                <input
-                  type={showPassword ? 'text' : 'password'}
+                <InputField
                   id='password'
                   name='password'
                   required
                   placeholder='Password'
                   className={`${styles.input} ${error ? styles.error : ''}`}
+                  isPasswordDisplay
                 />
                 {error ? (
                   <span className={styles.errorField}>Passwords must be at least 8 characters long.</span>
@@ -117,6 +133,21 @@ const SignUp: React.FC<SignUpProps> = () => {
                 <button onClick={handleToggleConfirmPassword} type='button'>
                   <Image src={showConfirmPassword ? HidePasswordImg : ShowPasswordImg} alt='Show Password' />
                 </button>
+              </div>
+
+              <div>
+                <label htmlFor='password'>Confirm Password:</label>
+                <InputField
+                  id='password'
+                  name='password'
+                  required
+                  placeholder='Confirm Password'
+                  className={`${styles.input} ${error ? styles.error : ''}`}
+                  isPasswordDisplay
+                />
+                {error ? (
+                  <span className={styles.passwordError}>Passwords must be confirmed</span>
+                ) : null}
               </div>
             </div>
 

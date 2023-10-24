@@ -3,16 +3,22 @@
   background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
-  padding: 7.25rem 0 2.5rem;
+  padding: 7.25rem 20px 2.5rem;
 
   h1 {
     color: var(--white);
-    font-size: var(--font-52);
-    font-weight: 600;
-    line-height: 62px;
     margin: 0;
     text-align: center;
-    width: 570px;
+    font-size: var(--font-28);
+    font-weight: 700;
+    width: 100%;
+
+    @media screen and (min-width: 769px) {
+      font-size: var(--font-52);
+      font-weight: 600;
+      line-height: 62px;
+      width: 570px;
+    }
   }
 
   summary {
@@ -23,6 +29,7 @@
     line-height: 30px;
     list-style-type: none;
     letter-spacing: 0.56px;
+    text-align: center;
   }
 
   .searchInput {
@@ -32,7 +39,11 @@
     margin-top: 2.375rem;
     padding: 11px 12px 13px;
     position: relative;
-    width: 792px;
+    width: 100%;
+
+    @media screen and (min-width: 991px) {
+      width: 792px;
+    }
 
     label {
       display: none;
@@ -59,17 +70,20 @@
     display: flex;
     margin-top: 1.75rem;
 
-    h5 {
-      color: var(--white);
-      font-size: var(--font-13);
-      font-weight: 500;
-      line-height: 22px;
-    }
-
     ul {
       flex-direction: row;
+      justify-content: center;
+      align-items: center;
       gap: 0.625rem;
       margin-left: 9px;
+      flex-wrap: wrap;
+
+      h5 {
+        color: var(--white);
+        font-size: var(--font-13);
+        font-weight: 500;
+        line-height: 22px;
+      }
 
       li {
         button {
@@ -100,15 +114,23 @@
 .productListMain {
   margin: auto;
   max-width: 1200px;
-  padding: 2.5rem 0 0;
+  padding: 2.5rem 20px 0;
+
+  @media screen and (min-width: 769px) {
+    padding: 2.5rem 0 0;
+  }
 
   nav {
     padding-bottom: 3.75rem;
 
     ul {
       flex-direction: row;
-      justify-content: center;
+      justify-content: start;
       gap: 0.625rem;
+
+      @media screen and (min-width: 769px) {
+        justify-content: center;
+      }
 
       li {
         .button {
