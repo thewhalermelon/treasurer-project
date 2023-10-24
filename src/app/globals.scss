@@ -364,26 +364,6 @@ li {
   opacity: 1;
 }
 
-// -------------------------------------------------------------
-.appear-element-desktop-4 {
-  opacity: 0;
-  transition: opacity 1.5s 1.5s, transform 1.5s 1.5s;
-}
-
-.appear-element-desktop-4.visible {
-  opacity: 1;
-}
-
-// -------------------------------------------------------------
-.appear-element-desktop-5 {
-  opacity: 0;
-  transition: opacity 2s 2s, transform 2s 2s;
-}
-
-.appear-element-desktop-5.visible {
-  opacity: 1;
-}
-
 @font-face {
   font-family: 'SUIT';
   src: url('../../public/fonts/SUIT-Thin.ttf') format('truetype');

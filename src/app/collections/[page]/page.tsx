@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-import styles from './page.module.scss';
+import styles from '../page.module.scss';
 import classes from '@/app/components/TreasurerProducts/treasurerProducts.module.scss';
 
 import Header from '@/app/components/Header/Header';
@@ -13,15 +13,18 @@ import Pagination from '@/app/components/Pagination/Pagination';
 import Footer from '@/app/components/Footer/Footer';
 import Button from '@/app/components/Button/Button';
 
-import getListPage, { Item } from '../libs/getListPage';
+import getListPage, { Item } from '../../libs/getListPage';
+import { ITEMS_PER_PAGE } from '../page';
 
-interface ProductListProps {}
+interface IProps {
+  params: { page: string };
+}
 
-export const ITEMS_PER_PAGE = 12;
-
-const ProductList: React.FC<ProductListProps> = async () => {
-  let data = await getListPage();
-  const items = data.data.slice(0, ITEMS_PER_PAGE);
+const ProductList: React.FC<IProps> = async ({ params }) => {
+  const start = (parseInt(params.page) - 1) * ITEMS_PER_PAGE;
+  const end = start + ITEMS_PER_PAGE;
+  const data = await getListPage();
+  const items = data.data.slice(start, end);
 
   return (
     <>

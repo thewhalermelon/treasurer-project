@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
 const path = require('path');
 
-module.exports = nextConfig;
-
-module.exports = {
+const nextConfig = {
+  images: {
+    domains: ['cdn.treasurer.co.kr', 'treasurer-source.s3.ap-northeast-2.amazonaws.com'],
+  },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
 };
+
+module.exports = nextConfig;

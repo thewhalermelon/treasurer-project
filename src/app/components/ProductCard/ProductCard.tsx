@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 
@@ -11,9 +11,10 @@ import FilledSaveImg from 'public/images/filled-save.svg';
 import OutlinedSaveImg from 'public/images/outlined-save.svg';
 import OrangeTriangleImg from 'public/images/orange-triangle.svg';
 import useWindowWidth from '@/app/hooks/useWindowWidth';
+import { formatAppraisalPriceUSD } from '@/app/utils/generalUtils';
 
 interface ProductCardProps {
-  src: StaticImageData;
+  src: string;
   alt: string;
   name: string;
   desc: string;
@@ -46,7 +47,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketP
     >
       <Link href={`/collection`}>
         <div className={styles.rectangle}>
-          <Image src={src} alt={alt} />
+          <Image src={src} alt={alt} width={290} height={290} />
           <button onClick={(e) => handleFavorite(e)}>
             <Image
               src={isSelected ? FilledSaveImg : OutlinedSaveImg}
@@ -68,7 +69,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketP
           <h6>piece price</h6>
         </div>
         <div className={styles.priceNumber}>
-          <h5>{marketPrice}</h5>
+          <h5>{formatAppraisalPriceUSD(marketPrice)}</h5>
           <h5>{piecePrice}</h5>
         </div>
       </div>
