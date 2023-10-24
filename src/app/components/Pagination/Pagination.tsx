@@ -11,8 +11,6 @@ interface PaginationProps {
   total: number;
 }
 
-const PAGINATION_LENGTH = 5;
-
 const Pagination: React.FC<PaginationProps> = ({ total }) => {
   const pathname = usePathname();
   const segments = pathname.split('/');

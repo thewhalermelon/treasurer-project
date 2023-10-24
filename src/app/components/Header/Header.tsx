@@ -80,18 +80,18 @@ const Header: React.FC<HeaderProps> = () => {
         <nav>
           <ul>
             <li>
-              <a href='/'>Home</a>
+              <Link href='/'>Home</Link>
             </li>
             <li>
-              <a href='/collections' className={pathname === COLLECTIONS_PATH ? styles.selectedPage : ''}>
+              <Link href='/collections' className={pathname === COLLECTIONS_PATH ? styles.selectedPage : ''}>
                 Collections
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='/blog'>Blog</a>
+              <Link href='/blog'>Blog</Link>
             </li>
             <li>
-              <a href='/contact'>Contact</a>
+              <Link href='/contact'>Contact</Link>
             </li>
           </ul>
         </nav>
