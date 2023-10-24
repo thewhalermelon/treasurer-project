@@ -314,7 +314,8 @@ export const PRODUCTS = [
     desc: "Submariner White Gold Blue Dial 'Smurf' 116619LB",
     marketPrice: 'US$1.8M',
     piecePrice: 'US$1.23',
-    save: '$1 (23.08%)',
+    currentSingleUnitPriceUSD: '0.624560000',
+    lastTradePriceUSD: '0.653420000',
   },
   {
     id: 1,
@@ -324,7 +325,8 @@ export const PRODUCTS = [
     desc: "Submariner White Gold Blue Dial 'Smurf' 116619LB",
     marketPrice: 'US$1.8M',
     piecePrice: 'US$1.23',
-    save: '$1 (23.08%)',
+    currentSingleUnitPriceUSD: '0.624560000',
+    lastTradePriceUSD: '0.653420000',
   },
   {
     id: 2,
@@ -334,7 +336,8 @@ export const PRODUCTS = [
     desc: "Submariner White Gold Blue Dial 'Smurf' 116619LB",
     marketPrice: 'US$1.8M',
     piecePrice: 'US$1.23',
-    save: '$1 (23.08%)',
+    currentSingleUnitPriceUSD: '0.624560000',
+    lastTradePriceUSD: '0.653420000',
   },
 ];
 
