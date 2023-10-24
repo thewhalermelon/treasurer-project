@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 
@@ -25,6 +27,8 @@ const ProductList: React.FC<IProps> = async ({ params }) => {
   const end = start + ITEMS_PER_PAGE;
   const data = await getListPage();
   const items = data.data.slice(start, end);
+
+  console.log('items: ', items);
 
   return (
     <>
@@ -78,8 +82,9 @@ const ProductList: React.FC<IProps> = async ({ params }) => {
                 desc={p.model}
                 marketPrice={p.appraisalPriceUSD}
                 piecePrice={p.currentSingleUnitPriceUSD}
-                save={p.lastTradePriceUSD}
                 index={i % 3}
+                currentPrice={p.currentSingleUnitPriceUSD}
+                lastestPrice={p.lastTradePriceUSD}
               />
             );
           })}

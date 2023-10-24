@@ -121,7 +121,12 @@
       height: 1.375rem;
       margin-left: auto;
       margin-top: 0.5rem;
-      width: 6rem;
+      padding: 3px 4px;
+      width: fit-content;
+
+      .down {
+        transform: rotate(-180deg);
+      }
 
       h6 {
         color: var(--vivid-coral);
