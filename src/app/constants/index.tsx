@@ -441,3 +441,5 @@ export const PRODUCT_LIST = [
     price: 24.99,
   },
 ];
+
+export const ITEMS_PER_PAGE = 12;

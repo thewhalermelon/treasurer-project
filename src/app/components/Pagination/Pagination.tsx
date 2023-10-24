@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 import styles from './pagination.module.scss';
-import { ITEMS_PER_PAGE } from '@/app/collections/page';
+import { ITEMS_PER_PAGE } from '@/app/constants';
 
 import ChevronRightImg from '../../../../public/images/chevron-right.svg';
 import ChevronLeftImg from '../../../../public/images/chevron-left.svg';

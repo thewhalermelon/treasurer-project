@@ -8,7 +8,7 @@ import classes from '@/app/components/TreasurerProducts/treasurerProducts.module
 
 import Header from '@/app/components/Header/Header';
 import Dropdown from '@/app/components/Dropdown/Dropdown';
-import { PRODUCT_CATEGORIES, TRENDING_SEARCHES } from '@/app/constants';
+import { ITEMS_PER_PAGE, PRODUCT_CATEGORIES, TRENDING_SEARCHES } from '@/app/constants';
 import WhiteMagnifyingGlassImg from 'public/images/white-magnifying-glass.svg';
 import ProductCard from '@/app/components/ProductCard/ProductCard';
 import Pagination from '@/app/components/Pagination/Pagination';
@@ -16,7 +16,6 @@ import Footer from '@/app/components/Footer/Footer';
 import Button from '@/app/components/Button/Button';
 
 import getListPage, { Item } from '../../libs/getListPage';
-import { ITEMS_PER_PAGE } from '../page';
 
 interface IProps {
   params: { page: string };
