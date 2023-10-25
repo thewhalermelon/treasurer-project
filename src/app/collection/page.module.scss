@@ -84,14 +84,11 @@
   gap: 1.25rem;
   margin: 3.75rem auto 0;
 
-  & > div {
-    width: 590px;
-  }
-
   .navigation-wrapper {
     background-color: var(--lighter-gray);
     border-radius: var(--border-radius-10);
     position: relative;
+    width: 590px;
 
     .keen-slider {
       display: flex;
@@ -116,10 +113,10 @@
       bottom: 1rem;
       display: flex;
       justify-content: space-between;
+      gap: 0.5rem;
       left: 50%;
       transform: translateX(-50%);
       position: absolute;
-      width: 104px;
 
       .dot {
         background-color: var(--light-gray);
@@ -137,17 +134,21 @@
   }
 
   .productPrices {
+    width: 590px;
+
     h3 {
       color: var(--medium-gray);
       font-size: var(--font-14);
       font-weight: 700;
       height: 17px;
       margin-top: 0.25rem;
+      text-transform: uppercase;
     }
 
     h1 {
       font-size: var(--font-28);
       font-weight: 700;
+      height: 70px;
       margin-top: 1rem;
       width: 500px;
     }
@@ -193,6 +194,10 @@
         h6 {
           font-size: var(--font-14);
           font-weight: 500;
+        }
+
+        .down {
+          transform: rotate(-180deg);
         }
       }
 
@@ -306,6 +311,7 @@
     border: 1px solid var(--light-gray);
     border-radius: 0.5rem;
     height: fit-content;
+    width: 590px;
 
     .header {
       border-bottom: 1px solid var(--light-gray);
@@ -347,6 +353,7 @@
         p {
           font-size: var(--font-15);
           font-weight: 400;
+          width: 198px;
         }
       }
 
@@ -360,6 +367,8 @@
   }
 
   .productMore {
+    width: 590px;
+
     .offers {
       border: 1px solid var(--light-gray);
       border-radius: 0.5rem;
