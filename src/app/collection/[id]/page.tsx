@@ -1,25 +1,14 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useKeenSlider } from 'keen-slider/react';
 
 import styles from '../page.module.scss';
 import classes from '@/app/components/TreasurerProducts/treasurerProducts.module.scss';
 
 import WhiteMagnifyingGlassImg from 'public/images/white-magnifying-glass.svg';
-import RolexDetailImg from 'public/images/rolex-detail.svg';
-import FilledSaveImg from 'public/images/filled-save.svg';
-import OutlinedSaveImg from 'public/images/outlined-save.svg';
-import OrangeTriangleImg from 'public/images/orange-triangle.svg';
-import GreyNoticeImg from 'public/images/grey-notice.svg';
-import BookMarkImg from 'public/images/bookmark.svg';
-import ArrowLeftImg from 'public/images/arrow-left.svg';
 import DetailImg from 'public/images/detail.svg';
 import OfferImg from 'public/images/offer.svg';
 import StorageImg from 'public/images/storage.svg';
-import PlusIconImg from 'public/images/plus-icon.svg';
 import GoogleMapImg from 'public/images/google-map.png';
 import BigOrangeTriangleImg from 'public/images/big-orange-triangle.svg';
 import BigGreyNoticeImg from 'public/images/big-grey-notice.svg';
@@ -29,90 +18,21 @@ import { PRODUCTS, TRENDING_SEARCHES } from '@/app/constants';
 import Footer from '@/app/components/Footer/Footer';
 import Header from '@/app/components/Header/Header';
 import ProductCard from '@/app/components/ProductCard/ProductCard';
-import Popup from '@/app/components/Popup/Popup';
+import Slider from './slider';
+import Purchase from './purchase';
+
+import getDetailPage, { ProductData } from '@/app/libs/getDetailPage';
+import getRelatedProducts, { ApiResponse } from '@/app/libs/getRelatedProducts';
 
 interface CollectionProps {
   params: { id: number };
 }
 
-const Collection: React.FC<CollectionProps> = ({ params }) => {
-  const [isSelected, setIsSelected] = React.useState<number>(0);
-  const [amount, setAmount] = React.useState<number>(1);
-  const [popup, setPopup] = React.useState<Boolean>(false);
+const Collection: React.FC<CollectionProps> = async ({ params }) => {
+  const productData: Promise<ProductData> = getDetailPage(params.id);
+  const relatedData: Promise<ApiResponse> = getRelatedProducts();
 
-  const imagesArray = Array.from({ length: 4 }, (_, i) => i + 1);
-
-  const [currentSlide, setCurrentSlide] = React.useState(0);
-  const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
-    {
-      initial: 0,
-      loop: true,
-      slideChanged(slider) {
-        setCurrentSlide(slider.track.details.rel);
-      },
-    },
-    [
-      (slider) => {
-        let timeout: ReturnType<typeof setTimeout>;
-        let mouseOver = false;
-        function clearNextTimeout() {
-          clearTimeout(timeout);
-        }
-        function nextTimeout() {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => {
-            slider.next();
-          }, 1000);
-        }
-        slider.on('created', () => {
-          slider.container.addEventListener('mouseover', () => {
-            mouseOver = true;
-            clearNextTimeout();
-          });
-          slider.container.addEventListener('mouseout', () => {
-            mouseOver = false;
-            nextTimeout();
-          });
-          nextTimeout();
-        });
-        slider.on('dragStarted', clearNextTimeout);
-        slider.on('animationEnded', nextTimeout);
-        slider.on('updated', nextTimeout);
-      },
-    ],
-  );
-
-  const handleFavorite = (i: number) => {
-    setIsSelected(i === isSelected ? 0 : i);
-  };
-
-  const handleTrendingSearch = () => {
-    return alert('Not implemented');
-  };
-
-  const decreaseAmount = () => {
-    return setAmount(amount === 1 ? amount : amount - 1);
-  };
-
-  const increaseAmount = () => {
-    setAmount(amount + 1);
-  };
-
-  const handlePopup = () => {
-    setPopup(!popup);
-  };
-
-  React.useEffect(() => {
-    if (popup) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [popup]);
+  const [product, relatedProducts] = await Promise.all([productData, relatedData]);
 
   return (
     <>
@@ -129,7 +49,7 @@ const Collection: React.FC<CollectionProps> = ({ params }) => {
             {TRENDING_SEARCHES.map((c) => {
               return (
                 <li key={c.id}>
-                  <button onClick={handleTrendingSearch}>{c.content}</button>
+                  <button>{c.content}</button>
                 </li>
               );
             })}
@@ -137,88 +57,9 @@ const Collection: React.FC<CollectionProps> = ({ params }) => {
         </nav>
       </aside>
       <main className={`container ${styles.main}`}>
-        <div className={styles['navigation-wrapper']}>
-          <div ref={sliderRef} className={styles['keen-slider']}>
-            {imagesArray.map((i) => {
-              return (
-                <div key={i} className={`keen-slider__slide number-slide${i} ${styles.slider}`}>
-                  <Image src={RolexDetailImg} alt={'Rolex'} />
-                  <button onClick={() => handleFavorite(i)} style={{ cursor: 'pointer' }}>
-                    <Image
-                      src={isSelected === i ? FilledSaveImg : OutlinedSaveImg}
-                      alt='Outlined Save'
-                      className={styles.favorite}
-                    />
-                  </button>
-                </div>
-              );
-            })}
-          </div>
-          <div className={`dots ${styles.dots}`}>
-            {imagesArray.map((idx) => {
-              return (
-                <button
-                  key={idx}
-                  onClick={() => {
-                    instanceRef.current?.moveToIdx(idx);
-                  }}
-                  className={`dot ${styles.dot}` + (currentSlide === idx - 1 ? ` active ${styles.active}` : '')}
-                ></button>
-              );
-            })}
-          </div>
-        </div>
+        <Slider product={product} />
 
-        <div className={styles.productPrices}>
-          <h3>ROLEX</h3>
-          <h1>Rolex Submariner Date Black Dial Two Tone 126613LN</h1>
-
-          <div className={styles.prices}>
-            <div className={styles.priceTitle}>
-              <h6>Market Price</h6>
-              <h6>Piece Price</h6>
-            </div>
-            <div className={styles.priceNumber}>
-              <h5>US$1.8M</h5>
-              <h5>US$1.23</h5>
-            </div>
-
-            <div className={styles.save}>
-              <Image src={OrangeTriangleImg} alt='Triangle' width={10} height={8} />
-              <h6>$1 (23.08%)</h6>
-            </div>
-
-            <div className={styles.amount}>
-              <div className={styles.notice}>
-                <Image src={GreyNoticeImg} alt='Notice' />
-                <span>This amount includes the commission fee.</span>
-              </div>
-              <div className={styles.buttons}>
-                <button className={styles.minus} onClick={decreaseAmount}>
-                  <div style={{ backgroundColor: amount > 1 ? '#000' : '#969A9B' }} />
-                </button>
-                <span className={styles.total}>{amount}</span>
-                <button className={styles.plus} onClick={increaseAmount}>
-                  <Image src={PlusIconImg} alt='Plus Button' />
-                </button>
-              </div>
-            </div>
-
-            <button className={styles.buyButton} onClick={handlePopup}>
-              Buy now
-            </button>
-          </div>
-
-          <div className={styles.notice}>
-            <Image src={BookMarkImg} alt='Bookmark' />
-            <h5>
-              If this is your first visit, <span>we will tell you in detail!</span>
-            </h5>
-            <button onClick={handlePopup}>
-              <Image src={ArrowLeftImg} alt='Arrow Left' />
-            </button>
-          </div>
-        </div>
+        <Purchase product={product} />
 
         <div className={styles.productDetail}>
           <div className={styles.header}>
@@ -228,11 +69,7 @@ const Collection: React.FC<CollectionProps> = ({ params }) => {
           <div className={styles.body}>
             <div className={styles.sub}>
               <h5>Model Name</h5>
-              <p>
-                Submariner White Gold Blue
-                <br />
-                Dial &apos;Smurf&apos; 116619LB
-              </p>
+              <p>{product.data.model}</p>
             </div>
 
             <hr />
@@ -404,7 +241,7 @@ const Collection: React.FC<CollectionProps> = ({ params }) => {
         <div className={styles.body}>
           <div className={styles.inclination}>
             <h3>Product Inclination</h3>
-            <h2>Stable</h2>
+            <h2>{product.data.riskEN}</h2>
           </div>
 
           <hr />
@@ -413,7 +250,7 @@ const Collection: React.FC<CollectionProps> = ({ params }) => {
             <h3>Expected Rate Of Return (1 Year)</h3>
             <h2>
               <Image src={BigOrangeTriangleImg} alt='Big Orange Triangle' />
-              20%
+              {`${product.data.estimatedReturn}%`}
             </h2>
           </div>
 
@@ -421,7 +258,7 @@ const Collection: React.FC<CollectionProps> = ({ params }) => {
 
           <div className={styles.period}>
             <h3>Expected monetization period</h3>
-            <h2>12 months</h2>
+            <h2>{product.data.periodEN}</h2>
           </div>
         </div>
       </div>
@@ -429,17 +266,17 @@ const Collection: React.FC<CollectionProps> = ({ params }) => {
       <div className={`container ${styles.productCollections}`}>
         <h2>Related Collections</h2>
         <div aria-label='Product List' className={classes.productList} style={{ paddingTop: '1.5rem' }}>
-          {PRODUCTS.map((p, i) => {
+          {relatedProducts.data.map((p, i) => {
             return (
               <ProductCard
                 id={p.id}
                 key={p.id}
-                src={p.imageSrc}
-                alt={p.imageAtl}
-                name={p.name}
-                desc={p.desc}
-                marketPrice={p.marketPrice}
-                piecePrice={p.piecePrice}
+                src={p.thumbnail}
+                alt='Product Image'
+                name={p.brand}
+                desc={p.model}
+                marketPrice={p.appraisalPriceUSD}
+                piecePrice={p.currentSingleUnitPriceUSD}
                 currentPrice={p.currentSingleUnitPriceUSD}
                 lastestPrice={p.lastTradePriceUSD}
                 index={i}
@@ -451,11 +288,9 @@ const Collection: React.FC<CollectionProps> = ({ params }) => {
 
       <Link className={`rounded-arrow-button ${styles.moreButton}`} href={'/collections'}>
         MORE
-        {/* <Image src={RightArrowImg} alt='Arrow' className={classes['right-arrow']} /> */}
         <Image src={RightArrowImg} alt='Arrow' />
       </Link>
       <Footer />
-      {popup ? <Popup setOpen={setPopup} title='Coming Soon!' /> : null}
     </>
   );
 };

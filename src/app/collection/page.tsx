@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 interface CollectionProps {}
 
 const Collection: React.FC<CollectionProps> = () => {
-  redirect('/homepage');
+  redirect('/collections');
 };
 
 export default Collection;
