@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 import { Metadata } from 'next';
@@ -19,16 +17,14 @@ interface IProps {
   params: { page: string };
 }
 
-// export const metadata: Metadata = {
-//   title: 'Treasurer Collections',
-// };
+export const metadata: Metadata = {
+  title: 'Treasurer Collections',
+};
 
 const ProductList: React.FC<IProps> = async ({ params }) => {
   const start = (parseInt(params.page) - 1) * ITEMS_PER_PAGE;
   const end = start + ITEMS_PER_PAGE;
   const data = await getListPage();
-
-  console.log('DATA: ', data);
 
   return (
     <>
