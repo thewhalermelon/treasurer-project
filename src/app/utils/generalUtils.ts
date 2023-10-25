@@ -2,9 +2,9 @@ export function formatAppraisalPriceUSD(price: string) {
   let value = parseFloat(price);
 
   if (value >= 1000000) {
-    return `$${truncate(value / 1000000, 1).toFixed(2)}M`;
+    return `$${(value / 1000000).toFixed(2)}M`;
   } else if (value >= 1000) {
-    return `$${truncate(value / 1000, 1).toFixed(2)}K`;
+    return `$${(value / 1000).toFixed(2)}K`;
   }
   return `$${value.toFixed(2)}`;
 }
@@ -20,11 +20,6 @@ export function formatPriceChange(currentPrice: string, lastestPrice: string) {
   let lastest = parseFloat(lastestPrice);
 
   return `${roundNumber(current - lastest)} (${percentageDifference(current, lastest)})`;
-}
-
-function truncate(number: number, decimals: number) {
-  const factor = Math.pow(10, decimals);
-  return Math.floor(number * factor) / factor;
 }
 
 function roundNumber(num: number) {
