@@ -20,7 +20,7 @@ const Pagination: React.FC<PaginationProps> = ({ total, category }) => {
   const pathname = usePathname();
   const segments = pathname.split('/');
   const currentPage = segments[segments.length - 1];
-  const pagesToShow = 5;
+  const pagesToShow = 10;
   const blockNumber = Math.ceil(parseInt(currentPage) / pagesToShow);
 
   let totalPages = Math.ceil(total / ITEMS_PER_PAGE);
@@ -55,7 +55,7 @@ const Pagination: React.FC<PaginationProps> = ({ total, category }) => {
     <nav className={styles.pagination}>
       <ul>
         {!isFirstBlock ? (
-          <Link href={`/collections/${startPage - pagesToShow}?category=${category}`}>
+          <Link href={`/collections/${startPage - 1}?category=${category}`}>
             <Image src={ChevronLeftImg} alt='Arrow Left' width={20} height={20} />
           </Link>
         ) : null}
