@@ -1,6 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
+import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import styles from '../page.module.scss';
 import classes from '@/app/components/TreasurerProducts/treasurerProducts.module.scss';
@@ -14,7 +15,7 @@ import BigOrangeTriangleImg from 'public/images/big-orange-triangle.svg';
 import BigGreyNoticeImg from 'public/images/big-grey-notice.svg';
 import RightArrowImg from 'public/images/right-arrow.svg';
 
-import { PRODUCTS, TRENDING_SEARCHES } from '@/app/constants';
+import { TRENDING_SEARCHES } from '@/app/constants';
 import Footer from '@/app/components/Footer/Footer';
 import Header from '@/app/components/Header/Header';
 import ProductCard from '@/app/components/ProductCard/ProductCard';
@@ -26,6 +27,22 @@ import getRelatedProducts, { ApiResponse } from '@/app/libs/getRelatedProducts';
 
 interface CollectionProps {
   params: { id: number };
+}
+
+type Props = {
+  params: { id: number };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const id = params.id;
+
+  // fetch data
+  const product = await getDetailPage(id);
+
+  return {
+    title: `${product.data.brand} - ${product.data.model}`,
+  };
 }
 
 const Collection: React.FC<CollectionProps> = async ({ params }) => {
