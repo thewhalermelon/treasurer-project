@@ -29,9 +29,19 @@ function truncate(number: number, decimals: number) {
 
 function roundNumber(num: number) {
   if (num < 0) {
+    let result = parseFloat((-num).toFixed(2));
+
+    if (result === 0) {
+      return '';
+    }
     return `-$${parseFloat((-num).toFixed(2))}`;
   }
 
+  let result = parseFloat((-num).toFixed(2));
+
+  if (result === 0) {
+    return '';
+  }
   return `+$${parseFloat(num.toFixed(2))}`;
 }
 
