@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import Image from 'next/image';
 
@@ -26,8 +24,6 @@ const ProductList: React.FC<IProps> = async ({ params }) => {
   const end = start + ITEMS_PER_PAGE;
   const data = await getListPage();
   const items = data.data.slice(start, end);
-
-  console.log('items: ', items);
 
   return (
     <>

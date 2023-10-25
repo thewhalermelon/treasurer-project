@@ -12,14 +12,14 @@ export function formatAppraisalPriceUSD(price: string) {
 export function currentSingleUnitPriceUSD(price: string) {
   let value = parseFloat(price);
 
-  return `US$${(Math.ceil(value * 100) / 100).toFixed(2)}`;
+  return `US$${value.toFixed(2)}`;
 }
 
 export function formatPriceChange(currentPrice: string, lastestPrice: string) {
   let current = parseFloat(currentPrice);
   let lastest = parseFloat(lastestPrice);
 
-  return `${roundUp(current - lastest)} (${percentageDifference(current, lastest)})`;
+  return `${roundNumber(current - lastest)} (${percentageDifference(current, lastest)})`;
 }
 
 function truncate(number: number, decimals: number) {
@@ -27,24 +27,18 @@ function truncate(number: number, decimals: number) {
   return Math.floor(number * factor) / factor;
 }
 
-function roundUp(num: number, precision = 2) {
-  const multiplier = Math.pow(10, precision);
-
+function roundNumber(num: number) {
   if (num < 0) {
-    return `-$${Math.ceil(-num * multiplier) / multiplier}`;
+    return `-$${parseFloat((-num).toFixed(2))}`;
   }
 
-  return `+$${Math.ceil(num * multiplier) / multiplier}`;
+  return `+$${parseFloat(num.toFixed(2))}`;
 }
 
-function percentageDifference(current: number, lastest: number, precision = 2) {
-  const multiplier = Math.pow(10, precision);
-
+function percentageDifference(current: number, lastest: number) {
   if (current - lastest < 0) {
-    // return `-$${Math.ceil(-num * multiplier) / multiplier}`;
-
-    return `-${Math.ceil(((100 * (lastest - current)) / lastest) * multiplier) / multiplier}%`;
+    return `-${parseFloat(((100 * (lastest - current)) / lastest).toFixed(2))}%`;
   }
 
-  return `+${Math.ceil(((100 * (current - lastest)) / lastest) * multiplier) / multiplier}%`;
+  return `+${parseFloat(((100 * (current - lastest)) / lastest).toFixed(2))}%`;
 }

@@ -4,7 +4,7 @@
 
   ul {
     flex-direction: row;
-    gap: 13px;
+    gap: 24px;
     margin: auto;
     width: fit-content;
 
@@ -20,12 +20,10 @@
       font-weight: 400;
       height: 1.25rem;
       text-align: center;
-      width: 1.25rem;
 
       &.selected {
-        background-color: var(--black);
-        border-radius: 0.25rem;
-        color: var(--white);
+        color: var(--black);
+        font-weight: 800;
       }
     }
   }
