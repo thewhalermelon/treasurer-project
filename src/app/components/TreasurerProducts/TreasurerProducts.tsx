@@ -31,7 +31,8 @@ const TreasurerProducts: React.FC<TreasurerProductsProps> = () => {
               desc={p.desc}
               marketPrice={p.marketPrice}
               piecePrice={p.piecePrice}
-              save={p.save}
+              currentPrice={p.currentSingleUnitPriceUSD}
+              lastestPrice={p.lastTradePriceUSD}
               index={i}
             />
           );

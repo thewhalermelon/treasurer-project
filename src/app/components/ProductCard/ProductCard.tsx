@@ -1,29 +1,42 @@
 'use client';
 
 import React from 'react';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useInView } from 'react-intersection-observer';
 
 import styles from '@/app/components/TreasurerProducts/treasurerProducts.module.scss';
 
+import useWindowWidth from '@/app/hooks/useWindowWidth';
+import { currentSingleUnitPriceUSD, formatAppraisalPriceUSD, formatPriceChange } from '@/app/utils/generalUtils';
+
 import FilledSaveImg from 'public/images/filled-save.svg';
 import OutlinedSaveImg from 'public/images/outlined-save.svg';
 import OrangeTriangleImg from 'public/images/orange-triangle.svg';
-import useWindowWidth from '@/app/hooks/useWindowWidth';
 
 interface ProductCardProps {
-  src: StaticImageData;
+  src: string;
   alt: string;
   name: string;
   desc: string;
   marketPrice: string;
   piecePrice: string;
-  save: string;
   index: number;
+  currentPrice: string;
+  lastestPrice: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketPrice, piecePrice, save, index }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+  src,
+  alt,
+  name,
+  desc,
+  marketPrice,
+  piecePrice,
+  currentPrice,
+  lastestPrice,
+  index,
+}) => {
   const windowWidth = useWindowWidth();
   const [isSelected, setIsSelected] = React.useState<Boolean>(false);
   const [ref, inView] = useInView({
@@ -46,7 +59,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketP
     >
       <Link href={`/collection`}>
         <div className={styles.rectangle}>
-          <Image src={src} alt={alt} />
+          <Image src={src} alt={alt} width={290} height={290} />
           <button onClick={(e) => handleFavorite(e)}>
             <Image
               src={isSelected ? FilledSaveImg : OutlinedSaveImg}
@@ -68,13 +81,19 @@ const ProductCard: React.FC<ProductCardProps> = ({ src, alt, name, desc, marketP
           <h6>piece price</h6>
         </div>
         <div className={styles.priceNumber}>
-          <h5>{marketPrice}</h5>
-          <h5>{piecePrice}</h5>
+          <h5>{formatAppraisalPriceUSD(marketPrice)}</h5>
+          <h5>{currentSingleUnitPriceUSD(piecePrice)}</h5>
         </div>
       </div>
       <div className={styles.save}>
-        <Image src={OrangeTriangleImg} alt='Triangle' height={8} width={10} />
-        <h6>{save}</h6>
+        <Image
+          src={OrangeTriangleImg}
+          alt='Triangle'
+          height={8}
+          width={10}
+          className={currentPrice >= lastestPrice ? styles.up : styles.down}
+        />
+        <h6>{formatPriceChange(currentPrice, lastestPrice)}</h6>
       </div>
     </article>
   );

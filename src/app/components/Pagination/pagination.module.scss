@@ -1,26 +1,29 @@
 .pagination {
   max-width: 1200px;
-  margin: 2.5rem auto 10rem;
+  margin: 0 auto 10rem;
 
   ul {
     flex-direction: row;
-    gap: 13px;
+    gap: 24px;
     margin: auto;
     width: fit-content;
 
-    button {
+    a {
+      align-items: center;
       background-color: var(--white);
       border: none;
       cursor: pointer;
+      display: flex;
+      justify-content: center;
       font-size: var(--font-14);
       font-family: 'Spoqa Han Sans Neo', sans-serif;
+      font-weight: 400;
       height: 1.25rem;
-      width: 1.25rem;
+      text-align: center;
 
       &.selected {
-        background-color: var(--black);
-        border-radius: 0.25rem;
-        color: var(--white);
+        color: var(--black);
+        font-weight: 800;
       }
     }
   }

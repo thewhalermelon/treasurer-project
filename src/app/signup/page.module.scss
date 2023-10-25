@@ -141,8 +141,44 @@
         }
       }
 
+      .signupForm {
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+        width: 100%;
+
+        .firstSection {
+          display: flex;
+          gap: 0.75rem;
+
+          input {
+            flex: 1;
+          }
+        }
+
+        .secondSection {
+          position: relative;
+
+          button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            height: 1.25rem;
+            position: absolute;
+            right: 1rem;
+            top: 0.75rem;
+          }
+        }
+
+        .errorField {
+          color: var(--red-orange);
+          display: block;
+          font-size: var(--font-13);
+          margin-top: 0.25rem;
+        }
+      }
       .suffix-icon {
-        top: calc((100% - 1.25rem)/2);
+        top: calc((100% - 1.25rem) / 2);
       }
 
       .signup-button {

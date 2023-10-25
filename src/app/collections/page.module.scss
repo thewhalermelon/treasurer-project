@@ -70,6 +70,13 @@
     display: flex;
     margin-top: 1.75rem;
 
+    h5 {
+      color: var(--white);
+      font-size: var(--font-13);
+      font-weight: 500;
+      line-height: 22px;
+    }
+
     ul {
       flex-direction: row;
       justify-content: center;
@@ -77,13 +84,6 @@
       gap: 0.625rem;
       margin-left: 9px;
       flex-wrap: wrap;
-
-      h5 {
-        color: var(--white);
-        font-size: var(--font-13);
-        font-weight: 500;
-        line-height: 22px;
-      }
 
       li {
         button {

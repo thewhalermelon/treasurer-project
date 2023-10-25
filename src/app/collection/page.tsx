@@ -437,7 +437,8 @@ const Collection: React.FC<CollectionProps> = () => {
                 desc={p.desc}
                 marketPrice={p.marketPrice}
                 piecePrice={p.piecePrice}
-                save={p.save}
+                currentPrice={p.currentSingleUnitPriceUSD}
+                lastestPrice={p.lastTradePriceUSD}
                 index={i}
               />
             );

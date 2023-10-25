@@ -1,5 +1,3 @@
-'use client';
-
 import styles from './treasurerFeatures.module.scss';
 
 import { FEATURES } from '@/app/constants';

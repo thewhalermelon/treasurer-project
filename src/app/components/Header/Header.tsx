@@ -25,25 +25,6 @@ const Header: React.FC<HeaderProps> = () => {
     alert('Not implemeted!');
   };
 
-  const timeoutRef = React.useRef<number | NodeJS.Timeout>();
-
-  const clearTimer = React.useCallback(() => clearTimeout(timeoutRef.current), []);
-
-  React.useEffect(() => {
-    if (timeoutRef.current) clearTimer();
-
-    timeoutRef.current = setTimeout(() => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-      });
-    }, 1000);
-
-    return () => {
-      clearTimer();
-    };
-  }, [clearTimer]);
-
   React.useEffect(() => {
     const handleScroll = () => {
       let currentScrollTop = window.scrollY;
@@ -80,18 +61,18 @@ const Header: React.FC<HeaderProps> = () => {
         <nav>
           <ul>
             <li>
-              <a href='/'>Home</a>
+              <Link href='/'>Home</Link>
             </li>
             <li>
-              <a href='/collections' className={pathname === COLLECTIONS_PATH ? styles.selectedPage : ''}>
+              <Link href='/collections' className={pathname === COLLECTIONS_PATH ? styles.selectedPage : ''}>
                 Collections
-              </a>
+              </Link>
             </li>
             <li>
-              <a href='/blog'>Blog</a>
+              <Link href='/blog'>Blog</Link>
             </li>
             <li>
-              <a href='/contact'>Contact</a>
+              <Link href='/contact'>Contact</Link>
             </li>
           </ul>
         </nav>
