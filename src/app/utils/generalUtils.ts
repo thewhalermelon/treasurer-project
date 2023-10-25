@@ -2,11 +2,11 @@ export function formatAppraisalPriceUSD(price: string) {
   let value = parseFloat(price);
 
   if (value >= 1000000) {
-    return `$${truncate(value / 1000000, 1)}M`;
+    return `$${truncate(value / 1000000, 1).toFixed(2)}M`;
   } else if (value >= 1000) {
-    return `$${truncate(value / 1000, 1)}K`;
+    return `$${truncate(value / 1000, 1).toFixed(2)}K`;
   }
-  return `$${value}`;
+  return `$${value.toFixed(2)}`;
 }
 
 export function currentSingleUnitPriceUSD(price: string) {

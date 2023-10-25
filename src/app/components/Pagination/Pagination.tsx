@@ -13,33 +13,39 @@ import ChevronLeftImg from '../../../../public/images/chevron-left.svg';
 
 interface PaginationProps {
   total: number;
+  category: string;
 }
 
-const Pagination: React.FC<PaginationProps> = ({ total }) => {
+const Pagination: React.FC<PaginationProps> = ({ total, category }) => {
   const pathname = usePathname();
   const segments = pathname.split('/');
   const currentPage = segments[segments.length - 1];
   const pagesToShow = 5;
+  const blockNumber = Math.ceil(parseInt(currentPage) / pagesToShow);
 
   let totalPages = Math.ceil(total / ITEMS_PER_PAGE);
 
   const isFirstBlock = parseInt(currentPage) <= pagesToShow;
-  const isLastBlock = parseInt(currentPage) >= totalPages;
+  const isLastBlock =
+    totalPages <= pagesToShow
+      ? true
+      : totalPages > blockNumber * pagesToShow
+      ? parseInt(currentPage) >= totalPages
+      : true;
 
   let startPage: number;
   let endPage: number;
 
   if (isFirstBlock) {
     startPage = 1;
-    endPage = pagesToShow;
+    endPage = totalPages < pagesToShow ? totalPages : pagesToShow;
   } else {
-    const blockNumber = Math.ceil(parseInt(currentPage) / pagesToShow);
     startPage = (blockNumber - 1) * pagesToShow + 1;
 
     if (parseInt(currentPage) === totalPages) {
       endPage = parseInt(currentPage);
     } else {
-      endPage = blockNumber * pagesToShow;
+      endPage = totalPages <= blockNumber * pagesToShow ? totalPages : blockNumber * pagesToShow;
     }
   }
 
@@ -49,21 +55,24 @@ const Pagination: React.FC<PaginationProps> = ({ total }) => {
     <nav className={styles.pagination}>
       <ul>
         {!isFirstBlock ? (
-          <Link href={`/collections/${startPage - pagesToShow}`}>
+          <Link href={`/collections/${startPage - pagesToShow}?category=${category}`}>
             <Image src={ChevronLeftImg} alt='Arrow Left' width={20} height={20} />
           </Link>
         ) : null}
         {pages.map((item) => {
           return (
             <li key={item}>
-              <Link href={`/collections/${item}`} className={item === parseInt(currentPage) ? styles.selected : ''}>
+              <Link
+                href={`/collections/${item}?category=${category}`}
+                className={item === parseInt(currentPage) ? styles.selected : ''}
+              >
                 {item}
               </Link>
             </li>
           );
         })}
         {!isLastBlock ? (
-          <Link href={`/collections/${endPage + 1}`}>
+          <Link href={`/collections/${endPage + 1}?category=${category}`}>
             <Image src={ChevronRightImg} alt='Arrow Right' width={20} height={20} />
           </Link>
         ) : null}

@@ -15,6 +15,7 @@ import OutlinedSaveImg from 'public/images/outlined-save.svg';
 import OrangeTriangleImg from 'public/images/orange-triangle.svg';
 
 interface ProductCardProps {
+  id: number;
   src: string;
   alt: string;
   name: string;
@@ -27,6 +28,7 @@ interface ProductCardProps {
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
+  id,
   src,
   alt,
   name,
@@ -57,7 +59,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         inView ? 'visible' : ''
       }`}
     >
-      <Link href={`/collection`}>
+      <Link href={`/collection/${id}`}>
         <div className={styles.rectangle}>
           <Image src={src} alt={alt} width={290} height={290} />
           <button onClick={(e) => handleFavorite(e)}>
@@ -72,7 +74,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </Link>
 
       <h6 className='title-14-medium-grey'>{name}</h6>
-      <Link href={`/collection`}>
+      <Link href={`/collection/${id}`}>
         <summary className='title-20-black'>{desc}</summary>
       </Link>
       <div className={styles.prices}>

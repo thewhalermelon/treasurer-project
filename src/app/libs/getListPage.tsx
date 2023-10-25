@@ -9,7 +9,7 @@ export interface Item {
   lastTradePriceUSD: string;
 }
 
-interface ApiResponse {
+export interface ApiResponse {
   data: Item[];
 }
 

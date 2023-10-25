@@ -134,6 +134,10 @@
 
       li {
         .button {
+          align-items: center;
+          display: flex;
+          font-weight: 400;
+          justify-content: center;
           min-width: 78px;
           width: 100%;
         }
