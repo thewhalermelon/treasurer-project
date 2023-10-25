@@ -24,6 +24,7 @@ const TreasurerProducts: React.FC<TreasurerProductsProps> = () => {
         {PRODUCTS.map((p, i) => {
           return (
             <ProductCard
+              id={p.id}
               key={p.id}
               src={p.imageSrc}
               alt={p.imageAtl}

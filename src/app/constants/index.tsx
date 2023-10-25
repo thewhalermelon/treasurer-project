@@ -312,8 +312,8 @@ export const PRODUCTS = [
     imageAtl: 'Hand Bag',
     name: 'ROLEX',
     desc: "Submariner White Gold Blue Dial 'Smurf' 116619LB",
-    marketPrice: 'US$1.8M',
-    piecePrice: 'US$1.23',
+    marketPrice: '26307.00000',
+    piecePrice: '0.058460000',
     currentSingleUnitPriceUSD: '0.624560000',
     lastTradePriceUSD: '0.653420000',
   },
@@ -323,8 +323,8 @@ export const PRODUCTS = [
     imageAtl: 'Wine',
     name: 'ROLEX',
     desc: "Submariner White Gold Blue Dial 'Smurf' 116619LB",
-    marketPrice: 'US$1.8M',
-    piecePrice: 'US$1.23',
+    marketPrice: '26307.00000',
+    piecePrice: '0.058460000',
     currentSingleUnitPriceUSD: '0.624560000',
     lastTradePriceUSD: '0.653420000',
   },
@@ -334,8 +334,8 @@ export const PRODUCTS = [
     imageAtl: 'Hand Bag',
     name: 'ROLEX',
     desc: "Submariner White Gold Blue Dial 'Smurf' 116619LB",
-    marketPrice: 'US$1.8M',
-    piecePrice: 'US$1.23',
+    marketPrice: '26307.00000',
+    piecePrice: '0.058460000',
     currentSingleUnitPriceUSD: '0.624560000',
     lastTradePriceUSD: '0.653420000',
   },
@@ -426,7 +426,14 @@ export const TRENDING_SEARCHES = [
   },
 ];
 
-export const PRODUCT_CATEGORIES = ['ALL', 'BAG', 'WINE', 'WATCH', 'GOLD/SILVER', 'OTHERS'];
+export const PRODUCT_CATEGORIES = [
+  { name: 'ALL', value: 'all' },
+  { name: 'BAG', value: 'bag' },
+  { name: 'WINE', value: 'wine' },
+  { name: 'WATCH', value: 'watch' },
+  { name: 'GOLD/SILVER', value: 'metal' },
+  { name: 'OTHERS', value: 'other' },
+];
 
 export const OPTIONS = ['Popular', 'New', 'High price', 'Low price'];
 
