@@ -51,6 +51,16 @@ const Collection: React.FC<CollectionProps> = async ({ params }) => {
 
   const [product, relatedProducts] = await Promise.all([productData, relatedData]);
 
+  const formattedProductDetails = (details: string) => {
+    return details?.split('\n').map((line) => {
+      const [title, value] = line.split(': ');
+      return {
+        title: title?.trim(),
+        value: value?.trim(),
+      };
+    });
+  };
+
   return (
     <>
       <Header />
@@ -92,78 +102,40 @@ const Collection: React.FC<CollectionProps> = async ({ params }) => {
             <hr />
 
             <div className={styles.section}>
-              <div className={styles.sub}>
-                <h5>Warranty Spamming Date</h5>
-                <p>2020</p>
-              </div>
-              <div className={styles.sub}>
-                <h5>Product Status</h5>
-                <p>N-S class</p>
-              </div>
-              <div className={styles.sub}>
-                <h5>Retail Price</h5>
-                <p>52.14 million won (2022)</p>
-              </div>
+              {formattedProductDetails(product.data.basicInformationEN)?.map((item) => {
+                return (
+                  <div className={styles.sub} key={item.title}>
+                    <h5>{item.title}</h5>
+                    <p>{item.value}</p>
+                  </div>
+                );
+              })}
             </div>
 
             <hr />
 
             <div className={styles.section}>
-              <div className={styles.sub}>
-                <h5>Bracelet Type</h5>
-                <p>Oyster, wide 3-row link</p>
-              </div>
-              <div className={styles.sub}>
-                <h5>Crystal</h5>
-                <p>
-                  Scratch-resistant sapphire,
-                  <br />
-                  date display Cyclops convex lens
-                </p>
-              </div>
-              <div className={styles.sub}>
-                <h5>Material</h5>
-                <p>18 carat white gold</p>
-              </div>
-              <div className={styles.sub}>
-                <h5>Bezel</h5>
-                <p>
-                  One-way rotation with 60-minute graduations;
-                  <br />
-                  Scratch-resistant Cerachrome ceramic,
-                  <br />
-                  Platinum-coated numerals and scales
-                </p>
-              </div>
+              {formattedProductDetails(product.data.materialEN)?.map((item) => {
+                return (
+                  <div className={styles.sub} key={item.title}>
+                    <h5>{item.title}</h5>
+                    <p>{item.value}</p>
+                  </div>
+                );
+              })}
             </div>
 
             <hr />
 
             <div className={styles.section}>
-              <div className={styles.sub}>
-                <h5>Power Reserve</h5>
-                <p>About 50 hours</p>
-              </div>
-              <div className={styles.sub}>
-                <h5>Waterproof</h5>
-                <p>Waterproof to 300M depth</p>
-              </div>
-              <div className={styles.sub}>
-                <h5>Dial</h5>
-                <p>black</p>
-              </div>
-              <div className={styles.sub}>
-                <h5>Movement</h5>
-                <p>
-                  Automatic winding mechanism
-                  <br />
-                  Perpetual movement, caliber 3135
-                </p>
-              </div>
-              <div className={styles.sub}>
-                <h5>Size</h5>
-                <p>40mm</p>
-              </div>
+              {formattedProductDetails(product.data.descriptionEN)?.map((item) => {
+                return (
+                  <div className={styles.sub} key={item.title}>
+                    <h5>{item.title}</h5>
+                    <p>{item.value}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>
