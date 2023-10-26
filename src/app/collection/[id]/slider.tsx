@@ -8,7 +8,6 @@ import styles from '../page.module.scss';
 
 import FilledSaveImg from 'public/images/filled-save.svg';
 import OutlinedSaveImg from 'public/images/outlined-save.svg';
-import NoImageImg from 'public/images/no-image.svg';
 
 import { ProductData } from '@/app/libs/getDetailPage';
 
@@ -66,26 +65,46 @@ const Slider: React.FC<IProps> = ({ product }) => {
 
   const images = Object.keys(product.data)
     .filter((key) => key.startsWith('image'))
-    .map((key) => ((product.data as any)[key] === null ? '' : (product.data as any)[key]));
+    .filter((key) => (product.data as any)[key])
+    .map((key) => (product.data as any)[key]);
 
   return (
     <div className={styles['navigation-wrapper']}>
-      <div ref={sliderRef} className={styles['keen-slider']}>
-        {images.map((i, ind) => {
-          return (
-            <div key={ind} className={`keen-slider__slide number-slide${i} ${styles.slider}`}>
-              <Image src={i || NoImageImg} alt='Product Image' width={536} height={536} />
-              <button onClick={() => handleFavorite(ind)} style={{ cursor: 'pointer' }}>
-                <Image
-                  src={isSelected === ind ? FilledSaveImg : OutlinedSaveImg}
-                  alt='Outlined Save'
-                  className={styles.favorite}
-                />
-              </button>
-            </div>
-          );
-        })}
-      </div>
+      {images.length === 1 ? (
+        <div className={styles['keen-slider']}>
+          {images.map((i, ind) => {
+            return (
+              <div key={ind} className={`keen-slider__slide number-slide${i} ${styles.slider}`}>
+                <Image src={i} alt='Product Image' width={536} height={536} />
+                <button onClick={() => handleFavorite(ind)} style={{ cursor: 'pointer' }}>
+                  <Image
+                    src={isSelected === ind ? FilledSaveImg : OutlinedSaveImg}
+                    alt='Save'
+                    className={styles.favorite}
+                  />
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      ) : (
+        <div ref={sliderRef} className={styles['keen-slider']}>
+          {images.map((i, ind) => {
+            return (
+              <div key={ind} className={`keen-slider__slide number-slide${i} ${styles.slider}`}>
+                <Image src={i} alt='Product Image' width={536} height={536} />
+                <button onClick={() => handleFavorite(ind)} style={{ cursor: 'pointer' }}>
+                  <Image
+                    src={isSelected === ind ? FilledSaveImg : OutlinedSaveImg}
+                    alt='Save'
+                    className={styles.favorite}
+                  />
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      )}
       <div className={`dots ${styles.dots}`}>
         {images.map((i, ind) => {
           return (
