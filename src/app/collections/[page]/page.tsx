@@ -38,8 +38,8 @@ const ProductList: React.FC<IProps> = async ({ params }) => {
           <input type='text' id='text' name='text' placeholder='Search' />
         </div>
         <nav>
-          <h5>Trending searches</h5>
           <ul>
+            <h5>Trending searches</h5>
             {TRENDING_SEARCHES.map((c) => {
               return (
                 <li key={c.id}>
