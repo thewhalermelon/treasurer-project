@@ -8,7 +8,7 @@ import classes from '@/app/components/TreasurerProducts/treasurerProducts.module
 
 import WhiteMagnifyingGlassImg from 'public/images/white-magnifying-glass.svg';
 import DetailImg from 'public/images/detail.svg';
-import OfferImg from 'public/images/offer.svg';
+import PurchaseImg from 'public/images/purchase.svg';
 import StorageImg from 'public/images/storage.svg';
 import GoogleMapImg from 'public/images/google-map.png';
 import BigOrangeTriangleImg from 'public/images/big-orange-triangle.svg';
@@ -141,67 +141,34 @@ const Collection: React.FC<CollectionProps> = async ({ params }) => {
         </div>
 
         <div className={styles.productMore}>
-          <div className={styles.offers}>
+          <div className={styles.purchase}>
             <div className={styles.header}>
-              <Image src={OfferImg} alt='Offer' />
-              <h3>Offers</h3>
+              <Image src={PurchaseImg} alt='Purchase' />
+              <h3>Purchase Value</h3>
+              <Image src={BigGreyNoticeImg} alt='Notice' />
             </div>
             <div className={styles.body}>
-              <div className={styles['body-header']}>
-                <span style={{ minWidth: 111 }}>Price</span>
-                <span style={{ minWidth: 158 }}>Quantity</span>
-                <span style={{ minWidth: 167 }}>Transaction Price</span>
-                <span>Expiration</span>
+              <div className={styles.period}>
+                <h3>Expected Monetization Period</h3>
+                <h2>{product.data.periodEN}</h2>
               </div>
 
-              <hr />
-
-              <div className={styles['body-body']}>
-                <span style={{ minWidth: 111 }}>$1.23</span>
-                <span style={{ minWidth: 158 }}>2</span>
-                <span style={{ minWidth: 167 }}>$2.46</span>
-                <span>in 59 minutes</span>
+              <div className={styles.rate}>
+                <h3>Expected Rate Of Return (1 Year)</h3>
+                {product.data.estimatedReturn ? (
+                  <h2>
+                    <Image src={BigOrangeTriangleImg} alt='Big Orange Triangle' />
+                    {`${product.data.estimatedReturn}%`}
+                  </h2>
+                ) : (
+                  <h2></h2>
+                )}
               </div>
-              <hr />
-
-              <div className={styles['body-body']}>
-                <span style={{ minWidth: 111 }}>$1.23</span>
-                <span style={{ minWidth: 158 }}>2</span>
-                <span style={{ minWidth: 167 }}>$2.46</span>
-                <span>in 59 minutes</span>
+              <div className={styles.inclination}>
+                <h3>Product Inclination</h3>
+                <h2>{product.data.riskEN}</h2>
               </div>
-              <hr />
-
-              <div className={styles['body-body']}>
-                <span style={{ minWidth: 111 }}>$1.23</span>
-                <span style={{ minWidth: 158 }}>2</span>
-                <span style={{ minWidth: 167 }}>$2.46</span>
-                <span>in 59 minutes</span>
-              </div>
-              <hr />
-
-              <div className={styles['body-body']}>
-                <span style={{ minWidth: 111 }}>$1.23</span>
-                <span style={{ minWidth: 158 }}>2</span>
-                <span style={{ minWidth: 167 }}>$2.46</span>
-                <span>in 59 minutes</span>
-              </div>
-              <hr />
-
-              <div className={styles['body-body']}>
-                <span style={{ minWidth: 111 }}>$1.23</span>
-                <span style={{ minWidth: 158 }}>2</span>
-                <span style={{ minWidth: 167 }}>$2.46</span>
-                <span>in 59 minutes</span>
-              </div>
-              <hr />
-
-              <div className={styles['body-body']}>
-                <span style={{ minWidth: 111 }}>$1.23</span>
-                <span style={{ minWidth: 158 }}>2</span>
-                <span style={{ minWidth: 167 }}>$2.46</span>
-                <span>in 59 minutes</span>
-              </div>
+              <div></div>
             </div>
           </div>
 
@@ -222,39 +189,6 @@ const Collection: React.FC<CollectionProps> = async ({ params }) => {
           </div>
         </div>
       </main>
-      <div className={`container ${styles.productPurchase}`}>
-        <div className={styles.header}>
-          <h2>Purchase Value</h2>
-          <Image src={BigGreyNoticeImg} alt='Notice' />
-        </div>
-        <div className={styles.body}>
-          <div className={styles.inclination}>
-            <h3>Product Inclination</h3>
-            <h2>{product.data.riskEN}</h2>
-          </div>
-
-          <hr />
-
-          <div className={styles.rate}>
-            <h3>Expected Rate Of Return (1 Year)</h3>
-            {product.data.estimatedReturn ? (
-              <h2>
-                <Image src={BigOrangeTriangleImg} alt='Big Orange Triangle' />
-                {`${product.data.estimatedReturn}%`}
-              </h2>
-            ) : (
-              <h2></h2>
-            )}
-          </div>
-
-          <hr />
-
-          <div className={styles.period}>
-            <h3>Expected monetization period</h3>
-            <h2>{product.data.periodEN}</h2>
-          </div>
-        </div>
-      </div>
 
       <div className={`container ${styles.productCollections}`}>
         <h2>Related Collections</h2>
