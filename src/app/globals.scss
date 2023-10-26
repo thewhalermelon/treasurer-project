@@ -338,7 +338,7 @@ li {
 // -------------------------------------------------------------
 .appear-element-desktop-1 {
   opacity: 0;
-  transition: opacity 0.5s, transform 0.5s;
+  transition: opacity 0.2s, transform 0.2s;
 }
 
 .appear-element-desktop-1.visible {
@@ -348,7 +348,7 @@ li {
 // -------------------------------------------------------------
 .appear-element-desktop-2 {
   opacity: 0;
-  transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+  transition: opacity 0.2s 0.2s, transform 0.2s 0.2s;
 }
 
 .appear-element-desktop-2.visible {
@@ -358,7 +358,7 @@ li {
 // -------------------------------------------------------------
 .appear-element-desktop-3 {
   opacity: 0;
-  transition: opacity 1s 1s, transform 1s 1s;
+  transition: opacity 0.4s 0.4s, transform 0.4s 0.4s;
 }
 
 .appear-element-desktop-3.visible {

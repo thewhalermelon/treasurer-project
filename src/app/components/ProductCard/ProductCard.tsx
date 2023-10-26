@@ -42,7 +42,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const windowWidth = useWindowWidth();
   const [isSelected, setIsSelected] = React.useState<Boolean>(false);
   const [ref, inView] = useInView({
-    threshold: 1,
+    threshold: 0.2,
     triggerOnce: true,
   });
 
