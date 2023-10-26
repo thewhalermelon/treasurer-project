@@ -75,7 +75,7 @@ const Slider: React.FC<IProps> = ({ product }) => {
           {images.map((i, ind) => {
             return (
               <div key={ind} className={`keen-slider__slide number-slide${i} ${styles.slider}`}>
-                <Image src={i} alt='Product Image' width={536} height={536} />
+                <Image src={i} alt='Product Image' width={536} height={536} priority={true} />
                 <button onClick={() => handleFavorite(ind)} style={{ cursor: 'pointer' }}>
                   <Image
                     src={isSelected === ind ? FilledSaveImg : OutlinedSaveImg}
