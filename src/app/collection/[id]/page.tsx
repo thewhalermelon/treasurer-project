@@ -104,7 +104,7 @@ const Collection: React.FC<CollectionProps> = async ({ params }) => {
             <div className={styles.section}>
               {formattedProductDetails(product.data.basicInformationEN)?.map((item) => {
                 return (
-                  <div className={styles.sub}>
+                  <div className={styles.sub} key={item.title}>
                     <h5>{item.title}</h5>
                     <p>{item.value}</p>
                   </div>
@@ -117,7 +117,7 @@ const Collection: React.FC<CollectionProps> = async ({ params }) => {
             <div className={styles.section}>
               {formattedProductDetails(product.data.materialEN)?.map((item) => {
                 return (
-                  <div className={styles.sub}>
+                  <div className={styles.sub} key={item.title}>
                     <h5>{item.title}</h5>
                     <p>{item.value}</p>
                   </div>
@@ -130,7 +130,7 @@ const Collection: React.FC<CollectionProps> = async ({ params }) => {
             <div className={styles.section}>
               {formattedProductDetails(product.data.descriptionEN)?.map((item) => {
                 return (
-                  <div className={styles.sub}>
+                  <div className={styles.sub} key={item.title}>
                     <h5>{item.title}</h5>
                     <p>{item.value}</p>
                   </div>
