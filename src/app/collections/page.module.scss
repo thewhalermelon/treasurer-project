@@ -64,7 +64,6 @@
       justify-content: center;
       align-items: center;
       gap: 0.625rem;
-      margin-left: 9px;
       flex-wrap: wrap;
 
       h5 {
@@ -85,6 +84,7 @@
           display: flex;
           font-size: var(--font-14);
           font-weight: 500;
+          font-family: 'SUIT', sans-serif;
           height: 33px;
           letter-spacing: 0.42px;
           line-height: 22px;
@@ -142,6 +142,7 @@
 @media screen and (max-width: 375px) {
   .categorySearch {
     margin-top: 4.5rem;
+    padding-bottom: 2.75rem;
     padding-top: 2.75rem;
 
     h1 {
@@ -158,15 +159,30 @@
 
     nav {
       margin-top: 1rem;
+
+      ul {
+        gap: 0.5rem;
+
+        li {
+          &:last-child {
+            margin-right: 24px;
+          }
+        }
+      }
     }
   }
 
   .productListMain {
+    padding: 1.25rem 1.25rem 0;
+
     nav {
+      padding-bottom: 1.5rem;
+
       ul {
+        justify-content: start;
         overflow: auto;
-        // margin: 0 -1.25rem;
-        // padding: 0 1.25rem;
+        margin: 0 -1.25rem;
+        padding: 0 1.25rem;
 
         -ms-overflow-style: none;
         scrollbar-width: none;
