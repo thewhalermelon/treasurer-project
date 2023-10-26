@@ -7,18 +7,12 @@
 
   h1 {
     color: var(--white);
+    font-size: var(--font-52);
+    font-weight: 600;
+    line-height: 62px;
     margin: 0;
     text-align: center;
-    font-size: var(--font-28);
-    font-weight: 700;
-    width: 100%;
-
-    @media screen and (min-width: 769px) {
-      font-size: var(--font-52);
-      font-weight: 600;
-      line-height: 62px;
-      width: 570px;
-    }
+    width: 570px;
   }
 
   summary {
@@ -29,7 +23,6 @@
     line-height: 30px;
     list-style-type: none;
     letter-spacing: 0.56px;
-    text-align: center;
   }
 
   .searchInput {
@@ -39,11 +32,7 @@
     margin-top: 2.375rem;
     padding: 11px 12px 13px;
     position: relative;
-    width: 100%;
-
-    @media screen and (min-width: 991px) {
-      width: 792px;
-    }
+    width: 792px;
 
     label {
       display: none;
@@ -70,13 +59,6 @@
     display: flex;
     margin-top: 1.75rem;
 
-    h5 {
-      color: var(--white);
-      font-size: var(--font-13);
-      font-weight: 500;
-      line-height: 22px;
-    }
-
     ul {
       flex-direction: row;
       justify-content: center;
@@ -84,6 +66,13 @@
       gap: 0.625rem;
       margin-left: 9px;
       flex-wrap: wrap;
+
+      h5 {
+        color: var(--white);
+        font-size: var(--font-13);
+        font-weight: 500;
+        line-height: 22px;
+      }
 
       li {
         button {
@@ -114,23 +103,15 @@
 .productListMain {
   margin: auto;
   max-width: 1200px;
-  padding: 2.5rem 20px 0;
-
-  @media screen and (min-width: 769px) {
-    padding: 2.5rem 0 0;
-  }
+  padding: 2.5rem 0 0;
 
   nav {
     padding-bottom: 3.75rem;
 
     ul {
       flex-direction: row;
-      justify-content: start;
+      justify-content: center;
       gap: 0.625rem;
-
-      @media screen and (min-width: 769px) {
-        justify-content: center;
-      }
 
       li {
         .button {
@@ -152,6 +133,46 @@
           .button {
             min-width: 123px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .categorySearch {
+    margin-top: 4.5rem;
+    padding-top: 2.75rem;
+
+    h1 {
+      font-size: var(--font-28);
+      font-weight: 700;
+      line-height: 38px;
+      width: auto;
+    }
+
+    .searchInput {
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+  }
+
+  .productListMain {
+    nav {
+      ul {
+        overflow: auto;
+        // margin: 0 -1.25rem;
+        // padding: 0 1.25rem;
+
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
         }
       }
     }

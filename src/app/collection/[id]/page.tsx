@@ -237,10 +237,14 @@ const Collection: React.FC<CollectionProps> = async ({ params }) => {
 
           <div className={styles.rate}>
             <h3>Expected Rate Of Return (1 Year)</h3>
-            <h2>
-              <Image src={BigOrangeTriangleImg} alt='Big Orange Triangle' />
-              {`${product.data.estimatedReturn}%`}
-            </h2>
+            {product.data.estimatedReturn ? (
+              <h2>
+                <Image src={BigOrangeTriangleImg} alt='Big Orange Triangle' />
+                {`${product.data.estimatedReturn}%`}
+              </h2>
+            ) : (
+              <h2></h2>
+            )}
           </div>
 
           <hr />
