@@ -55,7 +55,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <article
       ref={ref}
-      className={`${windowWidth && windowWidth >= 1440 ? `appear-element-desktop-${index + 1}` : 'appear-element'} ${
+      className={`${windowWidth && windowWidth >= 1440 ? `appear-element-desktop-${index + 1}` : ''} ${
         inView ? 'visible' : ''
       }`}
     >

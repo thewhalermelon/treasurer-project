@@ -13,6 +13,7 @@ import Pagination from '@/app/components/Pagination/Pagination';
 import { ApiResponse, Item } from '@/app/libs/getListPage';
 import { PRODUCT_CATEGORIES } from '@/app/constants';
 import Link from 'next/link';
+import useWindowWidth from '@/app/hooks/useWindowWidth';
 
 interface IProps {
   data: ApiResponse;
@@ -22,6 +23,7 @@ interface IProps {
 }
 
 const Main: React.FC<IProps> = ({ data, start, end, currentPage }) => {
+  const windowWidth = useWindowWidth();
   const searchParams = useSearchParams();
   const category = searchParams.get('category');
 
@@ -29,7 +31,10 @@ const Main: React.FC<IProps> = ({ data, start, end, currentPage }) => {
     redirect(`/collections/${currentPage}?category=all`);
   }
 
-  const items = data.data.filter((item) => (category === 'all' ? item : item.category === category)).slice(start, end);
+  const items =
+    windowWidth && windowWidth >= 376
+      ? data.data.filter((item) => (category === 'all' ? item : item.category === category)).slice(start, end)
+      : data.data.filter((item) => (category === 'all' ? item : item.category === category));
 
   return (
     <>
@@ -56,7 +61,12 @@ const Main: React.FC<IProps> = ({ data, start, end, currentPage }) => {
         <div
           aria-label='Product List'
           className={classes.productList}
-          style={{ paddingTop: '1rem', paddingBottom: '3.75rem', flexWrap: 'wrap' }}
+          style={{
+            paddingTop: windowWidth && windowWidth < 376 ? '18px' : '1rem',
+            paddingBottom: '3.75rem',
+            flexWrap: 'wrap',
+            gap: windowWidth && windowWidth < 376 ? '3rem' : '1.25rem',
+          }}
         >
           {items &&
             items.map((p: Item, i: number) => {
@@ -78,10 +88,12 @@ const Main: React.FC<IProps> = ({ data, start, end, currentPage }) => {
             })}
         </div>
       </main>
-      <Pagination
-        total={data.data.filter((item) => (category === 'all' ? item : item.category === category)).length}
-        category={category}
-      />
+      {windowWidth && windowWidth >= 376 ? (
+        <Pagination
+          total={data.data.filter((item) => (category === 'all' ? item : item.category === category)).length}
+          category={category}
+        />
+      ) : null}
     </>
   );
 };
