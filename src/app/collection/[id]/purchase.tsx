@@ -92,8 +92,8 @@ const Purchase: React.FC<IProps> = ({ product }) => {
             </div>
           </div>
 
-          <button className={styles.buyButton} onClick={handlePopup}>
-            Buy now
+          <button className={`${styles.buyButton} ${styles.disabled}`}>
+            We are preparing to open the service in your country.
           </button>
         </div>
 
