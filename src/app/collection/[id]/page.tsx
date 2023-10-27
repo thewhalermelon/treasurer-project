@@ -6,7 +6,6 @@ import Image from 'next/image';
 import styles from '../page.module.scss';
 import classes from '@/app/components/TreasurerProducts/treasurerProducts.module.scss';
 
-import WhiteMagnifyingGlassImg from 'public/images/white-magnifying-glass.svg';
 import DetailImg from 'public/images/detail.svg';
 import PurchaseImg from 'public/images/purchase.svg';
 import StorageImg from 'public/images/storage.svg';
@@ -15,7 +14,6 @@ import BigOrangeTriangleImg from 'public/images/big-orange-triangle.svg';
 import BigGreyNoticeImg from 'public/images/big-grey-notice.svg';
 import RightArrowImg from 'public/images/right-arrow.svg';
 
-import { TRENDING_SEARCHES } from '@/app/constants';
 import Footer from '@/app/components/Footer/Footer';
 import Header from '@/app/components/Header/Header';
 import ProductCard from '@/app/components/ProductCard/ProductCard';
@@ -24,6 +22,7 @@ import Purchase from './purchase';
 
 import getDetailPage, { ProductData } from '@/app/libs/getDetailPage';
 import getRelatedProducts, { ApiResponse } from '@/app/libs/getRelatedProducts';
+import Aside from './aside';
 
 interface CollectionProps {
   params: { id: number };
@@ -64,25 +63,7 @@ const Collection: React.FC<CollectionProps> = async ({ params }) => {
   return (
     <>
       <Header />
-      <aside className={styles.categorySearch}>
-        <div className={styles.searchInput}>
-          <Image src={WhiteMagnifyingGlassImg} alt='White Magnifying Glass' width={17} height={17} />
-          <label htmlFor='text'>Search:</label>
-          <input type='text' id='text' name='text' placeholder='Search' />
-        </div>
-        <nav>
-          <h5>Trending searches</h5>
-          <ul>
-            {TRENDING_SEARCHES.map((c) => {
-              return (
-                <li key={c.id}>
-                  <button>{c.content}</button>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </aside>
+      <Aside />
       <main className={`container ${styles.main}`}>
         <Slider product={product} />
 
