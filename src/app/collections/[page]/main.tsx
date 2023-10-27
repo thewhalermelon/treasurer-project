@@ -62,10 +62,10 @@ const Main: React.FC<IProps> = ({ data, start, end, currentPage }) => {
           aria-label='Product List'
           className={classes.productList}
           style={{
-            paddingTop: windowWidth && windowWidth < 376 ? '18px' : '1rem',
+            paddingTop: windowWidth && windowWidth < 426 ? '18px' : '1rem',
             paddingBottom: '3.75rem',
             flexWrap: 'wrap',
-            gap: windowWidth && windowWidth < 376 ? '3rem' : '1.25rem',
+            gap: windowWidth && windowWidth < 426 ? '3rem' : '1.25rem',
           }}
         >
           {items &&
