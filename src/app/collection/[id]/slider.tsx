@@ -26,6 +26,9 @@ const Slider: React.FC<IProps> = ({ product }) => {
       slideChanged(slider) {
         setCurrentSlide(slider.track.details.rel);
       },
+      defaultAnimation: {
+        duration: 2000,
+      },
     },
     [
       (slider) => {
