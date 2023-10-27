@@ -94,12 +94,21 @@
       display: flex;
       overflow: hidden;
 
+      .back {
+        background-color: transparent;
+        border: none;
+        top: 52px;
+        left: 20px;
+        position: absolute;
+        z-index: 1;
+      }
+
       .slider {
         height: 547px;
         padding: 6px 27px 5px;
         position: relative;
 
-        button {
+        .favorite {
           background-color: transparent;
           border: none;
           top: 20px;
@@ -554,6 +563,48 @@
         font-size: var(--font-20);
         font-weight: 700;
         line-height: 22px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .main {
+    margin-top: 0;
+
+    .navigation-wrapper {
+      border-radius: unset;
+      height: 428px;
+      width: 375px;
+
+      .keen-slider {
+        height: 100%;
+        padding-top: 3.125rem;
+        position: relative;
+        width: 375px;
+
+        .slider {
+          height: auto;
+          padding: 0;
+
+          & > img {
+            display: block;
+            margin: auto;
+          }
+
+          .favorite {
+            top: 2px;
+            right: 24px;
+          }
+        }
+      }
+    }
+
+    .productPrices {
+      padding: 0 20px;
+
+      h3 {
+        font-weight: 800;
       }
     }
   }

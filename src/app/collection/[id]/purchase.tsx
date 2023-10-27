@@ -9,7 +9,7 @@ import OrangeTriangleImg from 'public/images/orange-triangle.svg';
 import GreyNoticeImg from 'public/images/grey-notice.svg';
 import PlusIconImg from 'public/images/plus-icon.svg';
 import BookMarkImg from 'public/images/bookmark.svg';
-import ArrowLeftImg from 'public/images/arrow-left.svg';
+import ArrowRightImg from 'public/images/arrow-right.svg';
 
 import Popup from '@/app/components/Popup/Popup';
 
@@ -103,7 +103,7 @@ const Purchase: React.FC<IProps> = ({ product }) => {
             If this is your first visit, <span>we will tell you in detail!</span>
           </h5>
           <button onClick={handlePopup}>
-            <Image src={ArrowLeftImg} alt='Arrow Left' />
+            <Image src={ArrowRightImg} alt='Arrow Left' />
           </button>
         </div>
       </div>

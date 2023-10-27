@@ -11,7 +11,10 @@ import styles from './header.module.scss';
 import TreasureeBrandImg from 'public/images/treasurer-brand.svg';
 import HamburgerImg from 'public/images/hamburger.svg';
 
+import useWindowWidth from '@/app/hooks/useWindowWidth';
+
 const COLLECTIONS_PATH = '/collections';
+const COLLECTION_PATH = '/collection/';
 
 interface HeaderProps {}
 
@@ -20,6 +23,7 @@ const Header: React.FC<HeaderProps> = () => {
   const [lastScrollTop, setLastScrollTop] = React.useState(0);
 
   const pathname = usePathname();
+  const windowWidth = useWindowWidth();
 
   const handleHamburger = () => {
     alert('Not implemeted!');
@@ -52,46 +56,50 @@ const Header: React.FC<HeaderProps> = () => {
   }, [lastScrollTop]);
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <div>
-        <Link scroll={false} href='/'>
-          <Image src={TreasureeBrandImg} alt='Treasurer' priority={true} />
-        </Link>
-        <Image src={HamburgerImg} alt='Menu' className={styles.hamburger} onClick={handleHamburger} />
-        <nav>
-          <ul>
-            <li>
-              <Link href='/'>Home</Link>
-            </li>
-            <li>
-              <Link href='/collections' className={pathname === COLLECTIONS_PATH ? styles.selectedPage : ''}>
-                Collections
-              </Link>
-            </li>
-            <li>
-              <Link href='/blog'>Blog</Link>
-            </li>
-            <li>
-              <Link href='/contact'>Contact</Link>
-            </li>
-          </ul>
-        </nav>
-        <nav>
-          <ul className={styles.actions}>
-            <li>
-              <Link href='/signin' className='outlined-button'>
-                Sign In
-              </Link>
-            </li>
-            <li>
-              <Link href='/signup' className='rounded-button'>
-                Sign up for free
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <>
+      {pathname.includes(COLLECTION_PATH) && windowWidth && windowWidth < 1440 ? null : (
+        <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+          <div>
+            <Link scroll={false} href='/'>
+              <Image src={TreasureeBrandImg} alt='Treasurer' priority={true} />
+            </Link>
+            <Image src={HamburgerImg} alt='Menu' className={styles.hamburger} onClick={handleHamburger} />
+            <nav>
+              <ul>
+                <li>
+                  <Link href='/'>Home</Link>
+                </li>
+                <li>
+                  <Link href='/collections' className={pathname === COLLECTIONS_PATH ? styles.selectedPage : ''}>
+                    Collections
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/blog'>Blog</Link>
+                </li>
+                <li>
+                  <Link href='/contact'>Contact</Link>
+                </li>
+              </ul>
+            </nav>
+            <nav>
+              <ul className={styles.actions}>
+                <li>
+                  <Link href='/signin' className='outlined-button'>
+                    Sign In
+                  </Link>
+                </li>
+                <li>
+                  <Link href='/signup' className='rounded-button'>
+                    Sign up for free
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+      )}
+    </>
   );
 };
 
