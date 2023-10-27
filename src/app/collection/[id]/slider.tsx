@@ -28,7 +28,7 @@ const Slider: React.FC<IProps> = ({ product }) => {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
     {
       initial: 0,
-      loop: true,
+      // loop: true,
       slideChanged(slider) {
         setCurrentSlide(slider.track.details.rel);
       },
@@ -36,36 +36,36 @@ const Slider: React.FC<IProps> = ({ product }) => {
         duration: 2000,
       },
     },
-    [
-      (slider) => {
-        let timeout: ReturnType<typeof setTimeout>;
-        let mouseOver = false;
-        function clearNextTimeout() {
-          clearTimeout(timeout);
-        }
-        function nextTimeout() {
-          clearTimeout(timeout);
-          if (mouseOver) return;
-          timeout = setTimeout(() => {
-            slider.next();
-          }, 1000);
-        }
-        slider.on('created', () => {
-          slider.container.addEventListener('mouseover', () => {
-            mouseOver = true;
-            clearNextTimeout();
-          });
-          slider.container.addEventListener('mouseout', () => {
-            mouseOver = false;
-            nextTimeout();
-          });
-          nextTimeout();
-        });
-        slider.on('dragStarted', clearNextTimeout);
-        slider.on('animationEnded', nextTimeout);
-        slider.on('updated', nextTimeout);
-      },
-    ],
+    // [
+    //   (slider) => {
+    //     let timeout: ReturnType<typeof setTimeout>;
+    //     let mouseOver = false;
+    //     function clearNextTimeout() {
+    //       clearTimeout(timeout);
+    //     }
+    //     function nextTimeout() {
+    //       clearTimeout(timeout);
+    //       if (mouseOver) return;
+    //       timeout = setTimeout(() => {
+    //         slider.next();
+    //       }, 1000);
+    //     }
+    //     slider.on('created', () => {
+    //       slider.container.addEventListener('mouseover', () => {
+    //         mouseOver = true;
+    //         clearNextTimeout();
+    //       });
+    //       slider.container.addEventListener('mouseout', () => {
+    //         mouseOver = false;
+    //         nextTimeout();
+    //       });
+    //       nextTimeout();
+    //     });
+    //     slider.on('dragStarted', clearNextTimeout);
+    //     slider.on('animationEnded', nextTimeout);
+    //     slider.on('updated', nextTimeout);
+    //   },
+    // ],
   );
 
   const handleFavorite = (i: number) => {
